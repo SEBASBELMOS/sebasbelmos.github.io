@@ -164,16 +164,12 @@
   .step h3{font-family:'Fraunces',serif;font-weight:600;font-size:1.12rem;margin:12px 0 8px}
   .step p{color:var(--muted);font-size:.9rem}
 
-  .stack-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px}
+  .stack-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:24px}
   .stack-col h4{font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:15px;padding-bottom:11px;border-bottom:1px solid var(--line)}
   .chips{display:flex;flex-wrap:wrap;gap:8px}
   .chip{font-size:.84rem;color:var(--paper);background:var(--surface);border:1px solid var(--line);padding:7px 12px;border-radius:8px;transition:border-color .25s,color .25s}
   .chip:hover{border-color:var(--gold);color:var(--gold-hi)}
 
-  .comm-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
-  .comm-grid p{color:var(--muted)}
-  .lang-line{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
-  .lang-line span{font-family:'JetBrains Mono',monospace;font-size:.76rem;color:var(--gold-hi);border:1px solid rgba(201,162,75,.3);padding:8px 14px;border-radius:999px}
 
   .contact{text-align:center;padding:130px 0}
   .contact .eyebrow{display:inline-flex}
@@ -226,12 +222,13 @@
 
   @media(max-width:960px){
     .hero-in,.hero-main,.about-grid,.intro-grid,.comm-grid,.case{grid-template-columns:1fr}
-    .svc-grid,.method-grid,.stack-grid{grid-template-columns:1fr 1fr}
+    .svc-grid,.method-grid{grid-template-columns:1fr 1fr}
     .case-board{border-left:none;border-top:1px solid var(--line);min-height:260px}
     .hero-photo{max-width:380px}
   }
   @media(max-width:720px){
-    .p-grid,.svc-grid,.method-grid,.stack-grid,.proof-in{grid-template-columns:1fr}
+    .p-grid,.svc-grid,.method-grid,.proof-in{grid-template-columns:1fr}
+    .stack-grid{grid-template-columns:repeat(2,1fr)}
     .proof-item{border-right:none;border-bottom:1px solid var(--line);padding:24px 22px}
     .proof-item:last-child{border-bottom:none}
     section.block{padding:68px 0}
@@ -322,7 +319,7 @@
             <li>Spanish native · English C2 · German A2</li>
           </ul>
           <div class="about-text">
-            <p class="body" data-t="pos.p1">I combine data engineering, BI, practical AI and teaching-level communication. That matters because dashboards fail when the model is unclear, pipelines fail when nobody can maintain them, and AI workflows fail when no one owns the review loop.</p>
+            <p class="body" data-t="pos.p1">I combine data engineering, BI, practical AI and clear documentation. That matters because dashboards fail when the model is unclear, pipelines fail when nobody can maintain them, and AI workflows fail when no one owns the review loop.</p>
             <p class="body" data-t="pos.p2">My work is strongest where messy data, unclear processes and non-technical stakeholders meet: pipelines with documentation, dashboards with a business narrative, and automation that removes manual work without hiding the logic. I also work AI-first — orchestrating coding agents (Claude Code, Codex, OpenCode) with human review to ship faster without losing rigour. Currently finishing my Data &amp; AI Engineering degree at UAO.</p>
           </div>
         </div>
@@ -412,6 +409,7 @@
         <div class="stack-col"><h4 data-t="stack.h2">Business intelligence</h4><div class="chips"><span class="chip">Power BI</span><span class="chip">Looker Studio</span><span class="chip">KPI Reporting</span><span class="chip">Data Storytelling</span></div></div>
         <div class="stack-col"><h4 data-t="stack.h3">Production &amp; MLOps</h4><div class="chips"><span class="chip">FastAPI</span><span class="chip">Docker</span><span class="chip">MLflow</span><span class="chip">pytest</span><span class="chip">GCP</span><span class="chip">HF Spaces</span></div></div>
         <div class="stack-col"><h4 data-t="stack.h4">AI automation</h4><div class="chips"><span class="chip">n8n</span><span class="chip">Claude Code</span><span class="chip">Codex</span><span class="chip">OpenCode</span><span class="chip">Cursor</span><span class="chip">Prompt Engineering</span></div></div>
+        <div class="stack-col"><h4 data-t="stack.h5">Languages</h4><div class="chips"><span class="chip">Spanish · native</span><span class="chip">English · C2</span><span class="chip">German · A2</span></div></div>
       </div>
     </div>
   </section>
@@ -437,16 +435,6 @@
     </div>
   </section>
 
-  <!-- COMMUNICATION -->
-  <section class="block" id="communication">
-    <div class="wrap comm-grid reveal">
-      <div><span class="eyebrow" data-t="comm.eyebrow">Comunicación clara</span><h2 class="sec-title" style="margin-top:14px" data-t="comm.title">Teaching and creating content built my communication edge.</h2></div>
-      <div>
-        <p data-t="comm.p">I teach Spanish online and create content for YouTube. That background shows up in better documentation, cleaner stakeholder conversations and dashboards that explain themselves. Both activities force you to make complex ideas simple.</p>
-        <div class="lang-line" data-t="comm.langs"><span>Spanish · native</span><span>English · C2</span><span>German · A2</span></div>
-      </div>
-    </div>
-  </section>
 
   <!-- CONTACT -->
   <section class="contact" id="contact">
@@ -494,7 +482,7 @@ const ES={
   "pos.eyebrow":"Sobre mí",
   "pos.facts":"<li>Ingeniero de Datos e IA voluntario en <b>JurisIntel</b> (NLP LegalTech)</li><li>End-to-end: ETL → warehouse → BI</li><li>App en producción, con pruebas (FastAPI + React)</li><li>MLOps completo: MLflow, Docker, CI/CD</li><li>Español nativo · Inglés C2 · Alemán A2</li>",
   "pos.lead":"Para founders y equipos que necesitan datos, dashboards y automatización que <b>sigan mejorando con el negocio</b>.",
-  "pos.p1":"Combino ingeniería de datos, BI, IA práctica y comunicación a nivel de profesor. Eso importa porque los dashboards fallan cuando el modelo no es claro, los pipelines fallan cuando nadie puede mantenerlos, y los flujos de IA fallan cuando nadie es dueño del ciclo de revisión.",
+  "pos.p1":"Combino ingeniería de datos, BI, IA práctica y documentación clara. Eso importa porque los dashboards fallan cuando el modelo no es claro, los pipelines fallan cuando nadie puede mantenerlos, y los flujos de IA fallan cuando nadie es dueño del ciclo de revisión.",
   "pos.p2":"Ayudo a organizar datos, procesos e ideas técnicas para que los equipos entiendan qué está pasando y qué hacer después. También trabajo AI-first: orquesto agentes de código (Claude Code, Codex, OpenCode) con revisión humana para entregar más rápido sin perder rigor. Actualmente estoy terminando mi carrera de Ingeniería de Datos e IA en la UAO.",
   "svc.eyebrow":"Para qué contratarme","svc.title":"Impacto en tres áreas.",
   "svc1.h":"Dashboards de BI ejecutivos","svc1.p":"Dashboards en Power BI y Looker Studio que muestran qué está pasando, por dónde se fuga el dinero y qué hacer después.",
@@ -515,10 +503,7 @@ const ES={
   "m3.h":"Automatizar y orquestar","m3.p":"Airflow, n8n y flujos de IA multiagente.",
   "m4.h":"Entregar con pruebas","m4.p":"Documentación, tests y un handoff que tu equipo realmente puede mantener.",
   "stack.eyebrow":"Stack","stack.title":"Lo que uso.",
-  "stack.h1":"Datos core","stack.h2":"Business intelligence","stack.h3":"Producción y MLOps","stack.h4":"Automatización con IA",
-  "comm.eyebrow":"Comunicación clara","comm.title":"Enseñar y crear contenido forjaron mi comunicación.",
-  "comm.p":"Enseño español en línea y creo contenido para YouTube. Eso se nota en mejor documentación, conversaciones más claras con stakeholders y dashboards que se explican solos. Ambas actividades te obligan a hacer simple lo complejo.",
-  "comm.langs":"<span>Español · nativo</span><span>Inglés · C2</span><span>Alemán · A2</span>",
+  "stack.h1":"Datos core","stack.h2":"Business intelligence","stack.h3":"Producción y MLOps","stack.h4":"Automatización con IA","stack.h5":"Idiomas",
   "contact.eyebrow":"Trabajemos juntos",
   "contact.h2":"Convirtamos tus datos en <em>decisiones.</em>",
   "contact.p":"Abierto a roles y proyectos freelance. Cuéntame con qué estás trabajando y te respondo con una opinión honesta y un primer paso claro.",
@@ -542,7 +527,7 @@ const filterLabel={"All":{en:"All",es:"Todos"},...typeLabel};
 const projects=[
   {type:"Data engineering",metric:{en:"123K+",es:"123K+"},
    name:"LinkedIn Jobs ETL",
-   tag:{en:"Reveals hiring, skills and salary trends from 123K+ job postings.",es:"Revela tendencias de contratación, skills y salarios desde 123K+ ofertas de empleo."},
+   tag:{en:"Reveals hiring, skills and salary trends from 123K+ job postings.",es:"Revela tendencias de contratación, habilidades y salarios desde 123K+ ofertas de empleo."},
    desc:{en:"End-to-end pipeline into a star-schema PostgreSQL warehouse (cloud-deployable on GCP, AWS RDS or Supabase), orchestrated with Apache Airflow across raw → cleaned → analytics layers.",
          es:"Pipeline de punta a punta hacia un warehouse PostgreSQL en esquema estrella (desplegable en GCP, AWS RDS o Supabase), orquestado con Apache Airflow en capas raw → cleaned → analytics."},
    tech:["Python","Airflow","PostgreSQL","Power BI"],links:[["Code","Código","https://github.com/SEBASBELMOS/LinkedIn-Jobs-Posting"]]},
@@ -566,15 +551,15 @@ const projects=[
    tech:["XGBoost","FastAPI","MLflow","Prometheus"],links:[["Code","Código","https://github.com/SEBASBELMOS/abodi_ml"]]},
   {type:"BI",metric:{en:"live",es:"en vivo"},
    name:"Colombia Graduates Dashboard",
-   tag:{en:"An interactive dashboard on what and where Colombians graduate.",es:"Un dashboard interactivo sobre qué y dónde se gradúan los colombianos."},
+   tag:{en:"An interactive dashboard on what fields Colombians graduate in and where.",es:"Un dashboard interactivo sobre en qué campos y dónde se gradúan los colombianos."},
    desc:{en:"Live Looker Studio dashboard on official SNIES / datos.gov.co open data, analysing higher-education graduates (2016–2020) by field, level and region.",
          es:"Dashboard en vivo en Looker Studio sobre datos abiertos oficiales del SNIES / datos.gov.co, analizando graduados de educación superior (2016–2020) por área, nivel y región."},
    tech:["Looker Studio","Data Viz","Open data"],links:[["Live","En vivo","https://lookerstudio.google.com/reporting/fbf76da4-9963-4152-937b-44ca32ae93b8/page/p_uounofjj1c"],["Repo","Repo","https://github.com/SEBASBELMOS/colombia-graduates-dashboard"]]},
   {type:"Product",metric:{en:"full-stack AI",es:"full-stack IA"},
    name:"DeutschLernen",
    tag:{en:"A full-stack AI web app for learning German.",es:"Una app web full-stack con IA para aprender alemán."},
-   desc:{en:"Solo-built: Express backend + single-file vanilla-JS frontend, LLM role-play and correction (Groq), AssemblyAI voice input and a Leitner spaced-repetition system with account sync.",
-         es:"Hecha en solitario: backend en Express + frontend vanilla-JS de un archivo, chat y corrección con LLM (Groq), entrada por voz con AssemblyAI y repetición espaciada (Leitner) con sincronización de cuenta."},
+   desc:{en:"Built solo: Express backend + single-file vanilla-JS frontend, LLM role-play and correction (Groq), AssemblyAI voice input and a Leitner spaced-repetition system with account sync.",
+         es:"Desarrollada en solitario: backend en Express + frontend vanilla-JS de un archivo, chat y corrección con LLM (Groq), entrada por voz con AssemblyAI y repetición espaciada (Leitner) con sincronización de cuenta."},
    tech:["Node.js","Express","Groq","AssemblyAI"],links:[["Code","Código","https://github.com/SEBASBELMOS/deutschlernen"]]},
 ];
 

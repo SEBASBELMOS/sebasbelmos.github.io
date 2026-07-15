@@ -87,7 +87,7 @@
   .reveal-line{display:block;overflow:hidden;padding-bottom:.08em}
   .reveal-line>span{display:block;transform:translateY(110%);transition:transform .9s var(--ease)}
   .loaded .reveal-line>span{transform:none}
-  .d1>span{transition-delay:.05s}.d2>span{transition-delay:.14s}.d3>span{transition-delay:.23s}
+  .d1>span{transition-delay:.05s}.d2>span{transition-delay:.14s}.d3>span{transition-delay:.23s}.d4>span{transition-delay:.32s}
   .fade-up{opacity:0;transform:translateY(16px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
   .loaded .fade-up{opacity:1;transform:none}
   .dd1{transition-delay:.45s}.dd2{transition-delay:.57s}.dd3{transition-delay:.69s}.dd4{transition-delay:.8s}
@@ -474,7 +474,7 @@
         <div class="stack-col"><h4 data-t="stack.h1">Data engineering</h4><div class="chips"><span class="chip">Python</span><span class="chip">SQL</span><span class="chip">PostgreSQL</span><span class="chip">Apache Airflow</span><span class="chip">Docker</span></div></div>
         <div class="stack-col"><h4 data-t="stack.h2">Business intelligence</h4><div class="chips"><span class="chip">Power BI</span><span class="chip">Looker Studio</span><span class="chip">KPI modelling</span><span class="chip">Data Storytelling</span></div></div>
         <div class="stack-col"><h4 data-t="stack.h3">Production &amp; MLOps</h4><div class="chips"><span class="chip">FastAPI</span><span class="chip">React</span><span class="chip">GCP</span><span class="chip">HF Spaces</span><span class="chip">Git</span><span class="chip">GitHub Actions</span><span class="chip">CI/CD</span></div></div>
-        <div class="stack-col"><h4 data-t="stack.h4">AI-assisted development &amp; automation</h4><div class="chips"><span class="chip">n8n</span><span class="chip">Claude Code</span><span class="chip">Codex</span><span class="chip">OpenCode</span><span class="chip">Hugging Face</span></div></div>
+        <div class="stack-col"><h4 data-t="stack.h4">Automation</h4><div class="chips"><span class="chip">n8n</span><span class="chip">Claude Code</span><span class="chip">Codex</span><span class="chip">OpenCode</span><span class="chip">Hugging Face</span></div></div>
         <div class="stack-col"><h4 data-t="stack.h5">Communication</h4><div class="chips"><span class="chip" data-t="stack.comm1">Spanish native</span><span class="chip" data-t="stack.comm2">English C2</span><span class="chip" data-t="stack.comm3">German A2</span><span class="chip" data-t="stack.comm4">Technical documentation</span><span class="chip" data-t="stack.comm5">Teaching &amp; stakeholder communication</span></div></div>
       </div>
     </div>
@@ -584,7 +584,7 @@ const ES={
   "role":"Ingeniero de Datos e IA",
   "nav.about":"Sobre mí","nav.services":"Servicios","nav.work":"Proyectos","nav.stack":"Stack","nav.learn":"Aprende","nav.cta":"Hablemos",
 
-  "hero.h1":"<span class='reveal-line d1'><span>Convierto datos complejos</span></span><span class='reveal-line d2'><span>en sistemas que</span></span><span class='reveal-line d3'><span>ayudan a <em>decidir</em>.</span></span>",
+  "hero.h1":"<span class='reveal-line d1'><span>Convierto los datos</span></span><span class='reveal-line d2'><span>complejos en</span></span><span class='reveal-line d3'><span>sistemas que</span></span><span class='reveal-line d4'><span>ayudan a <em>decidir</em>.</span></span>",
   "hero.sub":"Construyo pipelines de datos confiables, dashboards claros y sistemas prácticos con IA para equipos que quieren <b>tomar mejores decisiones y reducir el trabajo repetitivo</b>.",
   "hero.cta1":"Ver proyectos","hero.cta2":"Hablemos →",
   "proof.l1":"ofertas de empleo procesadas","proof.d1":"Pipeline analítico de punta a punta",
@@ -631,10 +631,10 @@ const ES={
   "method.eyebrow":"Cómo trabajo","method.title":"De información dispersa a un sistema que tu equipo pueda mantener.",
   "m1.h":"Entender el problema","m1.p":"Entender la decisión, las personas, las fuentes y el trabajo manual actual antes de elegir herramientas.",
   "m2.h":"Construir la base de los datos","m2.p":"Limpiar, modelar y validar la información para que el resultado sea confiable.",
-  "m3.h":"Automatizar el trabajo repetible","m3.p":"Usar Python, SQL, Airflow, n8n o IA solamente donde hagan el proceso más confiable.",
+  "m3.h":"Automatizar lo repetible","m3.p":"Usar Python, SQL, Airflow, n8n o IA solamente donde hagan el proceso más confiable.",
   "m4.h":"Entregar con pruebas","m4.p":"Entregar pruebas, documentación y un handoff claro, en lugar de dejar una caja negra.",
   "stack.eyebrow":"Stack","stack.title":"Lo que uso.",
-  "stack.h1":"Ingeniería de datos","stack.h2":"Business intelligence","stack.h3":"Producción y MLOps","stack.h4":"Desarrollo asistido por IA y automatización","stack.h5":"Comunicación",
+  "stack.h1":"Ingeniería de datos","stack.h2":"Business intelligence","stack.h3":"Producción y MLOps","stack.h4":"Automatización","stack.h5":"Comunicación",
   "stack.comm1":"Español nativo","stack.comm2":"Inglés C2","stack.comm3":"Alemán A2","stack.comm4":"Documentación técnica","stack.comm5":"Enseñanza y comunicación con stakeholders",
   "contact.eyebrow":"Trabajemos juntos",
   "contact.h2":"¿Tienes algo específico en mente?",
@@ -648,7 +648,7 @@ const ES={
   "learn.cta1":"Ver en YouTube →","learn.cta2":"Seguir en LinkedIn →",
   "next.eyebrow":"Elige el siguiente paso","next.title":"Trabajemos juntos, considera mi perfil para un rol o aprende conmigo.",
   "next.route1.h":"Contrátame para un proyecto","next.route1.p":"¿Necesitas un pipeline de datos, un dashboard, un flujo de reportería o una herramienta práctica con IA? Cuéntame qué proceso es manual, confuso o difícil de mantener.","next.route1.cta":"Hablemos del proyecto →",
-  "next.route2.h":"Considera mi perfil para un rol","next.route2.p":"Estoy abierto a oportunidades en Data, Analytics, Ingeniería de Datos e IA práctica donde pueda construir, aprender y comunicar con claridad.","next.route2.cta1":"Descargar CV","next.route2.cta2":"Ver LinkedIn →",
+  "next.route2.h":"Revisa mi perfil","next.route2.p":"Estoy abierto a oportunidades en Data, Analytics, Ingeniería de Datos e IA práctica donde pueda construir, aprender y comunicar con claridad.","next.route2.cta1":"Descargar CV","next.route2.cta2":"Ver LinkedIn →",
   "next.route3.h":"Aprende conmigo","next.route3.p":"Encuentra contenido práctico sobre datos, proyectos asistidos por IA, decisiones de carrera y cómo construir oportunidades online.","next.route3.cta":"Ir a YouTube →",
   "tst.eyebrow":"Lo que dicen de mí","tst.title":"La confianza de quienes han construido conmigo.",
   "tst.q1":"Cuando Sebastian habla, los demás escuchamos. Un líder dentro y fuera de los proyectos, y de las mejores personas que una empresa podría tener.",

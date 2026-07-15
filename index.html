@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' https://*.clarity.ms; img-src 'self' data: https://*.clarity.ms https://*.bing.com; connect-src 'self' https://*.clarity.ms; upgrade-insecure-requests" />
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' https://*.clarity.ms; img-src 'self' data: https://*.clarity.ms https://*.bing.com; connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://*.clarity.ms; upgrade-insecure-requests" />
 <title>Sebastian Belalcazar | Data &amp; AI Engineer</title>
 <meta name="description" content="Data & AI Engineer building reliable data pipelines, clear dashboards and practical AI systems. Explore selected projects and practical content on Data, AI and online careers." />
 <meta name="theme-color" content="#0a0a0c" />
@@ -772,7 +772,7 @@ const spyMap={};document.querySelectorAll('.nav-links a[href^="#"]').forEach(a=>
 const spy=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){Object.values(spyMap).forEach(a=>a.classList.remove('active'));const l=spyMap[e.target.id];if(l)l.classList.add('active')}}),{rootMargin:'-40% 0px -55% 0px'});
 Object.keys(spyMap).forEach(id=>{const el=document.getElementById(id);if(el)spy.observe(el)});
 menu.addEventListener('click',()=>setMenuOpen(!navlinks.classList.contains('open')));
-navlinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setMenuOpen(false,{restoreFocus:true})));
+navlinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{setMenuOpen(false);setTimeout(()=>menu.focus(),0)}));
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&navlinks.classList.contains('open'))setMenuOpen(false,{restoreFocus:true})});
 
 /* ---------- cursor sheen ---------- */

@@ -378,8 +378,64 @@
   <section class="block alt" id="work">
     <div class="wrap">
       <div class="sec-head reveal"><span class="eyebrow" data-t="work.eyebrow">Selected work</span><h2 class="sec-title" data-t="work.title">The work behind the numbers.</h2></div>
-      <div class="filters reveal" id="filters"></div>
-      <div class="p-grid" id="pgrid"></div>
+      <div class="filters reveal" id="filters">
+        <button class="active" type="button" data-filter="All" aria-pressed="true" data-t="filter.all">All</button>
+        <button type="button" data-filter="Data engineering" aria-pressed="false" data-t="type.dataeng">Data engineering</button>
+        <button type="button" data-filter="MLOps" aria-pressed="false" data-t="type.mlops">MLOps</button>
+        <button type="button" data-filter="Product" aria-pressed="false" data-t="type.product">Product</button>
+        <button type="button" data-filter="Applied ML" aria-pressed="false" data-t="type.ml">Applied ML</button>
+        <button type="button" data-filter="BI" aria-pressed="false" data-t="type.bi">BI</button>
+      </div>
+      <div class="p-grid" id="pgrid">
+        <article class="card" data-project-type="Data engineering">
+          <div class="c-top"><span class="c-type" data-t="type.dataeng">Data engineering</span><span class="c-metric" data-t="proj.linkedin.metric">123K+</span></div>
+          <h3 class="p-name serif">LinkedIn Jobs ETL</h3>
+          <p class="p-tag" data-t="proj.linkedin.tag">Reveals hiring, skills and salary trends from 123K+ job postings.</p>
+          <p class="p-desc" data-t="proj.linkedin.desc">End-to-end pipeline into a star-schema PostgreSQL warehouse (cloud-deployable on GCP, AWS RDS or Supabase), orchestrated with Apache Airflow across raw → cleaned → analytics layers.</p>
+          <div class="p-tech"><span>Python</span><span>Airflow</span><span>PostgreSQL</span><span>Power BI</span></div>
+          <div class="p-links"><a href="https://github.com/SEBASBELMOS/LinkedIn-Jobs-Posting" target="_blank" rel="noopener noreferrer" data-t="proj.linkedin.link1">Code →</a></div>
+        </article>
+        <article class="card" data-project-type="Data engineering">
+          <div class="c-top"><span class="c-type" data-t="type.dataeng">Data engineering</span><span class="c-metric" data-t="proj.spotify.metric">−28.6% dupes</span></div>
+          <h3 class="p-name serif">Spotify Analytics ETL</h3>
+          <p class="p-tag" data-t="proj.spotify.tag">Cleans and analyses 114K+ music records for streaming insights.</p>
+          <p class="p-desc" data-t="proj.spotify.desc">Production ETL integrating Spotify tracks and Grammy records, orchestrated with Airflow on GCP with daily scheduling, monitoring and error handling; 81,941 enriched rows.</p>
+          <div class="p-tech"><span>Airflow</span><span>PostgreSQL</span><span>GCP</span><span>Power BI</span></div>
+          <div class="p-links"><a href="https://github.com/SEBASBELMOS/spotify-analytics-etl-pipeline" target="_blank" rel="noopener noreferrer" data-t="proj.spotify.link1">Code →</a></div>
+        </article>
+        <article class="card" data-project-type="MLOps">
+          <div class="c-top"><span class="c-type" data-t="type.mlops">MLOps</span><span class="c-metric" data-t="proj.abodi.metric">F1 0.89</span></div>
+          <h3 class="p-name serif">Abodi ML · LegalTech</h3>
+          <p class="p-tag" data-t="proj.abodi.tag">Flags court cases at risk of missing legal deadlines so lawyers can act first.</p>
+          <p class="p-desc" data-t="proj.abodi.desc">XGBoost risk classifier for Colombian legal-term expiry, with MLflow, FastAPI serving, Docker Compose, Prometheus + Grafana monitoring and CI/CD. Metrics on synthetic data modelled from business rules.</p>
+          <div class="p-tech"><span>XGBoost</span><span>FastAPI</span><span>MLflow</span><span>Prometheus</span></div>
+          <div class="p-links"><a href="https://github.com/SEBASBELMOS/abodi_ml" target="_blank" rel="noopener noreferrer" data-t="proj.abodi.link1">Code →</a></div>
+        </article>
+        <article class="card" data-project-type="Product">
+          <div class="c-top"><span class="c-type" data-t="type.product">Product</span><span class="c-metric" data-t="proj.deutsch.metric">full-stack AI</span></div>
+          <h3 class="p-name serif">DeutschLernen</h3>
+          <p class="p-tag" data-t="proj.deutsch.tag">A full-stack AI web app for learning German.</p>
+          <p class="p-desc" data-t="proj.deutsch.desc">Built solo: Express backend + single-file vanilla-JS frontend, LLM role-play and correction (Groq), AssemblyAI voice input and a Leitner spaced-repetition system with account sync.</p>
+          <div class="p-tech"><span>Node.js</span><span>Express</span><span>Groq</span><span>AssemblyAI</span></div>
+          <div class="p-links"><a href="https://github.com/SEBASBELMOS/deutschlernen" target="_blank" rel="noopener noreferrer" data-t="proj.deutsch.link1">Code →</a></div>
+        </article>
+        <article class="card" data-project-type="Applied ML">
+          <div class="c-top"><span class="c-type" data-t="type.ml">Applied ML</span><span class="c-metric" data-t="proj.happiness.metric">R² 0.8639</span></div>
+          <h3 class="p-name serif">Global Happiness ML</h3>
+          <p class="p-tag" data-t="proj.happiness.tag">Predicts how happy a country is from its economic and social data.</p>
+          <p class="p-desc" data-t="proj.happiness.desc">Regression pipeline across 164 countries with Random Forest selection, PostgreSQL traceability and a real-time Kafka streaming architecture for prediction events.</p>
+          <div class="p-tech"><span>scikit-learn</span><span>Kafka</span><span>PostgreSQL</span><span>Docker</span></div>
+          <div class="p-links"><a href="https://github.com/SEBASBELMOS/world-happiness-ml-pipeline" target="_blank" rel="noopener noreferrer" data-t="proj.happiness.link1">Code →</a></div>
+        </article>
+        <article class="card" data-project-type="BI">
+          <div class="c-top"><span class="c-type" data-t="type.bi">BI</span><span class="c-metric" data-t="proj.colombia.metric">live</span></div>
+          <h3 class="p-name serif">Colombia Graduates Dashboard</h3>
+          <p class="p-tag" data-t="proj.colombia.tag">An interactive dashboard on what fields Colombians graduate in and where.</p>
+          <p class="p-desc" data-t="proj.colombia.desc">Live Looker Studio dashboard on official SNIES / datos.gov.co open data, analysing higher-education graduates (2016–2020) by field, level and region.</p>
+          <div class="p-tech"><span>Looker Studio</span><span>Data Viz</span><span>Open data</span></div>
+          <div class="p-links"><a href="https://lookerstudio.google.com/reporting/fbf76da4-9963-4152-937b-44ca32ae93b8/page/p_uounofjj1c" target="_blank" rel="noopener noreferrer" data-t="proj.colombia.link1">Live →</a><a href="https://github.com/SEBASBELMOS/colombia-graduates-dashboard" target="_blank" rel="noopener noreferrer" data-t="proj.colombia.link2">Repo →</a></div>
+        </article>
+      </div>
     </div>
   </section>
 
@@ -505,6 +561,25 @@ const ES={
   "case.link1":"Ver app en vivo →","case.link2":"Docs de la API →","case.link3":"Código →",
   "case.dt1":"Precisión","case.dt2":"Pruebas","case.dt3":"Latencia","case.dt4":"Datos",
   "work.eyebrow":"Proyectos seleccionados","work.title":"El trabajo detrás de los números.",
+  "filter.all":"Todos","type.dataeng":"Ingeniería de datos","type.mlops":"MLOps","type.product":"Producto","type.ml":"ML aplicado","type.bi":"BI",
+  "proj.linkedin.metric":"123K+","proj.linkedin.tag":"Revela tendencias de contratación, habilidades y salarios desde 123K+ ofertas de empleo.",
+  "proj.linkedin.desc":"Pipeline de punta a punta hacia un warehouse PostgreSQL en esquema estrella (desplegable en GCP, AWS RDS o Supabase), orquestado con Apache Airflow en capas raw → cleaned → analytics.",
+  "proj.linkedin.link1":"Código →",
+  "proj.spotify.metric":"−28.6% dup.","proj.spotify.tag":"Limpieza y análisis de 114K+ registros musicales para insights de streaming.",
+  "proj.spotify.desc":"ETL de producción que integra tracks de Spotify y registros de los Grammy, orquestado con Airflow en GCP con agendamiento diario, monitoreo y manejo de errores; 81.941 filas enriquecidas.",
+  "proj.spotify.link1":"Código →",
+  "proj.abodi.metric":"F1 0.89","proj.abodi.tag":"Detecta procesos judiciales en riesgo de vencer términos para que los abogados actúen a tiempo.",
+  "proj.abodi.desc":"Clasificador de riesgo con XGBoost para vencimiento de términos judiciales en Colombia, con MLflow, serving en FastAPI, Docker Compose, monitoreo con Prometheus + Grafana y CI/CD. Métricas sobre datos sintéticos modelados desde reglas de negocio.",
+  "proj.abodi.link1":"Código →",
+  "proj.deutsch.metric":"full-stack IA","proj.deutsch.tag":"Una app web full-stack con IA para aprender alemán.",
+  "proj.deutsch.desc":"Desarrollada en solitario: backend en Express + frontend vanilla-JS de un archivo, chat y corrección con LLM (Groq), entrada por voz con AssemblyAI y repetición espaciada (Leitner) con sincronización de cuenta.",
+  "proj.deutsch.link1":"Código →",
+  "proj.happiness.metric":"R² 0.8639","proj.happiness.tag":"Predice qué tan feliz es un país a partir de sus datos económicos y sociales.",
+  "proj.happiness.desc":"Pipeline de regresión sobre 164 países con selección de Random Forest, trazabilidad en PostgreSQL y una arquitectura de streaming en tiempo real con Kafka para los eventos de predicción.",
+  "proj.happiness.link1":"Código →",
+  "proj.colombia.metric":"en vivo","proj.colombia.tag":"Un dashboard interactivo sobre en qué campos y dónde se gradúan los colombianos.",
+  "proj.colombia.desc":"Dashboard en vivo en Looker Studio sobre datos abiertos oficiales del SNIES / datos.gov.co, analizando graduados de educación superior (2016–2020) por área, nivel y región.",
+  "proj.colombia.link1":"En vivo →","proj.colombia.link2":"Repo →",
   "method.eyebrow":"Cómo trabajo","method.title":"De información dispersa a un sistema que tu equipo pueda mantener.",
   "m1.h":"Entender el problema","m1.p":"Entender la decisión, las personas, las fuentes y el trabajo manual actual antes de elegir herramientas.",
   "m2.h":"Sentar las bases de los datos","m2.p":"Limpiar, modelar y validar la información para que el resultado sea confiable.",
@@ -523,69 +598,20 @@ const ES={
   "edu.deg1":"Ingeniería de Datos e IA","edu.bootcamp":"Bootcamp de IA","edu.dsa":"DS4A · Analítica de datos <span style=\"color:var(--gold)\">· honores</span>","edu.eyebrow":"Formación","edu.title":"Educación y certificaciones.","edu.h1":"Educación","edu.h2":"Certificaciones",
 };
 
-/* ---------- bilingual data ---------- */
-const typeLabel={
-  "Data engineering":{en:"Data engineering",es:"Ingeniería de datos"},
-  "Applied ML":{en:"Applied ML",es:"ML aplicado"},
-  "MLOps":{en:"MLOps",es:"MLOps"},
-  "BI":{en:"BI",es:"BI"},
-  "Product":{en:"Product",es:"Producto"},
-};
-const filterLabel={"All":{en:"All",es:"Todos"},...typeLabel};
-const projects=[
-  {type:"Data engineering",metric:{en:"123K+",es:"123K+"},
-   name:"LinkedIn Jobs ETL",
-   tag:{en:"Reveals hiring, skills and salary trends from 123K+ job postings.",es:"Revela tendencias de contratación, habilidades y salarios desde 123K+ ofertas de empleo."},
-   desc:{en:"End-to-end pipeline into a star-schema PostgreSQL warehouse (cloud-deployable on GCP, AWS RDS or Supabase), orchestrated with Apache Airflow across raw → cleaned → analytics layers.",
-         es:"Pipeline de punta a punta hacia un warehouse PostgreSQL en esquema estrella (desplegable en GCP, AWS RDS o Supabase), orquestado con Apache Airflow en capas raw → cleaned → analytics."},
-   tech:["Python","Airflow","PostgreSQL","Power BI"],links:[["Code","Código","https://github.com/SEBASBELMOS/LinkedIn-Jobs-Posting"]]},
-  {type:"Data engineering",metric:{en:"−28.6% dupes",es:"−28.6% dup."},
-   name:"Spotify Analytics ETL",
-   tag:{en:"Cleans and analyzes 114K+ music records for streaming insights.",es:"Limpieza y análisis de 114K+ registros musicales para insights de streaming."},
-   desc:{en:"Production ETL integrating Spotify tracks and Grammy records, orchestrated with Airflow on GCP with daily scheduling, monitoring and error handling; 81,941 enriched rows.",
-         es:"ETL de producción que integra tracks de Spotify y registros de los Grammy, orquestado con Airflow en GCP con agendamiento diario, monitoreo y manejo de errores; 81.941 filas enriquecidas."},
-   tech:["Airflow","PostgreSQL","GCP","Power BI"],links:[["Code","Código","https://github.com/SEBASBELMOS/spotify-analytics-etl-pipeline"]]},
-  {type:"Applied ML",metric:{en:"R² 0.8639",es:"R² 0.8639"},
-   name:"Global Happiness ML",
-   tag:{en:"Predicts how happy a country is from its economic and social data.",es:"Predice qué tan feliz es un país a partir de sus datos económicos y sociales."},
-   desc:{en:"Regression pipeline across 164 countries with Random Forest selection, PostgreSQL traceability and a real-time Kafka streaming architecture for prediction events.",
-         es:"Pipeline de regresión sobre 164 países con selección de Random Forest, trazabilidad en PostgreSQL y una arquitectura de streaming en tiempo real con Kafka para los eventos de predicción."},
-   tech:["scikit-learn","Kafka","PostgreSQL","Docker"],links:[["Code","Código","https://github.com/SEBASBELMOS/world-happiness-ml-pipeline"]]},
-  {type:"MLOps",metric:{en:"F1 0.89",es:"F1 0.89"},
-   name:"Abodi ML · LegalTech",
-   tag:{en:"Flags court cases at risk of missing legal deadlines so lawyers can act first.",es:"Detecta procesos judiciales en riesgo de vencer términos para que los abogados actúen a tiempo."},
-   desc:{en:"XGBoost risk classifier for Colombian legal-term expiry, with MLflow, FastAPI serving, Docker Compose, Prometheus + Grafana monitoring and CI/CD. Metrics on synthetic data modelled from business rules.",
-         es:"Clasificador de riesgo con XGBoost para vencimiento de términos judiciales en Colombia, con MLflow, serving en FastAPI, Docker Compose, monitoreo con Prometheus + Grafana y CI/CD. Métricas sobre datos sintéticos modelados desde reglas de negocio."},
-   tech:["XGBoost","FastAPI","MLflow","Prometheus"],links:[["Code","Código","https://github.com/SEBASBELMOS/abodi_ml"]]},
-  {type:"BI",metric:{en:"live",es:"en vivo"},
-   name:"Colombia Graduates Dashboard",
-   tag:{en:"An interactive dashboard on what fields Colombians graduate in and where.",es:"Un dashboard interactivo sobre en qué campos y dónde se gradúan los colombianos."},
-   desc:{en:"Live Looker Studio dashboard on official SNIES / datos.gov.co open data, analysing higher-education graduates (2016–2020) by field, level and region.",
-         es:"Dashboard en vivo en Looker Studio sobre datos abiertos oficiales del SNIES / datos.gov.co, analizando graduados de educación superior (2016–2020) por área, nivel y región."},
-   tech:["Looker Studio","Data Viz","Open data"],links:[["Live","En vivo","https://lookerstudio.google.com/reporting/fbf76da4-9963-4152-937b-44ca32ae93b8/page/p_uounofjj1c"],["Repo","Repo","https://github.com/SEBASBELMOS/colombia-graduates-dashboard"]]},
-  {type:"Product",metric:{en:"full-stack AI",es:"full-stack IA"},
-   name:"DeutschLernen",
-   tag:{en:"A full-stack AI web app for learning German.",es:"Una app web full-stack con IA para aprender alemán."},
-   desc:{en:"Built solo: Express backend + single-file vanilla-JS frontend, LLM role-play and correction (Groq), AssemblyAI voice input and a Leitner spaced-repetition system with account sync.",
-         es:"Desarrollada en solitario: backend en Express + frontend vanilla-JS de un archivo, chat y corrección con LLM (Groq), entrada por voz con AssemblyAI y repetición espaciada (Leitner) con sincronización de cuenta."},
-   tech:["Node.js","Express","Groq","AssemblyAI"],links:[["Code","Código","https://github.com/SEBASBELMOS/deutschlernen"]]},
-];
-
-/* ---------- render work (bilingual) ---------- */
-const pgrid=document.getElementById('pgrid'),filtersEl=document.getElementById('filters');
-const types=['All',...new Set(projects.map(p=>p.type))];
-let active='All',lang='en';
-function card(p){const li=p.links.map(l=>`<a href="${l[2]}" target="_blank" rel="noopener noreferrer">${lang==='es'?l[1]:l[0]} →</a>`).join('');
-  return `<article class="card">
-  <div class="c-top"><span class="c-type">${typeLabel[p.type][lang]}</span><span class="c-metric">${p.metric[lang]}</span></div>
-  <div class="p-name serif">${p.name}</div>
-  <div class="p-tag">${p.tag[lang]}</div>
-  <p class="p-desc">${p.desc[lang]}</p>
-  <div class="p-tech">${p.tech.map(t=>`<span>${t}</span>`).join('')}</div>
-  <div class="p-links">${li}</div></article>`}
-function renderCards(){const list=active==='All'?projects:projects.filter(p=>p.type===active);pgrid.innerHTML=list.map(card).join('')}
-function renderFilters(){filtersEl.innerHTML=types.map(t=>`<button class="${t===active?'active':''}" data-t2="${t}">${filterLabel[t][lang]}</button>`).join('')}
-filtersEl.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;active=b.dataset.t2;renderFilters();renderCards()});
+/* ---------- work filtering (static semantic cards, show/hide only) ---------- */
+let lang='en';
+const filtersEl=document.getElementById('filters');
+const projectCards=[...document.querySelectorAll('#pgrid .card')];
+let activeFilter='All';
+function applyFilter(){
+  projectCards.forEach(c=>{c.style.display=(activeFilter==='All'||c.dataset.projectType===activeFilter)?'':'none'});
+  filtersEl.querySelectorAll('button').forEach(b=>{
+    const isActive=b.dataset.filter===activeFilter;
+    b.classList.toggle('active',isActive);
+    b.setAttribute('aria-pressed',isActive?'true':'false');
+  });
+}
+filtersEl.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;activeFilter=b.dataset.filter;applyFilter()});
 
 /* ---------- language switch ---------- */
 const tEls=[...document.querySelectorAll('[data-t]')],enCache={};
@@ -593,7 +619,7 @@ tEls.forEach(el=>enCache[el.dataset.t]=el.innerHTML);
 function applyLang(l){
   lang=l;document.documentElement.lang=l;
   tEls.forEach(el=>{const k=el.dataset.t,v=l==='es'?ES[k]:enCache[k];if(v!=null)el.innerHTML=v});
-  renderFilters();renderCards();
+  applyFilter();
   document.querySelectorAll('.lang-btn').forEach(b=>{b.classList.toggle('active',b.dataset.l===l);b.setAttribute('aria-pressed',b.dataset.l===l)});
   document.title=l==='es'?'Sebastian Belalcazar — Ingeniero de Datos e IA':'Sebastian Belalcazar — Data & AI Engineer';
   try{localStorage.setItem('lang',l)}catch(e){}

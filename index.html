@@ -283,6 +283,7 @@
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "xll1n786gy");
 </script>
+<noscript><style>.reveal,.fade-up{opacity:1!important;transform:none!important}.reveal-line>span{transform:none!important}</style></noscript>
 </head>
 <body id="top">
 <a class="skip" href="#work" data-t="skip">Skip to selected work</a>
@@ -584,7 +585,7 @@
         <a class="btn btn-ghost" href="https://www.linkedin.com/in/sebasbelmos/" target="_blank" rel="noopener noreferrer">LinkedIn →</a>
         <a class="btn btn-ghost" href="https://github.com/SEBASBELMOS" target="_blank" rel="noopener noreferrer">GitHub →</a>
       </div>
-      <button class="email-line" id="copyEmail" type="button" aria-label="Copy sebasbelmosdev@gmail.com">&#115;&#101;&#98;&#97;&#115;&#98;&#101;&#108;&#109;&#111;&#115;&#100;&#101;&#118;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109; <span class="cp" aria-live="polite" data-t="contact.copy">copy</span></button>
+      <button class="email-line" id="copyEmail" type="button">&#115;&#101;&#98;&#97;&#115;&#98;&#101;&#108;&#109;&#111;&#115;&#100;&#101;&#118;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109; <span class="cp" aria-live="polite" data-t="contact.copy">copy</span></button>
     </div>
   </section>
 </main>
@@ -737,7 +738,6 @@ function applyLang(l){
   if(twitterTitle)twitterTitle.setAttribute('content',META[lang].title);
   if(twitterDesc)twitterDesc.setAttribute('content',META[lang].social);
   if(langToggleEl)langToggleEl.setAttribute('aria-label',lang==='es'?'Selector de idioma':'Language selector');
-  if(cpBtn)cpBtn.setAttribute('aria-label',lang==='es'?'Copiar sebasbelmosdev@gmail.com':'Copy sebasbelmosdev@gmail.com');
   if(heroImg)heroImg.alt=lang==='es'?'Retrato de Sebastian Belalcazar':'Portrait of Sebastian Belalcazar';
   updateMenuButton();
   if(nextProjectCta){
@@ -790,9 +790,11 @@ function debounce(fn,wait){let t;return function(...args){clearTimeout(t);t=setT
 function makeGrid(canvas,opts){
   if(!canvas)return;const ctx=canvas.getContext('2d');let W,H,cols,rows,cells=[],cw,DPR=Math.min(devicePixelRatio||1,2);
   const cell=opts.cell||34,mouse={x:-999,y:-999};
+  function paintStatic(){ctx.clearRect(0,0,W,H);for(const c of cells){ctx.fillStyle=`rgba(201,162,75,${c.base+0.08})`;ctx.fillRect(c.px+1,c.py+1,cw-2,cw-2)}}
   function build(){const r=canvas.getBoundingClientRect();W=r.width;H=r.height;canvas.width=W*DPR;canvas.height=H*DPR;ctx.setTransform(DPR,0,0,DPR,0,0);
     cw=cell;cols=Math.ceil(W/cw)+1;rows=Math.ceil(H/cw)+1;cells=[];
-    for(let y=0;y<rows;y++)for(let x=0;x<cols;x++)cells.push({px:x*cw,py:y*cw,base:Math.random()*0.06,phase:Math.random()*6.28})}
+    for(let y=0;y<rows;y++)for(let x=0;x<cols;x++)cells.push({px:x*cw,py:y*cw,base:Math.random()*0.06,phase:Math.random()*6.28});
+    if(reduce)paintStatic()}
   build();addEventListener('resize',debounce(build,150));
   if(opts.mouse){canvas.addEventListener('mousemove',ev=>{const r=canvas.getBoundingClientRect();mouse.x=ev.clientX-r.left;mouse.y=ev.clientY-r.top});
     canvas.addEventListener('mouseleave',()=>{mouse.x=mouse.y=-999})}
@@ -807,7 +809,7 @@ function makeGrid(canvas,opts){
     ctx.strokeStyle='rgba(201,162,75,0.05)';ctx.lineWidth=1;ctx.beginPath();
     for(let x=0;x<=cols;x++){ctx.moveTo(x*cw,0);ctx.lineTo(x*cw,H)}for(let y=0;y<=rows;y++){ctx.moveTo(0,y*cw);ctx.lineTo(W,y*cw)}ctx.stroke();
     if(running)requestAnimationFrame(draw)}
-  if(reduce){for(const c of cells){ctx.fillStyle=`rgba(201,162,75,${c.base+0.08})`;ctx.fillRect(c.px+1,c.py+1,cw-2,cw-2)}return}
+  if(reduce)return; /* static frame painted by build() */
   /* perf: animate only while the canvas is on screen and the tab is visible */
   let running=false,inView=true;
   function start(){if(running)return;running=true;requestAnimationFrame(draw)}

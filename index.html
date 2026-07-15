@@ -3,19 +3,22 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Sebastian Belalcazar — Data &amp; AI Engineer</title>
-<meta name="description" content="Data & AI Engineer building reliable data pipelines, BI dashboards and practical AI systems. Explore projects and content on Data, AI and online careers." />
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' https://*.clarity.ms; img-src 'self' data: https://*.clarity.ms https://*.bing.com; connect-src 'self' https://*.clarity.ms; upgrade-insecure-requests" />
+<title>Sebastian Belalcazar | Data &amp; AI Engineer</title>
+<meta name="description" content="Data & AI Engineer building reliable data pipelines, clear dashboards and practical AI systems. Explore selected projects and practical content on Data, AI and online careers." />
 <meta name="theme-color" content="#0a0a0c" />
 <link rel="canonical" href="https://sebasbelmos.github.io/" />
-<meta property="og:title" content="Sebastian Belalcazar — Data & AI Engineer" />
-<meta property="og:description" content="Reliable data pipelines, clear dashboards and practical AI systems: backed by deployed projects, measurable proof and clear communication." />
+<meta property="og:title" content="Sebastian Belalcazar | Data &amp; AI Engineer" />
+<meta property="og:description" content="Reliable data pipelines, clear dashboards and practical AI systems, backed by deployed projects, measurable proof and clear communication." />
 <meta property="og:type" content="website" />
+<meta property="og:url" content="https://sebasbelmos.github.io/" />
 <meta property="og:image" content="https://sebasbelmos.github.io/assets/og-image.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Sebastian Belalcazar | Data &amp; AI Engineer" />
+<meta name="twitter:description" content="Reliable data pipelines, clear dashboards and practical AI systems, backed by deployed projects, measurable proof and clear communication." />
 <meta name="twitter:image" content="https://sebasbelmos.github.io/assets/og-image.png" />
-<link rel="icon" href="assets/s-icon.ico" sizes="48x48" />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%230a0a0c'/><text x='50' y='71' font-size='58' font-family='Georgia,serif' font-weight='700' fill='%23c9a24b' text-anchor='middle'>S</text></svg>" type="image/svg+xml" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -59,7 +62,7 @@
   .nav-links a.active{color:var(--gold-hi)}
   .nav-right{display:flex;align-items:center;gap:12px}
   .lang-toggle{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
-  .lang-btn{background:transparent;border:none;color:var(--muted);font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.06em;padding:7px 10px;cursor:pointer;transition:.2s}
+  .lang-btn{min-width:44px;height:44px;background:transparent;border:none;color:var(--muted);font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.06em;padding:0 10px;cursor:pointer;transition:.2s}
   .lang-btn.active{background:var(--gold);color:#151006;font-weight:700}
   .btn{display:inline-flex;align-items:center;gap:9px;font-weight:600;font-size:.9rem;padding:12px 22px;border-radius:999px;transition:transform .18s var(--ease),box-shadow .3s,border-color .3s;cursor:pointer;border:1px solid transparent}
   .btn:hover{transform:translateY(-2px)}
@@ -69,7 +72,7 @@
   .btn-ghost:hover{border-color:var(--gold)}
   .nav-cta{padding:9px 18px;font-size:.82rem;background:transparent;border-color:var(--gold);color:var(--gold-hi);box-shadow:none;font-weight:700}
   .nav-cta:hover{background:var(--gold);color:#0a0a0c}
-  .menu-btn{display:none;background:none;border:none;color:var(--paper);cursor:pointer;font-size:1.4rem}
+  .menu-btn{display:none;width:44px;height:44px;background:none;border:none;color:var(--paper);cursor:pointer;font-size:1.4rem;place-items:center}
 
   .hero{position:relative;min-height:84svh;display:flex;align-items:center;padding-top:100px;padding-bottom:48px;overflow:hidden}
   #grid-canvas{position:absolute;inset:0;width:100%;height:100%;z-index:0}
@@ -145,7 +148,7 @@
   .case-board dd{font-size:.92rem;color:var(--gold-hi);margin-top:5px}
 
   .filters{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:30px}
-  .filters button{font-family:'JetBrains Mono',monospace;font-size:.74rem;letter-spacing:.04em;color:var(--muted);background:transparent;border:1px solid var(--line);padding:8px 15px;border-radius:999px;cursor:pointer;transition:.2s}
+  .filters button{min-height:44px;font-family:'JetBrains Mono',monospace;font-size:.74rem;letter-spacing:.04em;color:var(--muted);background:transparent;border:1px solid var(--line);padding:8px 15px;border-radius:999px;cursor:pointer;transition:.2s}
   .filters button:hover{color:var(--paper)}
   .filters button.active{background:var(--gold);color:#151006;border-color:var(--gold);font-weight:700}
   .p-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
@@ -171,7 +174,7 @@
   .step p{color:var(--muted);font-size:.9rem}
 
   .stack-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:24px}
-  .stack-col h4{font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:15px;padding-bottom:11px;border-bottom:1px solid var(--line)}
+  .stack-col h3{font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:15px;padding-bottom:11px;border-bottom:1px solid var(--line)}
   .chips{display:flex;flex-wrap:wrap;gap:8px}
   .chip{font-size:.84rem;color:var(--paper);background:var(--surface);border:1px solid var(--line);padding:7px 12px;border-radius:8px;transition:border-color .25s,color .25s}
   .chip:hover{border-color:var(--gold);color:var(--gold-hi)}
@@ -183,7 +186,7 @@
   .contact h2 em{font-style:italic;color:transparent;background:var(--gold-grad);-webkit-background-clip:text;background-clip:text}
   .contact p{color:var(--muted);max-width:56ch;margin:24px auto 0}
   .contact-cta{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:36px}
-  .email-line{margin-top:26px;background:none;border:none;cursor:pointer;font-family:'JetBrains Mono',monospace;font-size:.8rem;letter-spacing:.04em;color:var(--muted);display:inline-flex;align-items:center;gap:10px;transition:color .2s}
+  .email-line{min-height:44px;margin-top:26px;background:none;border:none;cursor:pointer;font-family:'JetBrains Mono',monospace;font-size:.8rem;letter-spacing:.04em;color:var(--muted);display:inline-flex;align-items:center;gap:10px;transition:color .2s}
   .email-line:hover{color:var(--paper)}
   .email-line .cp{color:var(--gold);border:1px solid rgba(201,162,75,.35);padding:3px 10px;border-radius:999px;font-size:.68rem;text-transform:uppercase;letter-spacing:.12em}
   .reply{font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:26px;display:inline-flex;gap:10px;align-items:center}
@@ -216,7 +219,7 @@
   .tst figcaption span{font-family:'JetBrains Mono',monospace;font-size:.66rem;letter-spacing:.05em;color:var(--muted)}
   /* education */
   .edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:52px}
-  .edu-col h4{font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;padding-bottom:11px;border-bottom:1px solid var(--line)}
+  .edu-col h3{font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;padding-bottom:11px;border-bottom:1px solid var(--line)}
   .edu-item{padding:15px 0;border-bottom:1px solid var(--line)}
   .edu-item:last-child{border-bottom:none}
   .edu-item .y{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--gold);float:right}
@@ -233,10 +236,12 @@
     .hero-photo{max-width:380px}
   }
   @media(max-width:720px){
-    .p-grid,.svc-grid,.method-grid,.proof-in{grid-template-columns:1fr}
+    .p-grid,.svc-grid,.method-grid{grid-template-columns:1fr}
+    .proof-in{grid-template-columns:repeat(2,1fr)}
     .stack-grid{grid-template-columns:repeat(2,1fr)}
-    .proof-item{border-right:none;border-bottom:1px solid var(--line);padding:24px 22px}
-    .proof-item:last-child{border-bottom:none}
+    .proof-item{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:24px 22px}
+    .proof-item:nth-child(even){border-right:none}
+    .proof-item:nth-last-child(-n+2){border-bottom:none}
     section.block{padding:68px 0}
     .contact{padding:92px 0 100px}
     .hero{min-height:auto;padding:112px 0 54px}
@@ -248,9 +253,21 @@
     .sec-head{margin-bottom:36px}
     .nav-links{position:fixed;inset:74px 0 auto 0;flex-direction:column;gap:0;background:rgba(10,10,12,.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);padding:8px 0;display:none}
     .nav-links.open{display:flex}
-    .nav-links a{padding:15px 28px;width:100%}.nav-links .btn{margin:10px 28px;justify-content:center}
-    .menu-btn{display:block}
+    .nav-links a{padding:15px 28px;width:100%}.nav-links .btn{width:auto;margin:10px 28px;justify-content:center}
+    .menu-btn{display:grid}
     .spotlight{display:none}
+  }
+  @media(max-width:420px){
+    .proof-in{grid-template-columns:1fr}
+    .proof-item{border-right:none}
+    .proof-item:nth-last-child(-n+2){border-bottom:1px solid var(--line)}
+    .proof-item:last-child{border-bottom:none}
+  }
+  @media(max-width:360px){
+    .wrap{padding-left:14px;padding-right:14px}
+    .nav-in{gap:6px}
+    .nav-right{gap:4px}
+    .brand .mono-tag{display:none}
   }
   @media(prefers-reduced-motion:reduce){
     *{animation:none!important;scroll-behavior:auto}
@@ -280,8 +297,8 @@
       <a class="btn btn-gold nav-cta" href="#contact" data-t="nav.cta">Get in touch</a>
     </nav>
     <div class="nav-right">
-      <div class="lang-toggle" role="group" aria-label="Language"><button class="lang-btn" data-l="en">EN</button><button class="lang-btn" data-l="es">ES</button></div>
-      <button class="menu-btn" id="menu" aria-label="Menu">☰</button>
+      <div class="lang-toggle" role="group" aria-label="Language"><button class="lang-btn" type="button" data-l="en">EN</button><button class="lang-btn" type="button" data-l="es">ES</button></div>
+      <button class="menu-btn" id="menu" type="button" aria-label="Open navigation menu" aria-controls="navlinks" aria-expanded="false">☰</button>
     </div>
   </div>
 </header>
@@ -477,11 +494,11 @@
     <div class="wrap">
       <div class="sec-head reveal"><span class="eyebrow" data-t="stack.eyebrow">Stack</span><h2 class="sec-title" data-t="stack.title">What I use.</h2></div>
       <div class="stack-grid reveal">
-        <div class="stack-col"><h4 data-t="stack.h1">Data engineering</h4><div class="chips"><span class="chip">Python</span><span class="chip">SQL</span><span class="chip">PostgreSQL</span><span class="chip">Apache Airflow</span><span class="chip">Docker</span></div></div>
-        <div class="stack-col"><h4 data-t="stack.h2">Business intelligence</h4><div class="chips"><span class="chip">Power BI</span><span class="chip">Looker Studio</span><span class="chip">KPI modelling</span><span class="chip">Data Storytelling</span></div></div>
-        <div class="stack-col"><h4 data-t="stack.h3">Production &amp; MLOps</h4><div class="chips"><span class="chip">FastAPI</span><span class="chip">React</span><span class="chip">GCP</span><span class="chip">HF Spaces</span><span class="chip">Git</span><span class="chip">GitHub Actions</span><span class="chip">CI/CD</span></div></div>
-        <div class="stack-col"><h4 data-t="stack.h4">Automation</h4><div class="chips"><span class="chip">n8n</span><span class="chip">Claude Code</span><span class="chip">Codex</span><span class="chip">OpenCode</span><span class="chip">Hugging Face</span></div></div>
-        <div class="stack-col"><h4 data-t="stack.h5">Communication</h4><div class="chips"><span class="chip" data-t="stack.comm1">Spanish native</span><span class="chip" data-t="stack.comm2">English C2</span><span class="chip" data-t="stack.comm3">German A2</span><span class="chip" data-t="stack.comm4">Technical documentation</span><span class="chip" data-t="stack.comm5">Teaching &amp; stakeholder communication</span></div></div>
+        <div class="stack-col"><h3 data-t="stack.h1">Data engineering</h3><div class="chips"><span class="chip">Python</span><span class="chip">SQL</span><span class="chip">PostgreSQL</span><span class="chip">Apache Airflow</span><span class="chip">Docker</span></div></div>
+        <div class="stack-col"><h3 data-t="stack.h2">Business intelligence</h3><div class="chips"><span class="chip">Power BI</span><span class="chip">Looker Studio</span><span class="chip">KPI modelling</span><span class="chip">Data Storytelling</span></div></div>
+        <div class="stack-col"><h3 data-t="stack.h3">Production &amp; MLOps</h3><div class="chips"><span class="chip">FastAPI</span><span class="chip">React</span><span class="chip">GCP</span><span class="chip">HF Spaces</span><span class="chip">Git</span><span class="chip">GitHub Actions</span><span class="chip">CI/CD</span></div></div>
+        <div class="stack-col"><h3 data-t="stack.h4">Automation</h3><div class="chips"><span class="chip">n8n</span><span class="chip">Claude Code</span><span class="chip">Codex</span><span class="chip">OpenCode</span><span class="chip">Hugging Face</span></div></div>
+        <div class="stack-col"><h3 data-t="stack.h5">Communication</h3><div class="chips"><span class="chip" data-t="stack.comm1">Spanish native</span><span class="chip" data-t="stack.comm2">English C2</span><span class="chip" data-t="stack.comm3">German A2</span><span class="chip" data-t="stack.comm4">Technical documentation</span><span class="chip" data-t="stack.comm5">Teaching &amp; stakeholder communication</span></div></div>
       </div>
     </div>
   </section>
@@ -492,13 +509,13 @@
       <div class="sec-head reveal"><span class="eyebrow" data-t="edu.eyebrow">Background</span><h2 class="sec-title" data-t="edu.title">Education &amp; certifications.</h2></div>
       <div class="edu-grid reveal">
         <div class="edu-col">
-          <h4 data-t="edu.h1">Education</h4>
+          <h3 data-t="edu.h1">Education</h3>
           <div class="edu-item"><span class="y">2023–2026</span><div class="t"><span data-t="edu.deg1">Data &amp; AI Engineering</span></div><div class="s">Universidad Autónoma de Occidente (UAO)</div></div>
           <div class="edu-item"><span class="y">2024</span><div class="t" data-t="edu.bootcamp">AI Bootcamp</div><div class="s">Universidad Tecnológica de Pereira</div></div>
           <div class="edu-item"><span class="y">2022</span><div class="t" data-t="edu.dsa">DS4A · Data Analytics <span style="color:var(--gold)">· honours</span></div><div class="s">Correlation One</div></div>
         </div>
         <div class="edu-col">
-          <h4 data-t="edu.h2">Certifications</h4>
+          <h3 data-t="edu.h2">Certifications</h3>
           <div class="cert-chips">
             <span class="chip">EF SET · English C2</span><span class="chip">Python &amp; SQL · Talently</span><span class="chip">MLOps</span><span class="chip">Power BI</span><span class="chip">Data Viz for BI · Platzi</span><span class="chip">Google Cybersecurity</span>
           </div>
@@ -565,7 +582,7 @@
         <a class="btn btn-ghost" href="https://www.linkedin.com/in/sebasbelmos/" target="_blank" rel="noopener noreferrer">LinkedIn →</a>
         <a class="btn btn-ghost" href="https://github.com/SEBASBELMOS" target="_blank" rel="noopener noreferrer">GitHub →</a>
       </div>
-      <button class="email-line" id="copyEmail" type="button" aria-label="Copy email address">&#115;&#101;&#98;&#97;&#115;&#98;&#101;&#108;&#109;&#111;&#115;&#100;&#101;&#118;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109; <span class="cp" data-t="contact.copy">copy</span></button>
+      <button class="email-line" id="copyEmail" type="button" aria-label="Copy sebasbelmosdev@gmail.com">&#115;&#101;&#98;&#97;&#115;&#98;&#101;&#108;&#109;&#111;&#115;&#100;&#101;&#118;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109; <span class="cp" aria-live="polite" data-t="contact.copy">copy</span></button>
     </div>
   </section>
 </main>
@@ -682,38 +699,71 @@ tEls.forEach(el=>enCache[el.dataset.t]=el.innerHTML);
 const heroImg=document.querySelector('.hero-photo img');
 const langToggleEl=document.querySelector('.lang-toggle');
 const metaDesc=document.querySelector('meta[name="description"]');
+const ogTitle=document.querySelector('meta[property="og:title"]');
+const ogDesc=document.querySelector('meta[property="og:description"]');
+const twitterTitle=document.querySelector('meta[name="twitter:title"]');
+const twitterDesc=document.querySelector('meta[name="twitter:description"]');
 const nextProjectCta=document.getElementById('nextProjectCta');
 const cpBtn=document.getElementById('copyEmail');
 const menu=document.getElementById('menu'),navlinks=document.getElementById('navlinks');
-const META_DESC={en:'Data & AI Engineer building reliable data pipelines, BI dashboards and practical AI systems. Explore projects and content on Data, AI and online careers.',
-  es:'Ingeniero de Datos e IA que construye pipelines confiables, dashboards claros y sistemas prácticos con IA. Proyectos reales y contenido sobre Data, IA y carreras online.'};
+const META={
+  en:{title:'Sebastian Belalcazar | Data & AI Engineer',description:'Data & AI Engineer building reliable data pipelines, clear dashboards and practical AI systems. Explore selected projects and practical content on Data, AI and online careers.',social:'Reliable data pipelines, clear dashboards and practical AI systems, backed by deployed projects, measurable proof and clear communication.'},
+  es:{title:'Sebastian Belalcazar | Ingeniero de Datos e IA',description:'Ingeniero de Datos e IA que construye pipelines confiables, dashboards claros y sistemas prácticos con IA. Proyectos reales y contenido sobre Data, IA y carreras online.',social:'Pipelines de datos confiables, dashboards claros y sistemas prácticos con IA, respaldados por proyectos, evidencia medible y comunicación clara.'}
+};
+const MENU_LABELS={en:{open:'Open navigation menu',close:'Close navigation menu'},es:{open:'Abrir menú de navegación',close:'Cerrar menú de navegación'}};
+const COPY_FEEDBACK={en:{ok:'copied!',error:'copy failed'},es:{ok:'¡copiado!',error:'no se pudo copiar'}};
+function updateMenuButton(){
+  const open=navlinks.classList.contains('open');
+  menu.setAttribute('aria-expanded',open?'true':'false');
+  menu.setAttribute('aria-label',MENU_LABELS[lang][open?'close':'open']);
+  menu.textContent=open?'×':'☰';
+}
+function setMenuOpen(open,{restoreFocus=false}={}){
+  navlinks.classList.toggle('open',open);
+  updateMenuButton();
+  if(!open&&restoreFocus)menu.focus();
+}
 function applyLang(l){
-  lang=l;document.documentElement.lang=l;
-  tEls.forEach(el=>{const k=el.dataset.t,v=l==='es'?ES[k]:enCache[k];if(v!=null)el.innerHTML=v});
+  lang=l==='es'?'es':'en';document.documentElement.lang=lang;
+  tEls.forEach(el=>{const k=el.dataset.t,v=lang==='es'?ES[k]:enCache[k];if(v!=null)el.innerHTML=v});
   applyFilter();
-  document.querySelectorAll('.lang-btn').forEach(b=>{b.classList.toggle('active',b.dataset.l===l);b.setAttribute('aria-pressed',b.dataset.l===l)});
-  document.title=l==='es'?'Sebastian Belalcazar — Ingeniero de Datos e IA':'Sebastian Belalcazar — Data & AI Engineer';
-  if(metaDesc)metaDesc.setAttribute('content',l==='es'?META_DESC.es:META_DESC.en);
-  if(langToggleEl)langToggleEl.setAttribute('aria-label',l==='es'?'Idioma':'Language');
-  if(menu)menu.setAttribute('aria-label',l==='es'?'Menú':'Menu');
-  if(cpBtn)cpBtn.setAttribute('aria-label',l==='es'?'Copiar correo electrónico':'Copy email address');
-  if(heroImg)heroImg.alt=l==='es'?'Retrato de Sebastian Belalcazar':'Portrait of Sebastian Belalcazar';
+  document.querySelectorAll('.lang-btn').forEach(b=>{b.classList.toggle('active',b.dataset.l===lang);b.setAttribute('aria-pressed',b.dataset.l===lang)});
+  document.title=META[lang].title;
+  if(metaDesc)metaDesc.setAttribute('content',META[lang].description);
+  if(ogTitle)ogTitle.setAttribute('content',META[lang].title);
+  if(ogDesc)ogDesc.setAttribute('content',META[lang].social);
+  if(twitterTitle)twitterTitle.setAttribute('content',META[lang].title);
+  if(twitterDesc)twitterDesc.setAttribute('content',META[lang].social);
+  if(langToggleEl)langToggleEl.setAttribute('aria-label',lang==='es'?'Selector de idioma':'Language selector');
+  if(cpBtn)cpBtn.setAttribute('aria-label',lang==='es'?'Copiar sebasbelmosdev@gmail.com':'Copy sebasbelmosdev@gmail.com');
+  if(heroImg)heroImg.alt=lang==='es'?'Retrato de Sebastian Belalcazar':'Portrait of Sebastian Belalcazar';
+  updateMenuButton();
   if(nextProjectCta){
-    const subject=l==='es'?'Consulta de proyecto: Sebastian Belalcazar':'Project enquiry: Sebastian Belalcazar';
+    const subject=lang==='es'?'Consulta de proyecto: Sebastian Belalcazar':'Project enquiry: Sebastian Belalcazar';
     nextProjectCta.href=`mailto:${atob('c2ViYXNiZWxtb3NkZXZAZ21haWwuY29t')}?subject=${encodeURIComponent(subject)}`;
   }
-  try{localStorage.setItem('lang',l)}catch(e){}
+  try{localStorage.setItem('lang',lang)}catch(e){}
 }
 document.querySelector('.lang-toggle').addEventListener('click',e=>{const b=e.target.closest('.lang-btn');if(b)applyLang(b.dataset.l)});
 let saved;try{saved=localStorage.getItem('lang')}catch(e){}
-applyLang(saved||((navigator.language||'en').toLowerCase().startsWith('es')?'es':'en'));
+applyLang((saved==='en'||saved==='es')?saved:((navigator.language||'en').toLowerCase().startsWith('es')?'es':'en'));
 document.getElementById('yr').textContent=new Date().getFullYear();
 
 /* ---------- copy email ---------- */
-if(cpBtn){const cp=cpBtn.querySelector('.cp');cpBtn.addEventListener('click',async()=>{
-  try{await navigator.clipboard.writeText(atob('c2ViYXNiZWxtb3NkZXZAZ21haWwuY29t'))}catch(e){}
-  cp.textContent=lang==='es'?'¡copiado!':'copied!';
-  setTimeout(()=>{cp.textContent=lang==='es'?ES['contact.copy']:enCache['contact.copy']},1600)})}
+async function copyText(text){
+  if(navigator.permissions?.query){
+    try{const permission=await navigator.permissions.query({name:'clipboard-write'});if(permission.state==='denied')throw new Error('clipboard-denied')}
+    catch(e){if(e.message==='clipboard-denied')throw e}
+  }
+  if(navigator.clipboard?.writeText&&window.isSecureContext){await navigator.clipboard.writeText(text);return}
+  const field=document.createElement('textarea');field.value=text;field.setAttribute('readonly','');field.style.position='fixed';field.style.opacity='0';
+  document.body.appendChild(field);field.select();const copied=document.execCommand('copy');field.remove();if(!copied)throw new Error('copy-failed');
+}
+if(cpBtn){const cp=cpBtn.querySelector('.cp');let resetTimer;cpBtn.addEventListener('click',async()=>{
+  clearTimeout(resetTimer);
+  try{await copyText(atob('c2ViYXNiZWxtb3NkZXZAZ21haWwuY29t'));cp.textContent=COPY_FEEDBACK[lang].ok}
+  catch(e){cp.textContent=COPY_FEEDBACK[lang].error}
+  resetTimer=setTimeout(()=>{cp.textContent=lang==='es'?ES['contact.copy']:enCache['contact.copy']},1800)})}
 
 /* ---------- nav + scroll progress + scrollspy ---------- */
 const nav=document.getElementById('nav');
@@ -721,8 +771,9 @@ addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>20),{passi
 const spyMap={};document.querySelectorAll('.nav-links a[href^="#"]').forEach(a=>{const id=a.getAttribute('href').slice(1);if(id!=='contact')spyMap[id]=a});
 const spy=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){Object.values(spyMap).forEach(a=>a.classList.remove('active'));const l=spyMap[e.target.id];if(l)l.classList.add('active')}}),{rootMargin:'-40% 0px -55% 0px'});
 Object.keys(spyMap).forEach(id=>{const el=document.getElementById(id);if(el)spy.observe(el)});
-menu.addEventListener('click',()=>navlinks.classList.toggle('open'));
-navlinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navlinks.classList.remove('open')));
+menu.addEventListener('click',()=>setMenuOpen(!navlinks.classList.contains('open')));
+navlinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setMenuOpen(false,{restoreFocus:true})));
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&navlinks.classList.contains('open'))setMenuOpen(false,{restoreFocus:true})});
 
 /* ---------- cursor sheen ---------- */
 addEventListener('pointermove',e=>{document.documentElement.style.setProperty('--cx',e.clientX+'px');document.documentElement.style.setProperty('--cy',e.clientY+'px')},{passive:true});

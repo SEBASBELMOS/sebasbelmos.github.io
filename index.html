@@ -50,7 +50,7 @@
   .spotlight{position:fixed;inset:0;z-index:3;pointer-events:none;background:radial-gradient(560px circle at var(--cx) var(--cy),rgba(201,162,75,.05),transparent 46%)}
   .grain{position:fixed;inset:0;z-index:2;pointer-events:none;opacity:.05;background-image:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
 
-  .eyebrow{font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);display:inline-flex;align-items:center;gap:12px}
+  .eyebrow{font-family:'JetBrains Mono',monospace;font-size:.72rem;font-weight:400;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);display:inline-flex;align-items:center;gap:12px}
   .eyebrow::before{content:"";width:26px;height:1px;background:var(--gold);opacity:.7}
   :focus-visible{outline:2px solid var(--gold);outline-offset:4px;border-radius:3px}
   .skip{position:absolute;left:14px;top:-52px;background:var(--gold);color:#000;font-weight:600;padding:10px 16px;border-radius:8px;z-index:200;transition:top .2s}
@@ -347,7 +347,7 @@
   <!-- POSITIONING -->
   <section class="block" id="about">
       <div class="wrap reveal">
-        <span class="eyebrow" data-t="pos.eyebrow">About me</span>
+        <h2 class="eyebrow" data-t="pos.eyebrow">About me</h2>
         <p class="lead serif" data-t="pos.lead">I build data products that are <b>technically sound, clearly explained and useful</b> to the people running the business.</p>
         <div class="about-grid">
           <ul class="about-facts" data-t="pos.facts">

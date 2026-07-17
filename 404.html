@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Page not found | Sebastian Belalcazar</title>
+<meta name="robots" content="noindex" />
+<meta name="theme-color" content="#0a0a0c" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%230a0a0c'/><text x='50' y='71' font-size='58' font-family='Georgia,serif' font-weight='700' fill='%23c9a24b' text-anchor='middle'>S</text></svg>" type="image/svg+xml" />
+<style>
+  :root{--ink:#0a0a0c;--line:#26262f;--gold:#c9a24b;--gold-hi:#e8d9a8;--gold-deep:#9a7b2e;--paper:#edeae3;--muted:#8f8a7e}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--ink);color:var(--paper);font-family:system-ui,sans-serif;min-height:100svh;display:flex;align-items:center;justify-content:center;padding:28px;text-align:center;line-height:1.65;-webkit-font-smoothing:antialiased}
+  ::selection{background:var(--gold);color:#000}
+  .code{font-family:ui-monospace,'JetBrains Mono',monospace;font-size:.78rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold)}
+  h1{font-family:Georgia,'Fraunces',serif;font-weight:600;font-size:clamp(1.9rem,5vw,3rem);letter-spacing:-.02em;line-height:1.15;margin-top:18px}
+  h1 em{font-style:italic;color:transparent;background:linear-gradient(120deg,var(--gold-hi),var(--gold) 55%,var(--gold-deep));-webkit-background-clip:text;background-clip:text}
+  p{color:var(--muted);max-width:44ch;margin:18px auto 0}
+  a.btn{display:inline-flex;align-items:center;gap:9px;font-weight:600;font-size:.9rem;padding:12px 24px;border-radius:999px;margin-top:32px;text-decoration:none;background:linear-gradient(120deg,var(--gold-hi),var(--gold) 55%,var(--gold-deep));color:#151006;box-shadow:0 6px 22px rgba(201,162,75,.28);transition:transform .18s ease,box-shadow .3s}
+  a.btn:hover{transform:translateY(-2px);box-shadow:0 12px 34px rgba(201,162,75,.42)}
+  :focus-visible{outline:2px solid var(--gold);outline-offset:4px;border-radius:3px}
+</style>
+</head>
+<body>
+<main>
+  <span class="code">404 — not found</span>
+  <h1 id="t">This page doesn't exist, <em>but the work does</em>.</h1>
+  <p id="p">The link you followed may be broken or the page may have moved.</p>
+  <a class="btn" href="/" id="b">Back to the portfolio →</a>
+</main>
+<script>
+  var es=false;
+  try{es=localStorage.getItem('lang')==='es'}catch(e){}
+  if(!es){try{es=!localStorage.getItem('lang')&&(navigator.language||'').toLowerCase().indexOf('es')===0}catch(e){}}
+  if(es){
+    document.documentElement.lang='es';
+    document.title='Página no encontrada | Sebastian Belalcazar';
+    document.getElementById('t').innerHTML='Esta página no existe, <em>pero el trabajo sí</em>.';
+    document.getElementById('p').textContent='El enlace puede estar roto o la página pudo haber cambiado de lugar.';
+    document.getElementById('b').textContent='Volver al portafolio →';
+  }
+</script>
+</body>
+</html>

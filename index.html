@@ -230,6 +230,8 @@
   .edu-item:last-child{border-bottom:none}
   .edu-item .y{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--gold);float:right}
   .edu-item .t{font-weight:600}
+  .edu-item .t a{color:inherit;border-bottom:1px dotted var(--gold);transition:color .2s}
+  .edu-item .t a:hover{color:var(--gold-hi)}
   .edu-item .s{color:var(--muted);font-size:.9rem;margin-top:3px}
   .cert-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
   @media(max-width:960px){.edu-grid{grid-template-columns:1fr}}
@@ -530,7 +532,7 @@
           <h3 data-t="edu.h1">Education</h3>
           <div class="edu-item"><span class="y">2023–2026</span><div class="t"><span data-t="edu.deg1">Data &amp; AI Engineering</span></div><div class="s">Universidad Autónoma de Occidente (UAO)</div></div>
           <div class="edu-item"><span class="y">2024</span><div class="t" data-t="edu.bootcamp">AI Bootcamp</div><div class="s">Universidad Tecnológica de Pereira</div></div>
-          <div class="edu-item"><span class="y">2022</span><div class="t" data-t="edu.dsa">DS4A · Data Analytics <span style="color:var(--gold)">· honours</span></div><div class="s">Correlation One</div></div>
+          <div class="edu-item"><span class="y">2022</span><div class="t" data-t="edu.dsa"><a href="https://www.credential.net/2217d97b-4f00-4bae-bd3c-d862c8e89fa8#acc.smEH7PVl" target="_blank" rel="noopener noreferrer">DS4A · Data Analytics <span style="color:var(--gold)">· honours</span></a></div><div class="s">Correlation One</div></div>
         </div>
         <div class="edu-col">
           <h3 data-t="edu.h2">Certifications</h3>
@@ -693,7 +695,7 @@ const ES={
   "tst.q2":"Los proyectos de Sebastián fueron inspiración para ideas que luego desarrollé con otros equipos. Disciplina, pasión y compromiso: una de las mentes más brillantes de la carrera.",
   "tst.q3":"Su actitud y capacidad para adaptarse han sido clave para el éxito de nuestros proyectos; su compromiso asegura siempre los resultados esperados.",
   "tst.r1":"Científico de Datos e Ingeniero de Datos","tst.r2":"Ingeniero de Datos y Analista de Negocios","tst.r3":"Cofundador de Abodi",
-  "edu.deg1":"Ingeniería de Datos e IA","edu.bootcamp":"Bootcamp de IA","edu.dsa":"DS4A · Analítica de datos <span style=\"color:var(--gold)\">· honores</span>","edu.eyebrow":"Formación","edu.title":"Educación y certificaciones.","edu.h1":"Educación","edu.h2":"Certificaciones",
+  "edu.deg1":"Ingeniería de Datos e IA","edu.bootcamp":"Bootcamp de IA","edu.dsa":"<a href=\"https://www.credential.net/2217d97b-4f00-4bae-bd3c-d862c8e89fa8#acc.smEH7PVl\" target=\"_blank\" rel=\"noopener noreferrer\">DS4A · Analítica de datos <span style=\"color:var(--gold)\">· honores</span></a>","edu.eyebrow":"Formación","edu.title":"Educación y certificaciones.","edu.h1":"Educación","edu.h2":"Certificaciones",
 };
 
 /* ---------- work filtering (static semantic cards, show/hide only) ---------- */

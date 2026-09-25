@@ -1,843 +1,97 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' https://*.clarity.ms; img-src 'self' data: https://*.clarity.ms https://*.bing.com; connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://*.clarity.ms; upgrade-insecure-requests" />
-<title>Sebastian Belalcazar | Data &amp; AI Engineer</title>
-<meta name="description" content="Data & AI Engineer building data pipelines, dashboards, AI-assisted tools and automations for creators, online education businesses and digital teams. Deployed projects and practical content on data and AI." />
-<meta name="theme-color" content="#0a0a0c" />
-<meta name="color-scheme" content="dark" />
-<link rel="canonical" href="https://sebasbelmos.github.io/" />
-<meta property="og:title" content="Sebastian Belalcazar | Data &amp; AI Engineer" />
-<meta property="og:description" content="Data pipelines, dashboards, AI-assisted tools and automations for creators, online education businesses and digital teams — backed by deployed projects and measurable proof." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://sebasbelmos.github.io/" />
-<meta property="og:image" content="https://sebasbelmos.github.io/assets/og-image.png" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content="Sebastian Belalcazar — Data & AI Engineer" />
-<meta property="og:locale" content="en_US" />
-<meta property="og:locale:alternate" content="es_CO" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Sebastian Belalcazar | Data &amp; AI Engineer" />
-<meta name="twitter:description" content="Reliable data pipelines, clear dashboards and practical AI systems, backed by deployed projects, measurable proof and clear communication." />
-<meta name="twitter:image" content="https://sebasbelmos.github.io/assets/og-image.png" />
-<meta name="twitter:image:alt" content="Sebastian Belalcazar — Data & AI Engineer" />
-<link rel="icon" href="assets/s-icon.ico" sizes="any" />
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%230a0a0c'/><text x='50' y='71' font-size='58' font-family='Georgia,serif' font-weight='700' fill='%23c9a24b' text-anchor='middle'>S</text></svg>" type="image/svg+xml" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Sebastian Belalcazar","jobTitle":"Data & AI Engineer","url":"https://sebasbelmos.github.io/","image":"https://sebasbelmos.github.io/assets/sebastian.webp","alumniOf":{"@type":"CollegeOrUniversity","name":"Universidad Autónoma de Occidente"},"sameAs":["https://github.com/SEBASBELMOS","https://www.linkedin.com/in/sebasbelmos/","https://www.youtube.com/@sebasbelmos"],"knowsAbout":["Data Engineering","ETL","Business Intelligence","Data Visualisation","MLOps","Practical AI","Workflow Automation","Python","SQL","PostgreSQL","Power BI","Apache Airflow","Technical Communication"],"address":{"@type":"PostalAddress","addressCountry":"CO"}}</script>
-<style>
-  :root{
-    --ink:#0a0a0c;--ink-2:#0f0f13;--surface:#141419;--surface-2:#1b1b22;--line:#26262f;
-    --gold:#c9a24b;--gold-hi:#e8d9a8;--gold-deep:#9a7b2e;
-    --paper:#edeae3;--muted:#8f8a7e;--muted-2:#6a665c;
-    --maxw:1180px;--ease:cubic-bezier(.2,.7,.2,1);
-    --gold-grad:linear-gradient(120deg,var(--gold-hi),var(--gold) 55%,var(--gold-deep));
-    --cx:50vw;--cy:12vh;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth;scroll-padding-top:88px;-webkit-text-size-adjust:100%}
-  body{background:var(--ink);color:var(--paper);font-family:'Inter',system-ui,sans-serif;font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-  ::selection{background:var(--gold);color:#000}
-  a{color:inherit;text-decoration:none}
-  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
-  .serif{font-family:'Fraunces',Georgia,serif}
-  .mono{font-family:'JetBrains Mono',monospace}
-  .spotlight{position:fixed;inset:0;z-index:3;pointer-events:none;background:radial-gradient(560px circle at var(--cx) var(--cy),rgba(201,162,75,.05),transparent 46%)}
-  .grain{position:fixed;inset:0;z-index:2;pointer-events:none;opacity:.05;background-image:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
-
-  .eyebrow{font-family:'JetBrains Mono',monospace;font-size:.72rem;font-weight:400;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);display:inline-flex;align-items:center;gap:12px}
-  .eyebrow::before{content:"";width:26px;height:1px;background:var(--gold);opacity:.7}
-  :focus-visible{outline:2px solid var(--gold);outline-offset:4px;border-radius:3px}
-  .skip{position:absolute;left:14px;top:-52px;background:var(--gold);color:#000;font-weight:600;padding:10px 16px;border-radius:8px;z-index:200;transition:top .2s}
-  .skip:focus{top:14px}
-
-  header.nav{position:fixed;inset:0 0 auto 0;z-index:100;transition:background .4s,border-color .4s}
-  header.nav.scrolled{background:rgba(10,10,12,.8);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-  .nav-in{display:flex;align-items:center;justify-content:space-between;height:74px;gap:16px}
-  .brand{display:flex;align-items:center;gap:11px;font-family:'Fraunces',serif;font-weight:600;font-size:1.05rem;line-height:1.15}
-  .brand .mono-tag{font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:.2em;color:var(--muted);text-transform:uppercase;line-height:1.4}
-  .monogram{width:34px;height:34px;border:1px solid var(--gold);border-radius:8px;display:grid;place-items:center;color:var(--gold);font-family:'Fraunces',serif;font-weight:700;font-size:1.05rem;background:linear-gradient(160deg,rgba(201,162,75,.16),transparent)}
-  .nav-links{display:flex;align-items:center;gap:28px}
-  .nav-links a{font-size:.82rem;color:#dcd9d1;transition:color .2s}
-  .nav-links a:hover{color:var(--gold-hi)}
-  .nav-links a.active{color:var(--gold-hi)}
-  .nav-right{display:flex;align-items:center;gap:12px}
-  .lang-toggle{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
-  .lang-btn{min-width:44px;height:44px;background:transparent;border:none;color:var(--muted);font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.06em;padding:0 10px;cursor:pointer;transition:.2s}
-  .lang-btn.active{background:var(--gold);color:#151006;font-weight:700}
-  .btn{display:inline-flex;align-items:center;gap:9px;font-weight:600;font-size:.9rem;padding:12px 22px;border-radius:999px;transition:transform .18s var(--ease),box-shadow .3s,border-color .3s;cursor:pointer;border:1px solid transparent}
-  .btn:hover{transform:translateY(-2px)}
-  .btn-gold{background:var(--gold-grad);color:#151006;box-shadow:0 6px 22px rgba(201,162,75,.28)}
-  .btn-gold:hover{box-shadow:0 12px 34px rgba(201,162,75,.42)}
-  .btn-ghost{border-color:var(--line);color:var(--paper);background:rgba(255,255,255,.02)}
-  .btn-ghost:hover{border-color:var(--gold)}
-  .nav-cta{padding:9px 18px;font-size:.82rem;background:transparent;border-color:var(--gold);color:var(--gold-hi);box-shadow:none;font-weight:700}
-  .nav-cta:hover{background:var(--gold);color:#0a0a0c}
-  .menu-btn{display:none;width:44px;height:44px;background:none;border:none;color:var(--paper);cursor:pointer;font-size:1.4rem;place-items:center}
-
-  .hero{position:relative;min-height:84svh;display:flex;align-items:center;padding-top:100px;padding-bottom:48px;overflow:hidden}
-  #grid-canvas{position:absolute;inset:0;width:100%;height:100%;z-index:0}
-  .hero-scrim{position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(120% 90% at 10% 42%,rgba(10,10,12,.96) 0%,rgba(10,10,12,.7) 44%,rgba(10,10,12,.12) 74%,transparent 100%),linear-gradient(0deg,var(--ink) 2%,transparent 28%)}
-  .hero-in{position:relative;z-index:2;width:100%;display:flex;flex-direction:column;gap:36px}
-.hero-main{display:grid;grid-template-columns:1.35fr .82fr;gap:48px;align-items:center;width:100%}
-.hero-photo{width:100%;border-radius:20px;overflow:hidden;border:1px solid var(--line);aspect-ratio:3/4;background:var(--surface)}
-.hero-photo img{width:100%;height:100%;object-fit:cover;display:block}
-.hero-proof{width:100%;margin-top:4px}
-  .hero h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(2.1rem,5vw,4.2rem);line-height:1.15;letter-spacing:-.02em;margin:14px 0 0;max-width:20ch}
-  .hero h1 em{font-style:italic;color:transparent;background:var(--gold-grad);-webkit-background-clip:text;background-clip:text}
-  .hero-sub{color:var(--muted);font-size:clamp(1rem,1.6vw,1.18rem);max-width:52ch;margin:26px 0 0}
-  .hero-sub b{color:var(--paper);font-weight:600}
-  .hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:36px}
-  .reveal-line{display:block;overflow:hidden;padding-bottom:.08em}
-  .reveal-line>span{display:block;transform:translateY(110%);transition:transform .9s var(--ease)}
-  .loaded .reveal-line>span{transform:none}
-  .d1>span{transition-delay:.05s}.d2>span{transition-delay:.14s}.d3>span{transition-delay:.23s}.d4>span{transition-delay:.32s}
-  .fade-up{opacity:0;transform:translateY(16px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
-  .loaded .fade-up{opacity:1;transform:none}
-  .dd1{transition-delay:.45s}.dd2{transition-delay:.57s}.dd3{transition-delay:.69s}.dd4{transition-delay:.8s}
-
-
-  .proof{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(255,255,255,.015)}
-  .proof-in{display:grid;grid-template-columns:repeat(4,1fr)}
-  .proof-item{padding:32px 26px;border-right:1px solid var(--line)}
-  .proof-item:last-child{border-right:none}
-  .proof-item .num{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.7rem,3.3vw,2.5rem);color:var(--gold-hi);line-height:1}
-  .proof-item .num.txt{font-size:clamp(1.3rem,2.3vw,1.9rem);letter-spacing:-.01em;padding-top:.35em}
-  .proof-item .lab{font-size:.88rem;color:var(--paper);margin-top:12px;font-weight:500}
-  .proof-item .det{font-family:'JetBrains Mono',monospace;font-size:.66rem;letter-spacing:.06em;color:var(--muted);margin-top:6px}
-
-  section.block{padding:104px 0;position:relative}
-  .alt{background:var(--ink-2)}
-  .sec-head{margin-bottom:48px}
-  .sec-head .eyebrow{margin-bottom:16px}
-  .sec-title{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.6rem,2.7vw,2.2rem);letter-spacing:-.02em;line-height:1.1;margin-top:14px}
-  .sec-body{color:var(--muted);margin-top:18px;font-size:1rem}
-  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
-  .reveal.in{opacity:1;transform:none}
-
-  .intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
-  .intro-grid p{color:var(--muted)}
-  .intro-grid p+p{margin-top:16px}
-  .intro-grid .lead{font-family:'Fraunces',serif;font-size:clamp(1.35rem,2.4vw,1.85rem);line-height:1.36;color:var(--paper)}
-  .intro-grid .lead b{color:var(--gold-hi)}
-
-  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-  .svc{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:30px;transition:transform .25s var(--ease),border-color .3s}
-  .svc:hover{transform:translateY(-6px);border-color:rgba(201,162,75,.5);box-shadow:0 18px 44px rgba(0,0,0,.42)}
-  .svc h3{font-family:'Fraunces',serif;font-weight:600;font-size:1.3rem;margin-bottom:10px}
-  .svc p{color:var(--muted);font-size:.94rem}
-  .svc ul{list-style:none;margin-top:18px;display:grid;gap:9px}
-  .svc li{font-family:'JetBrains Mono',monospace;font-size:.74rem;color:var(--muted);display:flex;gap:9px}
-  .svc li::before{content:"+";color:var(--gold)}
-.btn-row{display:flex;gap:8px;margin-top:20px}
-.btn-row .btn{padding:10px 16px;font-size:.82rem}
-
-  .case{display:grid;grid-template-columns:1.05fr .95fr;gap:0;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:var(--surface)}
-  .case-body{padding:42px}
-  .case-body h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.5rem,2.6vw,2rem);line-height:1.12;margin:14px 0 14px;letter-spacing:-.01em}
-  .case-body p{color:var(--muted);font-size:.97rem}
-  .tag-team{font-family:'JetBrains Mono',monospace;font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,162,75,.4);padding:5px 11px;border-radius:999px}
-  .case-links{display:flex;flex-wrap:wrap;gap:18px;margin-top:22px}
-  .case-links a{font-size:.88rem;font-weight:600;color:var(--gold);display:inline-flex;gap:6px;transition:gap .2s}
-  .case-links a:hover{gap:11px}
-  .case-body .case-note{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--muted);margin-top:12px}
-  .case-board{position:relative;background:radial-gradient(120% 120% at 80% 15%,rgba(201,162,75,.14),transparent 60%),var(--ink);border-left:1px solid var(--line);padding:34px;display:flex;flex-direction:column;justify-content:flex-end;min-height:360px}
-  #case-grid{position:absolute;inset:0;width:100%;height:100%;opacity:.9}
-  .case-board dl{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden}
-  .case-board dl>div{background:rgba(12,11,8,.86);padding:16px 18px;backdrop-filter:blur(4px)}
-  .case-board dt{font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
-  .case-board dd{font-size:.92rem;color:var(--gold-hi);margin-top:5px}
-
-  .filters{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:30px}
-  .filters button{min-height:44px;font-family:'JetBrains Mono',monospace;font-size:.74rem;letter-spacing:.04em;color:var(--muted);background:transparent;border:1px solid var(--line);padding:8px 15px;border-radius:999px;cursor:pointer;transition:.2s}
-  .filters button:hover{color:var(--paper)}
-  .filters button.active{background:var(--gold);color:#151006;border-color:var(--gold);font-weight:700}
-  .p-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
-  .card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:28px;display:flex;flex-direction:column;transition:transform .25s var(--ease),border-color .3s,background .3s}
-  .card:hover{transform:translateY(-6px);border-color:rgba(201,162,75,.5);background:var(--surface-2);box-shadow:0 18px 44px rgba(0,0,0,.42)}
-  .card .c-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:8px}
-  .c-type{font-family:'JetBrains Mono',monospace;font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,162,75,.3);padding:4px 9px;border-radius:999px}
-  .c-metric{font-family:'JetBrains Mono',monospace;font-size:.74rem;color:var(--gold-hi)}
-  .p-name{font-family:'Fraunces',serif;font-weight:600;font-size:1.3rem;margin-bottom:5px;letter-spacing:-.01em}
-  .p-badge{align-self:flex-start;font-family:'JetBrains Mono',monospace;font-size:.64rem;letter-spacing:.06em;color:var(--gold-hi);border:1px solid rgba(201,162,75,.35);border-radius:999px;padding:4px 9px;margin:2px 0 10px}
-  .p-tag{font-family:'Fraunces',serif;font-style:italic;color:var(--gold-hi);font-size:1rem;margin-bottom:12px}
-  .p-desc{color:var(--muted);font-size:.92rem;flex-grow:1}
-  .p-tech{display:flex;flex-wrap:wrap;gap:7px;margin:16px 0}
-  .p-tech span{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--muted);border:1px solid var(--line);padding:4px 9px;border-radius:6px}
-  .p-links{display:flex;flex-wrap:wrap;gap:16px;margin-top:auto}
-  .p-links a{font-size:.84rem;font-weight:600;color:var(--gold);display:inline-flex;gap:6px;transition:gap .2s}
-  .p-links a:hover{gap:11px}
-
-  .method-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
-  .step{border-top:1px solid var(--line);padding-top:20px}
-  .step .n{font-family:'JetBrains Mono',monospace;font-size:.8rem;color:var(--gold)}
-  .step h3{font-family:'Fraunces',serif;font-weight:600;font-size:1.12rem;margin:12px 0 8px}
-  .step p{color:var(--muted);font-size:.9rem}
-
-  .stack-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:24px}
-  .stack-col h3{font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:15px;padding-bottom:11px;border-bottom:1px solid var(--line)}
-  .chips{display:flex;flex-wrap:wrap;gap:8px}
-  .chip{font-size:.84rem;color:var(--paper);background:var(--surface);border:1px solid var(--line);padding:7px 12px;border-radius:8px;transition:border-color .25s,color .25s}
-  .chip:hover{border-color:var(--gold);color:var(--gold-hi)}
-
-
-  .contact{text-align:center;padding:130px 0}
-  .contact .eyebrow{display:inline-flex}
-  .contact h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.9rem,4.2vw,3.4rem);line-height:1.08;letter-spacing:-.02em;margin:22px auto 0}
-  .contact h2 em{font-style:italic;color:transparent;background:var(--gold-grad);-webkit-background-clip:text;background-clip:text}
-  .contact p{color:var(--muted);max-width:56ch;margin:24px auto 0}
-  .contact-cta{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:36px}
-  .email-line{min-height:44px;margin-top:26px;background:none;border:none;cursor:pointer;font-family:'JetBrains Mono',monospace;font-size:.8rem;letter-spacing:.04em;color:var(--muted);display:inline-flex;align-items:center;gap:10px;transition:color .2s}
-  .email-line:hover{color:var(--paper)}
-  .email-line .cp{color:var(--gold);border:1px solid rgba(201,162,75,.35);padding:3px 10px;border-radius:999px;font-size:.68rem;text-transform:uppercase;letter-spacing:.12em}
-  .reply{font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:26px;display:inline-flex;gap:10px;align-items:center}
-  .reply .dot{width:7px;height:7px;border-radius:50%;background:#4ec77e;box-shadow:0 0 0 4px rgba(78,199,126,.15)}
-
-  footer{border-top:1px solid var(--line);padding:34px 0}
-  .foot-in{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center;color:var(--muted);font-size:.82rem}
-  .foot-links{display:flex;gap:22px}
-  .foot-links a{color:var(--muted);transition:color .2s}
-  .foot-links a:hover{color:var(--gold)}
-
-  /* about + photo */
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;margin-top:40px}
-.about-facts{list-style:none;border:1px solid var(--line);border-radius:14px;background:var(--surface);padding:24px;display:grid;gap:13px;align-content:center;height:100%}
-.about-facts li{position:relative;padding-left:22px;font-size:.92rem;color:var(--paper)}
-.about-facts li::before{content:"›";color:var(--gold);font-weight:700;position:absolute;left:0;top:0}
-#about .lead{font-family:'Fraunces',serif;font-size:clamp(1.35rem,2.2vw,1.7rem);line-height:1.4;color:var(--paper);margin-top:16px}
-  #about .lead b{color:var(--gold-hi)}
-  .about-text p.body{color:var(--muted);margin-top:16px;font-size:.95rem}
-  .about-text p.body:first-child{margin-top:0}
-  /* testimonials */
-  .tst-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-  .tst-link{display:flex;flex-direction:column;text-decoration:none;color:inherit}.tst-link:hover .tst{border-color:rgba(201,162,75,.5)}
-.tst-link .tst{flex:1}
-  .tst{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:20px;margin:0}
-  .tst blockquote{font-family:'Fraunces',serif;font-style:italic;font-size:1.05rem;line-height:1.5;color:var(--paper);flex-grow:1}
-  .tst blockquote::before{content:"\201C";color:var(--gold);font-size:2.4rem;line-height:0;vertical-align:-.35em;margin-right:3px}
-  .tst figcaption{margin-top:auto;display:flex;flex-direction:column;gap:3px;border-top:1px solid var(--line);padding-top:16px}
-  .tst figcaption b{font-size:.95rem}
-  .tst figcaption span{font-family:'JetBrains Mono',monospace;font-size:.66rem;letter-spacing:.05em;color:var(--muted)}
-  /* education */
-  .edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:52px}
-  .edu-col h3{font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;padding-bottom:11px;border-bottom:1px solid var(--line)}
-  .edu-item{padding:15px 0;border-bottom:1px solid var(--line)}
-  .edu-item:last-child{border-bottom:none}
-  .edu-item .y{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--gold);float:right}
-  .edu-item .t{font-weight:600}
-  .edu-item .t a{color:inherit;border-bottom:1px dotted var(--gold);transition:color .2s}
-  .edu-item .t a:hover{color:var(--gold-hi)}
-  .edu-item .s{color:var(--muted);font-size:.9rem;margin-top:3px}
-  .cert-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
-  @media(max-width:960px){.edu-grid{grid-template-columns:1fr}}
-  @media(max-width:720px){.tst-grid{grid-template-columns:1fr}}
-
-  @media(max-width:960px){
-    .hero-in,.hero-main,.about-grid,.intro-grid,.comm-grid,.case{grid-template-columns:1fr}
-    .svc-grid,.method-grid{grid-template-columns:1fr 1fr}
-    .case-board{border-left:none;border-top:1px solid var(--line);min-height:260px}
-    .hero-photo{max-width:380px}
-  }
-  @media(max-width:720px){
-    .p-grid,.svc-grid,.method-grid{grid-template-columns:1fr}
-    .proof-in{grid-template-columns:repeat(2,1fr)}
-    .stack-grid{grid-template-columns:repeat(2,1fr)}
-    .proof-item{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:24px 22px}
-    .proof-item:nth-child(even){border-right:none}
-    .proof-item:nth-last-child(-n+2){border-bottom:none}
-    section.block{padding:68px 0}
-    .contact{padding:92px 0 100px}
-    .hero{min-height:auto;padding:112px 0 54px}
-    .hero-photo{max-width:320px;margin:0 auto}
-    .hero-sub{font-size:1.06rem}
-    .p-desc,.svc p,.step p,.case-body p{font-size:.98rem}
-    .tag-team{font-size:.6rem;letter-spacing:.06em}
-    .card,.svc,.tst{padding:24px}
-    .case-body{padding:28px}
-    .sec-head{margin-bottom:36px}
-    .nav-links{position:fixed;inset:74px 0 auto 0;flex-direction:column;gap:0;background:rgba(10,10,12,.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);padding:8px 0;display:none}
-    .nav-links.open{display:flex}
-    .nav-links a{padding:15px 28px;width:100%}.nav-links .btn{width:auto;margin:10px 28px;justify-content:center}
-    .menu-btn{display:grid}
-    .spotlight{display:none}
-  }
-  @media(max-width:420px){
-    .hero h1{font-size:clamp(1.55rem,8.2vw,2rem)}
-    .proof-in{grid-template-columns:1fr}
-    .proof-item{border-right:none}
-    .proof-item:nth-last-child(-n+2){border-bottom:1px solid var(--line)}
-    .proof-item:last-child{border-bottom:none}
-  }
-  @media(max-width:360px){
-    .wrap{padding-left:14px;padding-right:14px}
-    .nav-in{gap:6px}
-    .nav-right{gap:4px}
-    .brand .mono-tag{display:none}
-  }
-  @media(prefers-reduced-motion:reduce){
-    *{animation:none!important;scroll-behavior:auto}
-    .reveal,.fade-up{opacity:1!important;transform:none!important}
-    .reveal-line>span{transform:none!important}
-  }
-</style>
-<script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "xll1n786gy");
-</script>
-<noscript><style>.reveal,.fade-up{opacity:1!important;transform:none!important}.reveal-line>span{transform:none!important}</style></noscript>
-</head>
-<body id="top">
-<a class="skip" href="#work" data-t="skip">Skip to selected work</a>
-<div class="spotlight" aria-hidden="true"></div>
-<div class="grain" aria-hidden="true"></div>
-
-
-<header class="nav" id="nav">
-  <div class="wrap nav-in">
-    <a class="brand" href="#top"><span class="monogram">S</span><span>Sebastian Belalcazar<br><span class="mono-tag" data-t="role">Data &amp; AI Engineer</span></span></a>
-    <nav class="nav-links" id="navlinks">
-      <a href="#about" data-t="nav.about">About</a><a href="#services" data-t="nav.services">Capabilities</a><a href="#work" data-t="nav.work">Work</a><a href="#stack" data-t="nav.stack">Stack</a><a href="#learn" data-t="nav.learn">Learn</a>
-      <a class="btn btn-gold nav-cta" href="#contact" data-t="nav.cta">Get in touch</a>
-    </nav>
-    <div class="nav-right">
-      <div class="lang-toggle" role="group" aria-label="Language"><button class="lang-btn" type="button" data-l="en">EN</button><button class="lang-btn" type="button" data-l="es">ES</button></div>
-      <button class="menu-btn" id="menu" type="button" aria-label="Open navigation menu" aria-controls="navlinks" aria-expanded="false">☰</button>
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f9fc">
+  
+  <meta name="description" content="Data pipelines, dashboards and practical AI tools for creators, online education businesses and digital teams. Discuss your project with Sebastian Belalcazar.">
+  <title>Sebastian Belalcazar — Data &amp; AI Engineer</title>
+  <link rel="icon" href="assets/brand-icon.ico" type="image/x-icon">
+  <link rel="preload" href="assets/fonts/bricolage-700.ttf" as="font" type="font/ttf" crossorigin="">
+  <link rel="stylesheet" href="styles.css">
+  <script src="site-config.js" defer=""></script><script src="analytics.js" defer=""></script><script src="app.js" defer=""></script>
+  <link rel="stylesheet" href="research.css">
+  <noscript><style>.language,.menu-toggle,[data-case],#copy-email{display:none!important}.hero{grid-template-columns:1fr}.nav-shell{height:auto;min-height:86px;flex-wrap:wrap;padding-block:15px}.nav-links{display:flex;position:static;flex-direction:row;flex-wrap:wrap;margin:0;padding:0;border:0;box-shadow:none}.hero-actions{flex-wrap:wrap}</style></noscript>
+<link rel="canonical" href="https://sebasbelmos.github.io/">
+<meta property="og:type" content="website"><meta property="og:title" content="Sebastian Belalcazar — Less busywork. More clarity."><meta property="og:description" content="Connect your data, build dashboards and automate recurring tasks. Data &amp; AI engineering for creators, education businesses and digital teams."><meta property="og:url" content="https://sebasbelmos.github.io/"><meta property="og:image" content="https://sebasbelmos.github.io/assets/og-image.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Sebastian Belalcazar — Less busywork. More clarity."><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Sebastian Belalcazar — Less busywork. More clarity."><meta name="twitter:description" content="Connect your data, build dashboards and automate recurring tasks."><meta name="twitter:url" content="https://sebasbelmos.github.io/"><meta name="twitter:image" content="https://sebasbelmos.github.io/assets/og-image.png"><meta name="twitter:image:alt" content="Sebastian Belalcazar — Less busywork. More clarity."></head>
+<body class="research-version">
+  <a class="skip-link" href="#main" data-t="skip">Skip to content</a>
+  <header class="header">
+    <div class="container nav-shell">
+      <a class="brand" href="#home" aria-label="SEBASBELMOS — Home" data-label="nav.home"><span class="brand-icon" aria-hidden="true"><img src="assets/brand-icon.ico" alt="" width="110" height="146"></span><span>SEBASBELMOS<span class="brand-dot">.</span></span></a>
+      <nav class="nav-links" id="navigation" aria-label="Main navigation" data-label="nav.label">
+        <a href="#approach" data-t="nav.approach">Services</a><a href="#work" data-t="nav.work">Work</a><a href="#about" data-t="nav.about">About</a>
+      </nav>
+      <div class="nav-actions"><button class="language" id="language" type="button" aria-label="Switch to Spanish"><span data-language="en" class="selected">EN</span><span class="language-slash">/</span><span data-language="es">ES</span></button><a href="#contact" class="button button-small" data-t="nav.contact">Discuss your project <span aria-hidden="true">↓</span></a><button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="navigation" aria-label="Open menu" data-label="menu.open"><span></span><span></span></button></div>
     </div>
-  </div>
-</header>
+  </header>
 
-<main>
-  <!-- HERO -->
-  <section class="hero" id="hero">
-    <canvas id="grid-canvas" aria-hidden="true"></canvas>
-    <div class="hero-scrim"></div>
-    <div class="wrap hero-in">
-      <div class="hero-main">
-        <div>
-          <h1 class="serif" data-t="hero.h1">
-            <span class="reveal-line d1"><span>I turn complex data</span></span>
-            <span class="reveal-line d2"><span>into systems that</span></span>
-            <span class="reveal-line d3"><span>help people make</span></span>
-            <span class="reveal-line d4"><span><em>better decisions</em>.</span></span>
-          </h1>
-          <p class="hero-sub fade-up dd2" data-t="hero.sub">I build data pipelines, dashboards and AI-assisted tools, from internal systems to automations for <b>creators, online education businesses and digital teams</b>.</p>
-          <div class="hero-cta fade-up dd3">
-            <a class="btn btn-gold" href="#work" data-t="hero.cta1" data-cta="hero-work">View selected work</a>
-            <a class="btn btn-ghost" href="#next-step" data-t="hero.cta2" data-cta="hero-contact">Start a conversation →</a>
+  <main id="main" tabindex="-1">
+    <section class="hero container" id="home" aria-labelledby="hero-title">
+      <div class="hero-copy"><div class="hero-person"><img src="assets/sebastian.webp" alt="" width="152" height="152" fetchpriority="high"><div><strong>Sebastian Belalcazar</strong></div></div>
+        
+        <p class="eyebrow hero-role" data-t="role">Data &amp; AI Engineer</p>
+        <h1 id="hero-title" data-t="hero.title">Less busywork.<br><span>More clarity.</span></h1>
+        <p class="hero-description" data-t="hero.description">I connect your tools, organise your data and automate repetitive work. So your team can spend less time moving information and more time using it.</p>
+        <p class="client-context" data-t="hero.audience">For creators, online education businesses and digital teams.</p>
+        <div class="hero-actions"><a class="button" href="#contact" data-t="hero.contact">Discuss your project <span aria-hidden="true">↓</span></a><a class="text-link" href="#work" data-t="hero.work">Explore my work <span aria-hidden="true">→</span></a></div>
+        
+      </div>
+      <aside class="hero-proof" aria-labelledby="hero-proof-title"><div id="hero-selected-work"><p class="eyebrow" id="hero-proof-title"><span data-t="hero.proof">Selected work</span></p><a class="proof-row" href="#case-betterlife"><strong><span class="proof-row-label">BetterLife Coaching </span><span aria-hidden="true">→</span></strong><span data-t="hero.betterlife">Personal-finance MVP, reports and workflows.</span></a><a class="proof-row" href="#case-jurisintel"><strong><span class="proof-row-label">JurisIntel · <span data-t="proof.volunteer">Volunteer</span> </span><span aria-hidden="true">→</span></strong><span data-t="hero.jurisintel">Legal-document NLP and case monitoring.</span></a><a class="proof-row" href="https://analiticalastdance-geovision-cali-frontend.hf.space" target="_blank" rel="noopener noreferrer"><strong><span class="proof-row-label">GeoVision · <span data-t="hero.live">Live app</span></span><span aria-hidden="true">↗</span></strong><span data-t="hero.geovision">University project: data, backend and frontend.</span><span class="sr-only"><span data-t="link.newTab">(opens in a new tab)</span></span></a></div><figure id="hero-dashboard" hidden=""><img id="hero-dashboard-image" alt="" width="1600" height="1000"><figcaption><span data-t="hero.demo.caption">Demo with fictional data</span></figcaption></figure></aside>
+    </section>
+
+    <section class="proof-strip container" aria-labelledby="proof-title">
+      <div class="proof-work"><p class="eyebrow" id="proof-title" data-t="proof.title">Experience with teams and businesses</p>
+        <p class="proof-experience" data-t="proof.experience">LegalTech (volunteer) · Coaching · Lead automation</p>
+      </div>
+      <div class="proof-credentials">      <a class="proof-credential" href="https://www.credential.net/2217d97b-4f00-4bae-bd3c-d862c8e89fa8#acc.smEH7PVl" target="_blank" rel="noopener noreferrer"><span class="credential-mark" aria-hidden="true">✳</span><span><strong data-t="proof.credential">DS4A · Data Analytics with honours</strong><span data-t="proof.verify">View credential ↗</span></span></a><a class="proof-credential" href="https://github.com/SEBASBELMOS" target="_blank" rel="noopener noreferrer"><span class="credential-mark" aria-hidden="true">↗</span><span><strong><span data-t="proof.github">Code on GitHub</span></strong><span data-t="proof.github.profile">SEBASBELMOS on GitHub ↗</span></span></a></div>
+    </section>
+
+    <section class="section approach-section container" id="approach" aria-labelledby="approach-title">
+      <div class="section-heading"><div><p class="eyebrow" data-t="approach.eyebrow">A useful place to start</p><h2 id="approach-title" data-t="approach.title">What is slowing<br>your team down?</h2></div><p class="section-intro" data-t="approach.intro">Three ways to help. We start with one clear problem and agree on what a useful result looks like.</p></div>
+      <div class="service-offers"><article class="service-offer"><p class="offer-pain" data-t="offer.data.pain">Your information is scattered.</p><h3 data-t="offer.data.title">Connect your data</h3><p class="offer-body" data-t="offer.data.body">A repeatable workflow that brings spreadsheets, databases and tools together.</p><details class="offer-details" open=""><summary><span data-t="offer.disclosure">Deliverables &amp; first step</span></summary><ul class="offer-deliverables"><li data-t="offer.data.item0">Connected sources and consistent data</li><li data-t="offer.data.item1">A documented, repeatable update process</li></ul><div class="offer-first"><strong data-t="offer.first">First step</strong><p data-t="offer.data.first">We review your sources and the report or process that needs them.</p></div></details><p class="offer-stack">Python · SQL · Airflow</p><a class="text-link offer-link" href="#contact" data-service="data"><span data-t="cta.data">Talk about your data</span> <span aria-hidden="true">↓</span></a></article><article class="service-offer"><p class="offer-pain" data-t="offer.dashboard.pain">Every report starts from scratch.</p><h3 data-t="offer.dashboard.title">A dashboard for your team</h3><p class="offer-body" data-t="offer.dashboard.body">A clear view of the metrics your team needs, with the source of each number explained.</p><details class="offer-details" open=""><summary><span data-t="offer.disclosure">Deliverables &amp; first step</span></summary><ul class="offer-deliverables"><li data-t="offer.dashboard.item0">A dashboard built around your questions</li><li data-t="offer.dashboard.item1">Documented metrics and data sources</li></ul><div class="offer-first"><strong data-t="offer.first">First step</strong><p data-t="offer.dashboard.first">We choose the decisions, metrics and data that matter.</p></div></details><p class="offer-stack">Power BI · Looker Studio</p><a class="text-link offer-link" href="#contact" data-service="dashboard"><span data-t="cta.dashboard">Talk about a dashboard</span> <span aria-hidden="true">↓</span></a></article><article class="service-offer"><p class="offer-pain" data-t="offer.automation.pain">The same task, over and over.</p><h3 data-t="offer.automation.title">Automate a recurring task</h3><p class="offer-body" data-t="offer.automation.body">A workflow for lead intake, updates or content tasks, with AI where it adds value and review where it matters.</p><details class="offer-details" open=""><summary><span data-t="offer.disclosure">Deliverables &amp; first step</span></summary><ul class="offer-deliverables"><li data-t="offer.automation.item0">Connected tools and clear handoffs</li><li data-t="offer.automation.item1">Human review and exception handling</li></ul><div class="offer-first"><strong data-t="offer.first">First step</strong><p data-t="offer.automation.first">We map one task, its tools and the people involved.</p></div></details><p class="offer-stack"><span data-t="offer.automation.stack">n8n · APIs · AI workflows</span></p><a class="text-link offer-link" href="#contact" data-service="automation"><span data-t="cta.automation">Talk about an automation</span> <span aria-hidden="true">↓</span></a></article></div>
+      <div class="delivery-process"><h3 data-t="delivery.title">What happens after you reach out?</h3><ol><li><span class="step-index" aria-hidden="true">01</span><div><h4 data-t="delivery.1.title">Understand</h4><p data-t="delivery.1.body">We review the current process and what is getting in the way.</p></div></li><li><span class="step-index" aria-hidden="true">02</span><div><h4 data-t="delivery.2.title">Define</h4><p data-t="delivery.2.body">We agree on scope, deliverables and priorities before building.</p></div></li><li><span class="step-index" aria-hidden="true">03</span><div><h4 data-t="delivery.3.title">Build &amp; test</h4><p data-t="delivery.3.body">We test the workflow with your data and feedback.</p></div></li><li><span class="step-index" aria-hidden="true">04</span><div><h4 data-t="delivery.4.title">Hand over</h4><p data-t="delivery.4.body">You get the system, documentation and an explanation of how to use it.</p></div></li></ol></div>
+    </section>
+
+    <section class="work-section section" id="work" aria-labelledby="work-title">
+      <div class="container">
+        <div class="section-heading"><div><p class="eyebrow" data-t="work.eyebrow">Work you can explore</p><h2 id="work-title" data-t="work.title">From the workflow<br>to the working system.</h2></div><p class="section-intro" data-t="work.intro">Project-based work, volunteer contributions and technical projects in data engineering and AI. Explore the scope and my contribution to each.</p></div>
+        <div class="business-cases" id="business-work"><article class="business-case " id="case-betterlife"><div class="business-kicker"><strong>BetterLife Coaching</strong><span data-t="case.betterlife.type">Project-based · 2024–2025</span></div><h3><span data-t="case.betterlife.title">A first version of a finance product.</span></h3><dl><dt><span data-t="case.problem">Problem</span></dt><dd><span data-t="case.betterlife.problem">Coaching clients had no simple way to track income and expenses or see their financial habits.</span></dd><dt><span data-t="case.built">What I built</span></dt><dd><span data-t="case.betterlife.built">I built a personal-finance MVP with tracking and reports, and supported workflows and UX for the alpha.</span></dd><dt><span data-t="case.scope">Scope</span></dt><dd><span data-t="case.betterlife.scope">MVP and alpha version · project-based collaboration.</span> </dd></dl><p class="business-tools"><span data-t="case.betterlife.tools">MVP · Reports · Workflow automation</span></p></article><article class="business-case " id="case-jurisintel"><div class="business-kicker"><strong>JurisIntel</strong><span data-t="case.jurisintel.type">Volunteer · 2025–2026</span></div><h3><span data-t="case.jurisintel.title">Making legal documents easier to work with.</span></h3><dl><dt><span data-t="case.problem">Problem</span></dt><dd><span data-t="case.jurisintel.problem">Legal documents and case updates need to be organised for review.</span></dd><dt><span data-t="case.built">What I built</span></dt><dd><span data-t="case.jurisintel.built">I contributed legal-document NLP pipelines, case-monitoring automation and support for an AI legal chatbot.</span></dd><dt><span data-t="case.scope">Scope</span></dt><dd><span data-t="case.jurisintel.scope">Volunteer contribution · pipelines, monitoring and chatbot support.</span> </dd></dl><p class="business-tools"><span data-t="case.jurisintel.tools">NLP · Case monitoring · AI</span></p></article><article class="business-case business-case-compact" id="case-bilbao"><div class="business-kicker"><strong>Bilbao2</strong><span data-t="case.bilbao.type">Project-based · January 2026</span></div><h3><span data-t="case.bilbao.title">From lead intake to the right team.</span></h3><dl><dt><span data-t="case.problem">Problem</span></dt><dd><span data-t="case.bilbao.problem">Incoming leads need to be qualified and routed.</span></dd><dt><span data-t="case.built">What I built</span></dt><dd><span data-t="case.bilbao.built">I designed lead intake, qualification and routing automations.</span></dd><dt><span data-t="case.scope">Scope</span></dt><dd><span data-t="case.bilbao.scope">Project-based collaboration · automation design.</span> </dd></dl><p class="business-tools"><span data-t="case.bilbao.tools">n8n · Typeform · ActiveCampaign · CRM</span></p></article></div><p class="eyebrow technical-heading" data-t="work.technical">Technical projects · data engineering &amp; AI</p>
+        <article class="featured-project" id="geovision-project">
+          <div class="geo-art" role="img" aria-label="Illustrative spatial grid inspired by GeoVision in Cali, not actual pollution readings" data-label="geo.visual">
+            <div class="geo-top"><span class="geo-logo"><span aria-hidden="true">◈</span> GeoVision</span><span class="geo-badge">CALI, CO</span></div>
+            <svg viewBox="0 0 520 340" class="geo-map" aria-hidden="true"><defs><pattern id="geo-grid" width="26" height="26" patternUnits="userSpaceOnUse"><path d="M26 0H0V26" fill="none" stroke="#608d85" stroke-opacity=".19"></path></pattern><linearGradient id="geo-land" x2="0.8" y2="1"><stop stop-color="#87cbb9"></stop><stop offset="1" stop-color="#d0e6b4"></stop></linearGradient></defs><rect width="520" height="340" fill="url(#geo-grid)"></rect><g class="map-terrain"><path d="M48 2C90 80 75 126 117 160S90 280 149 340M5 2C47 80 32 126 74 160S47 280 106 340M-38 2C4 80-11 126 31 160S4 280 63 340" fill="none" stroke="#79a394" stroke-opacity=".22" stroke-width="20"></path><path d="M250 6L321 35 304 68 354 89 333 124 372 169 332 201 349 245 309 272 288 321 231 309 218 274 189 257 201 215 169 185 182 151 158 113 204 96 196 61 235 46Z" fill="url(#geo-land)" stroke="#7fb4a3" stroke-width="1.5"></path><g id="geo-cells"></g><path d="M320 0C280 63 347 104 302 152S324 244 278 340" stroke="#f5fcf7" stroke-width="4" fill="none"></path><path d="M230 47L262 91 225 144 259 188 235 239 273 296M190 182L331 201M180 125L328 115" stroke="#f4faf5" stroke-width="2" fill="none"></path><circle cx="259" cy="173" r="7" fill="#255e55" stroke="white" stroke-width="3"></circle><circle cx="259" cy="173" r="17" fill="none" stroke="#255e55" stroke-opacity=".25"></circle></g><g transform="translate(453,38)" fill="none" stroke="#396e60"><path d="M0 27V0L-4 9M0 0L4 9"></path></g></svg>
+            <div class="geo-data"><div><strong><span data-t="geo.raw.number">93.1 <small>GB</small></span></strong><span data-t="geo.data">Raw Sentinel-2 imagery</span></div><div><strong><span data-t="geo.cells.number">1,920</span></strong><span data-t="geo.cells">Spatial cells</span></div><div><strong>5</strong><span data-t="geo.sources">Data sources</span></div></div><span class="illustration-note" data-t="geo.note">Illustrative spatial view</span>
           </div>
-        </div>
-        <div class="hero-photo"><img src="assets/sebastian.webp" alt="Portrait of Sebastian Belalcazar" width="1122" height="1402" fetchpriority="high"></div>
+          <div class="featured-copy"><div class="project-kicker"><span class="eyebrow" data-t="geo.featured">University project · team of 3</span><span class="tag" data-t="geo.category">Geospatial AI</span></div><h3 data-t="geo.heading">Seeing a city<br><span>through its data.</span></h3><p class="project-name">GeoVision-CLIP Cali</p><p data-t="geo.description">A university project connecting five data sources with a backend and an explorable frontend.</p><div class="contribution"><span class="eyebrow" data-t="geo.roleLabel">My contribution · team of 3</span><p data-t="geo.role">Data engineering, FastAPI backend, React frontend, testing and deployment.</p></div><div class="project-actions"><button class="text-link" data-case="geovision" type="button" aria-haspopup="dialog" data-t="geo.case">View project details <span aria-hidden="true">+</span></button><a class="subtle-link" href="https://analiticalastdance-geovision-cali-frontend.hf.space" target="_blank" rel="noopener noreferrer" data-t="geo.demo">Live app <span aria-hidden="true">↗</span></a></div></div>
+        </article><div class="project-grid restored-projects" id="project-grid"><article class="project-card" data-project="jobs"><div class="card-visual visual-jobs" aria-hidden="true"><div class="mini-pipeline"><div class="pipeline-row"><span class="pipeline-node" data-t="project.jobs.raw">raw</span><span class="pipeline-arrow">→</span><span class="pipeline-node" data-t="project.jobs.clean">cleaned</span><span class="pipeline-arrow">→</span><span class="pipeline-node accent" data-t="project.jobs.analysis">analytics</span></div><p><span data-t="project.jobs.figure">123K+ → PostgreSQL</span></p></div></div><div class="card-copy"><div class="card-kicker"><span data-t="project.category.data">Data engineering</span><span data-t="project.status">Code available</span></div><h3>LinkedIn Jobs ETL</h3><p class="card-description"><span data-t="project.jobs.summary">123K+ job postings, transformed into a clearer picture of hiring, skills and salaries.</span></p><ul class="tech-chips"><li>Python</li><li>Airflow</li><li>PostgreSQL</li><li>Power BI</li></ul><div class="card-footer"><button type="button" class="text-link" data-case="jobs" aria-haspopup="dialog"><span data-t="project.details">Project details</span> <span aria-hidden="true">+</span><span class="sr-only"> — LinkedIn Jobs ETL</span></button><a href="https://github.com/SEBASBELMOS/LinkedIn-Jobs-Posting" target="_blank" rel="noopener noreferrer">GitHub ↗<span class="sr-only"> — LinkedIn Jobs ETL</span></a></div></div></article><article class="project-card" data-project="spotify"><div class="card-visual visual-spotify" aria-hidden="true"><div class="mini-spotify"><i style="--bar:22px"></i><i style="--bar:41px"></i><i style="--bar:57px"></i><i style="--bar:30px"></i><i style="--bar:71px"></i><i style="--bar:85px"></i><i style="--bar:61px"></i><i style="--bar:95px"></i><i style="--bar:74px"></i><i style="--bar:50px"></i><i style="--bar:67px"></i><i style="--bar:90px"></i><i style="--bar:53px"></i><i style="--bar:76px"></i><i style="--bar:40px"></i><i style="--bar:64px"></i><i style="--bar:28px"></i><i style="--bar:43px"></i></div><span class="music-caption"><span data-t="project.spotify.figure">114K+ records → 81,941 enriched</span></span></div><div class="card-copy"><div class="card-kicker"><span data-t="project.category.data">Data engineering</span><span data-t="project.status">Code available</span></div><h3>Spotify Analytics ETL</h3><p class="card-description"><span data-t="project.spotify.summary">114K+ music records. Less duplication, richer data and a pipeline ready for analysis.</span></p><ul class="tech-chips"><li>Airflow</li><li>PostgreSQL</li><li>GCP</li><li>Power BI</li></ul><div class="card-footer"><button type="button" class="text-link" data-case="spotify" aria-haspopup="dialog"><span data-t="project.details">Project details</span> <span aria-hidden="true">+</span><span class="sr-only"> — Spotify Analytics ETL</span></button><a href="https://github.com/SEBASBELMOS/spotify-analytics-etl-pipeline" target="_blank" rel="noopener noreferrer">GitHub ↗<span class="sr-only"> — Spotify Analytics ETL</span></a></div></div></article><article class="project-card" data-project="deutsch"><div class="card-visual visual-deutsch" aria-hidden="true"><div class="chat-preview"><div class="chat-top"><span>DeutschLernen</span><span>DE · A2</span></div><div class="chat-line">Wie war dein Tag?</div><div class="chat-line reply">Heute habe ich viel gelernt.</div><div class="chat-input">Weiter üben</div></div></div><div class="card-copy"><div class="card-kicker"><span data-t="project.category.ai">AI &amp; products</span><span data-t="project.status">Code available</span></div><h3>DeutschLernen</h3><p class="card-description"><span data-t="project.deutsch.summary">A place to practise German with AI conversations, voice input and spaced repetition.</span></p><ul class="tech-chips"><li>Node.js</li><li>Express</li><li>Groq</li><li>AssemblyAI</li></ul><div class="card-footer"><button type="button" class="text-link" data-case="deutsch" aria-haspopup="dialog"><span data-t="project.details">Project details</span> <span aria-hidden="true">+</span><span class="sr-only"> — DeutschLernen</span></button><a href="https://github.com/SEBASBELMOS/deutschlernen" target="_blank" rel="noopener noreferrer">GitHub ↗<span class="sr-only"> — DeutschLernen</span></a></div></div></article></div>
+        
+        
+        
+        <noscript></noscript>
       </div>
-      <div class="hero-proof" id="proof">
-        <div class="proof-in" id="proofin">
-          <div class="proof-item"><div class="num">123K+</div><div class="lab" data-t="proof.l1">job postings processed</div><div class="det" data-t="proof.d1">End-to-end analytics pipeline</div></div>
-          <div class="proof-item"><div class="num txt">93.1 GB</div><div class="lab" data-t="proof.l2">satellite data engineered</div><div class="det" data-t="proof.d2">GeoVision production pipeline</div></div>
-          <div class="proof-item"><div class="num">60+</div><div class="lab" data-t="proof.l3">international students taught</div><div class="det" data-t="proof.d3">Clear communication across cultures</div></div>
-          <div class="proof-item"><div class="num">C2</div><div class="lab" data-t="proof.l4">English · Spanish native</div><div class="det" data-t="proof.d4">EF SET certified</div></div>
-        </div>
+    </section>
+
+
+    <section class="about-section section" id="about" aria-labelledby="about-title"><div class="container about-grid"><div class="portrait-wrap"><div class="portrait"><img src="assets/sebastian.webp" alt="Sebastian Belalcazar" width="560" height="620" loading="lazy"><span class="portrait-label">Sebastian Belalcazar<span data-t="role">Data &amp; AI Engineer</span></span></div><aside class="teaching-review" aria-labelledby="review-context"><p class="review-rating"><span data-t="review.rating">5/5 · 25 reviews on Preply</span></p><p class="review-context" id="review-context" data-t="review.context">A student's review on Preply</p><blockquote data-t="review.quote">“Punctual, professional, and experienced.”</blockquote><p class="review-author" data-t="review.author">Tariq · Spanish student · July 2026</p><a class="text-link" href="https://preply.com/en/tutor/7382924" target="_blank" rel="noopener noreferrer" data-t="review.link">Read the reviews on Preply <span aria-hidden="true">↗</span></a><p class="source-date" data-t="review.date">Profile checked · 24 Sep 2026</p></aside></div><div class="about-copy"><p class="eyebrow" data-t="about.eyebrow">About Sebastian</p><h2 id="about-title" data-t="about.title">I build. I teach.<br>I connect the dots.</h2><p class="about-lead" data-t="about.lead">I like making sense of complicated things: organising data, improving workflows and explaining the systems I build.</p><p data-t="about.body">I'm finishing my Data &amp; AI Engineering degree at Universidad Autónoma de Occidente. I build data pipelines, dashboards and automation workflows, and apply AI to practical problems.</p><p data-t="about.teaching">I've taught over 700 Spanish lessons on Preply to 60+ international students. Teaching has trained me to listen, break ideas into clear steps and adapt to different levels. I bring those habits to your project, its documentation and our conversations.</p><div class="about-facts"><div><strong><span data-t="about.projects.number">3</span></strong><span data-t="about.projects">real-world projects</span><small><span data-t="about.projects.scope">Project-based &amp; volunteer</span></small></div><div><strong>700+</strong><span data-t="about.lessons">Spanish lessons taught</span></div><div><strong>ES / EN</strong><span data-t="about.languages">Native Spanish · C2 English</span></div></div><p class="past-brand"><span data-t="about.music">Previously, I built a bilingual music-content brand, Música 4 Soul, to 153K+ TikTok followers.</span> <span data-t="about.music.status">Past project, now inactive.</span></p><div class="about-socials"><a href="https://www.youtube.com/channel/UCeYaQhjA-N6YVd6RNTdhBeA" target="_blank" rel="noopener noreferrer">YouTube ↗</a><a href="https://www.linkedin.com/in/sebasbelmos/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div><a class="text-link" href="assets/SEBASTIAN_BELALCAZAR_MOSQUERA.pdf" download="" data-t="about.cv">Download my CV <span aria-hidden="true">↓</span></a><details class="education"><summary data-t="about.education">Education &amp; credentials</summary><ul><li><strong><span data-t="edu.degree">Data &amp; AI Engineering</span></strong><span>Universidad Autónoma de Occidente · 2023–2026</span></li><li><strong data-t="edu.ds4a">DS4A · Data Analytics, with honours</strong><a href="https://www.credential.net/2217d97b-4f00-4bae-bd3c-d862c8e89fa8#acc.smEH7PVl" target="_blank" rel="noopener noreferrer">Correlation One · 2022 ↗</a></li><li><strong><span data-t="edu.bootcamp">AI Bootcamp</span></strong><span>Universidad Tecnológica de Pereira · 2024</span></li></ul><p class="education-languages" data-t="edu.languages">Languages: Spanish (native) · English (C2) · German (A2) · Portuguese (A2)</p></details></div></div></section>
+
+    
+
+    <section class="contact-section" id="contact" aria-labelledby="contact-title"><div class="container contact-grid">
+      <div class="contact-copy"><p class="eyebrow" data-t="contact.eyebrow">Discuss your project</p><h2 id="contact-title" data-t="contact.title">Tell me what's<br>slowing you down.</h2><p class="contact-intro" data-t="contact.body">You do not need a technical brief. A short email with these three points is enough to start.</p>
+        <div class="contact-next"><h3 data-t="contact.next.title">A clear first step</h3><p data-t="contact.next.body">We can review your current process, identify the useful next step and agree on the scope before building.</p></div>
       </div>
-    </div>
-  </section>
-
-  <!-- POSITIONING -->
-  <section class="block" id="about">
-      <div class="wrap reveal">
-        <h2 class="eyebrow" data-t="pos.eyebrow">About me</h2>
-        <p class="lead serif" data-t="pos.lead">I build data products that are <b>technically sound, clearly explained and useful</b> to the people running the business.</p>
-        <div class="about-grid">
-          <ul class="about-facts" data-t="pos.facts">
-            <li>Volunteer Data &amp; AI Engineer at <b>JurisIntel</b> (LegalTech NLP)</li>
-            <li>Data &amp; AI Engineer finishing my degree at UAO</li>
-            <li>End-to-end systems: ingestion → transformation → analytics → delivery</li>
-            <li>Production experience with FastAPI, React, Docker, testing and CI/CD</li>
-            <li>AI-assisted development with Claude Code, Codex and OpenCode, always with human review</li>
-            <li>Spanish native · English C2 · German A2</li>
-          </ul>
-          <div class="about-text">
-            <p class="body" data-t="pos.p1">I combine data engineering, business intelligence and practical AI to turn scattered information and manual processes into systems a team can understand, maintain and improve.</p>
-            <p class="body" data-t="pos.p2">My background in online teaching has also shaped how I work. After teaching 60+ international students, I have learnt to explain complex ideas clearly, adapt to different people and build useful feedback loops. I bring the same approach to technical projects, documentation and stakeholder conversations.</p>
-          </div>
-        </div>
-    </div>
-  </section>
-
-  <!-- SERVICES -->
-  <section class="block alt" id="services">
-    <div class="wrap">
-      <div class="sec-head reveal"><span class="eyebrow" data-t="svc.eyebrow">Capabilities</span><h2 class="sec-title" data-t="svc.title">Practical systems that work.</h2><p class="sec-body" data-t="svc.body">Particularly interested in projects for creators, online education businesses and digital teams.</p></div>
-      <div class="svc-grid">
-        <article class="svc reveal"><h3 data-t="svc1.h">Data &amp; Decision Systems</h3><p data-t="svc1.p">Data pipelines, dashboards, analytics and reporting systems that turn scattered information into useful knowledge for better decisions.</p></article>
-        <article class="svc reveal"><h3 data-t="svc2.h">AI Systems &amp; Automation</h3><p data-t="svc2.p">Focused workflows that reduce repetitive work, organise knowledge, connect tools and apply AI while keeping human review at the centre.</p></article>
-        <article class="svc reveal"><h3 data-t="svc3.h">Internal Tools &amp; Prototypes</h3><p data-t="svc3.p">Internal applications and prototypes designed to validate ideas, improve processes and build practical solutions before investing in larger platforms.</p></article>
+      <div class="contact-details">
+        <h3 data-t="contact.include.title">What to include in your email</h3>
+        <ol class="contact-prompts"><li data-t="contact.include.help">What you would like help with.</li><li data-t="contact.include.process">How you do it today and which tools you use.</li><li data-t="contact.include.result">What a useful result would look like.</li></ol>
+        <div class="contact-email-row"><span id="project-email" class="contact-address">sebasbelmosdev@gmail.com</span><button class="button" type="button" id="copy-email" data-t="contact.copy">Copy email</button></div>
+        <p id="copy-status" role="status" aria-live="polite" aria-atomic="true"></p>
+        <a id="contact-linkedin" href="https://www.linkedin.com/in/sebasbelmos/" target="_blank" rel="noopener noreferrer" data-t="contact.linkedin">Prefer LinkedIn? Message me there ↗</a>
       </div>
-    </div>
-  </section>
+      <p class="contact-note" data-t="contact.roles">Hiring for your team? <a href="assets/SEBASTIAN_BELALCAZAR_MOSQUERA.pdf" download="">Download my CV</a>.</p>
+    </div></section>
+  </main>
+  <footer class="footer container"><a class="brand" href="#home">SEBASBELMOS<span class="brand-dot">.</span></a><p data-t="footer.note">© 2026 Sebastian Belalcazar</p><div><a href="https://www.youtube.com/channel/UCeYaQhjA-N6YVd6RNTdhBeA" target="_blank" rel="noopener noreferrer">YouTube ↗</a><a href="https://github.com/SEBASBELMOS" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="https://www.linkedin.com/in/sebasbelmos/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="#home" aria-label="Back to top" data-label="footer.top">↑</a></div></footer>
+  <dialog id="case-dialog" aria-labelledby="case-title"><div class="dialog-bar"><span class="eyebrow" data-t="dialog.label">Project notes</span><button id="close-dialog" class="close-dialog" type="button" aria-label="Close project" data-label="dialog.close">×</button></div><div id="case-content"></div></dialog>
 
-  <!-- CASE STUDY -->
-  <section class="block" id="case">
-    <div class="wrap">
-      <div class="sec-head reveal"><span class="eyebrow" data-t="case.eyebrow">Signature case</span><h2 class="sec-title" data-t="case.title">City-scale GeoAI, deployed and tested.</h2></div>
-      <div class="case reveal">
-        <div class="case-body">
-          <span class="tag-team" data-t="case.team">Team of 3 · data, backend &amp; frontend</span>
-          <h2 class="serif">GeoVision-CLIP Cali</h2>
-          <p data-t="case.p">A production-deployed system estimating NO₂, SO₂ and O₃ across ~380 km² of Cali on a 1,920-cell grid, with day-ahead horizons. I owned the data engineering (5 satellite/ground sources into Zarr/Parquet), the FastAPI backend, the React + Leaflet frontend, Docker, testing, deployment and documentation.</p>
-          <div class="case-links">
-            <a href="https://analiticalastdance-geovision-cali-frontend.hf.space" target="_blank" rel="noopener noreferrer" data-cta="geovision-demo" data-t="case.link1">Open live app →</a>
-            <a href="https://analiticalastdance-geovision-cali-api.hf.space/docs" target="_blank" rel="noopener noreferrer" data-t="case.link2">API docs →</a>
-            <a href="https://github.com/SEBASBELMOS/GeoVision-CLIP-Cali" target="_blank" rel="noopener noreferrer" data-cta="geovision-project" data-t="case.link3">View project →</a>
-          </div>
-          <p class="case-note" data-t="case.wake">The live demo may take a few seconds to wake up.</p>
-        </div>
-        <div class="case-board">
-          <canvas id="case-grid" aria-hidden="true"></canvas>
-          <dl>
-            <div><dt data-t="case.dt1">Accuracy</dt><dd>R² = 0.807</dd></div>
-            <div><dt data-t="case.dt2">Testing</dt><dd>26/26 pytest</dd></div>
-            <div><dt data-t="case.dt3">Latency</dt><dd>~480 ms p50 prod</dd></div>
-            <div><dt data-t="case.dt4">Data</dt><dd>93.1 GB Sentinel-2</dd></div>
-          </dl>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- WORK -->
-  <section class="block alt" id="work">
-    <div class="wrap">
-      <div class="sec-head reveal"><span class="eyebrow" data-t="work.eyebrow">Selected work</span><h2 class="sec-title" data-t="work.title">The work behind the numbers.</h2></div>
-      <div class="filters reveal" id="filters">
-        <button class="active" type="button" data-filter="All" aria-pressed="true" data-t="filter.all">All</button>
-        <button type="button" data-filter="Data engineering" aria-pressed="false" data-t="type.dataeng">Data engineering</button>
-        <button type="button" data-filter="MLOps" aria-pressed="false" data-t="type.mlops">MLOps</button>
-        <button type="button" data-filter="Product" aria-pressed="false" data-t="type.product">Product</button>
-        <button type="button" data-filter="Applied ML" aria-pressed="false" data-t="type.ml">Applied ML</button>
-        <button type="button" data-filter="BI" aria-pressed="false" data-t="type.bi">BI</button>
-      </div>
-      <div class="p-grid" id="pgrid">
-        <article class="card" data-project-type="Data engineering">
-          <div class="c-top"><span class="c-type" data-t="type.dataeng">Data engineering</span><span class="c-metric" data-t="proj.linkedin.metric">123K+</span></div>
-          <h3 class="p-name serif">LinkedIn Jobs ETL</h3>
-          <p class="p-tag" data-t="proj.linkedin.tag">Reveals hiring, skills and salary trends from 123K+ job postings.</p>
-          <p class="p-desc" data-t="proj.linkedin.desc">End-to-end pipeline into a star-schema PostgreSQL warehouse (cloud-deployable on GCP, AWS RDS or Supabase), orchestrated with Apache Airflow across raw → cleaned → analytics layers.</p>
-          <div class="p-tech"><span>Python</span><span>Airflow</span><span>PostgreSQL</span><span>Power BI</span></div>
-          <div class="p-links"><a href="https://github.com/SEBASBELMOS/LinkedIn-Jobs-Posting" target="_blank" rel="noopener noreferrer" data-t="proj.linkedin.link1">View project →</a></div>
-        </article>
-        <article class="card" data-project-type="Data engineering">
-          <div class="c-top"><span class="c-type" data-t="type.dataeng">Data engineering</span><span class="c-metric" data-t="proj.spotify.metric">−28.6% dupes</span></div>
-          <h3 class="p-name serif">Spotify Analytics ETL</h3>
-          <p class="p-tag" data-t="proj.spotify.tag">Cleans and analyses 114K+ music records for streaming insights.</p>
-          <p class="p-desc" data-t="proj.spotify.desc">Production ETL integrating Spotify tracks and Grammy records, orchestrated with Airflow on GCP with daily scheduling, monitoring and error handling; 81,941 enriched rows.</p>
-          <div class="p-tech"><span>Airflow</span><span>PostgreSQL</span><span>GCP</span><span>Power BI</span></div>
-          <div class="p-links"><a href="https://github.com/SEBASBELMOS/spotify-analytics-etl-pipeline" target="_blank" rel="noopener noreferrer" data-t="proj.spotify.link1">View project →</a></div>
-        </article>
-        <article class="card" data-project-type="MLOps">
-          <div class="c-top"><span class="c-type" data-t="type.mlops">MLOps</span><span class="c-metric" data-t="proj.abodi.metric">F1 0.89 · synthetic</span></div>
-          <h3 class="p-name serif">Abodi ML · LegalTech</h3>
-          <span class="p-badge" data-t="proj.abodi.badge">POC · Synthetic data</span>
-          <p class="p-tag" data-t="proj.abodi.tag">Flags court cases at risk of missing legal deadlines so lawyers can act first.</p>
-          <p class="p-desc" data-t="proj.abodi.desc">Proof of concept evaluated on synthetic data modelled from business rules; it achieved F1 0.89 in that synthetic evaluation. The XGBoost classifier includes MLflow, FastAPI serving, Docker Compose, Prometheus + Grafana monitoring and CI/CD.</p>
-          <div class="p-tech"><span>XGBoost</span><span>FastAPI</span><span>MLflow</span><span>Prometheus</span></div>
-          <div class="p-links"><a href="https://github.com/SEBASBELMOS/abodi_ml" target="_blank" rel="noopener noreferrer" data-t="proj.abodi.link1">View project →</a></div>
-        </article>
-        <article class="card" data-project-type="Product">
-          <div class="c-top"><span class="c-type" data-t="type.product">Product</span><span class="c-metric" data-t="proj.echoform.metric">content → assets</span></div>
-          <h3 class="p-name serif">EchoForm</h3>
-          <span class="p-badge" data-t="proj.echoform.badge">In development</span>
-          <p class="p-tag" data-t="proj.echoform.tag">A content repurposing system that turns transcripts into structured, editable content assets for creators and digital teams.</p>
-          <p class="p-desc" data-t="proj.echoform.desc">It organises a transcript into editable outputs like content briefs, post variants, a Markdown article or a shorts plan, keeping human review and brand context at the centre before anything is published. Currently in development.</p>
-          <div class="p-tech"><span>AI agents</span><span>Supabase</span><span>Human-in-the-loop</span></div>
-        </article>
-        <article class="card" data-project-type="Product">
-          <div class="c-top"><span class="c-type" data-t="type.product">Product</span><span class="c-metric" data-t="proj.deutsch.metric">full-stack AI</span></div>
-          <h3 class="p-name serif">DeutschLernen</h3>
-          <p class="p-tag" data-t="proj.deutsch.tag">A full-stack AI web app for learning German.</p>
-          <p class="p-desc" data-t="proj.deutsch.desc">Built solo: Express backend + single-file vanilla-JS frontend, LLM role-play and correction (Groq), AssemblyAI voice input and a Leitner spaced-repetition system with account sync.</p>
-          <div class="p-tech"><span>Node.js</span><span>Express</span><span>Groq</span><span>AssemblyAI</span></div>
-          <div class="p-links"><a href="https://github.com/SEBASBELMOS/deutschlernen" target="_blank" rel="noopener noreferrer" data-t="proj.deutsch.link1">View project →</a></div>
-        </article>
-        <article class="card" data-project-type="Applied ML">
-          <div class="c-top"><span class="c-type" data-t="type.ml">Applied ML</span><span class="c-metric" data-t="proj.happiness.metric">R² 0.8639</span></div>
-          <h3 class="p-name serif">Global Happiness ML</h3>
-          <p class="p-tag" data-t="proj.happiness.tag">Predicts how happy a country is from its economic and social data.</p>
-          <p class="p-desc" data-t="proj.happiness.desc">Regression pipeline across 164 countries with Random Forest selection, PostgreSQL traceability and a real-time Kafka streaming architecture for prediction events.</p>
-          <div class="p-tech"><span>scikit-learn</span><span>Kafka</span><span>PostgreSQL</span><span>Docker</span></div>
-          <div class="p-links"><a href="https://github.com/SEBASBELMOS/world-happiness-ml-pipeline" target="_blank" rel="noopener noreferrer" data-t="proj.happiness.link1">View project →</a></div>
-        </article>
-        <article class="card" data-project-type="BI">
-          <div class="c-top"><span class="c-type" data-t="type.bi">BI</span><span class="c-metric" data-t="proj.colombia.metric">live</span></div>
-          <h3 class="p-name serif">Colombia Graduates Dashboard</h3>
-          <p class="p-tag" data-t="proj.colombia.tag">An interactive dashboard on what fields Colombians graduate in and where.</p>
-          <p class="p-desc" data-t="proj.colombia.desc">Live Looker Studio dashboard on official SNIES / datos.gov.co open data, analysing higher-education graduates (2016–2020) by field, level and region.</p>
-          <div class="p-tech"><span>Looker Studio</span><span>Data Viz</span><span>Open data</span></div>
-          <div class="p-links"><a href="https://lookerstudio.google.com/reporting/fbf76da4-9963-4152-937b-44ca32ae93b8/page/p_uounofjj1c" target="_blank" rel="noopener noreferrer" data-t="proj.colombia.link1">Live →</a><a href="https://github.com/SEBASBELMOS/colombia-graduates-dashboard" target="_blank" rel="noopener noreferrer" data-t="proj.colombia.link2">Repo →</a></div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- TESTIMONIALS -->
-  <section class="block" id="testimonials">
-    <div class="wrap">
-      <div class="sec-head reveal"><span class="eyebrow" data-t="tst.eyebrow">What people say</span><h2 class="sec-title" data-t="tst.title">Trusted by the people I've built with.</h2></div>
-      <div class="tst-grid reveal">
-        <a href="https://www.linkedin.com/in/juan-andr%C3%A9s-ruiz-24b187279/" target="_blank" rel="noopener noreferrer" class="tst-link"><figure class="tst"><blockquote data-t="tst.q1">When Sebastian speaks, the rest of us listen. A leader inside and outside projects. One of the best people a company could have.</blockquote><figcaption><b>Juan Andrés Ruiz</b><span data-t="tst.r1">Data Scientist &amp; Data Engineer</span></figcaption></figure></a>
-        <a href="https://www.linkedin.com/in/mitgar14/" target="_blank" rel="noopener noreferrer" class="tst-link"><figure class="tst"><blockquote data-t="tst.q2">Sebastian's projects inspired ideas I later built with other teams. Discipline, passion and commitment. One of the brightest minds in our programme.</blockquote><figcaption><b>Martín García</b><span data-t="tst.r2">Data Engineer &amp; Business Analyst</span></figcaption></figure></a>
-        <a href="https://www.linkedin.com/in/gabriel-eduardo-martinez-martinez-a12068267/" target="_blank" rel="noopener noreferrer" class="tst-link"><figure class="tst"><blockquote data-t="tst.q3">His attitude and ability to adapt have been key to our projects' success; his commitment always ensures the expected results.</blockquote><figcaption><b>Gabriel Martínez</b><span data-t="tst.r3">Co-Founder, Abodi</span></figcaption></figure></a>
-      </div>
-    </div>
-  </section>
-
-  <!-- METHOD -->
-  <section class="block" id="method">
-    <div class="wrap">
-      <div class="sec-head reveal"><span class="eyebrow" data-t="method.eyebrow">How I work</span><h2 class="sec-title" data-t="method.title">From unclear inputs to a system your team can own.</h2></div>
-      <div class="method-grid reveal">
-        <div class="step"><span class="n">01</span><h3 data-t="m1.h">Understand the problem</h3><p data-t="m1.p">Map the decision, users, sources and current manual work before choosing tools.</p></div>
-        <div class="step"><span class="n">02</span><h3 data-t="m2.h">Build the data foundation</h3><p data-t="m2.p">Clean, model and validate the information so the result can be trusted.</p></div>
-        <div class="step"><span class="n">03</span><h3 data-t="m3.h">Automate the repeatable work</h3><p data-t="m3.p">Use Python, SQL, Airflow, n8n or AI only where they make the process more reliable.</p></div>
-        <div class="step"><span class="n">04</span><h3 data-t="m4.h">Ship with proof</h3><p data-t="m4.p">Deliver tests, documentation and a clear handover instead of leaving a black box.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- STACK -->
-  <section class="block alt" id="stack">
-    <div class="wrap">
-      <div class="sec-head reveal"><span class="eyebrow" data-t="stack.eyebrow">Stack</span><h2 class="sec-title" data-t="stack.title">What I use.</h2></div>
-      <div class="stack-grid reveal">
-        <div class="stack-col"><h3 data-t="stack.h1">Data engineering</h3><div class="chips"><span class="chip">Python</span><span class="chip">SQL</span><span class="chip">PostgreSQL</span><span class="chip">Apache Airflow</span><span class="chip">Docker</span></div></div>
-        <div class="stack-col"><h3 data-t="stack.h2">Business intelligence</h3><div class="chips"><span class="chip">Power BI</span><span class="chip">Looker Studio</span><span class="chip">KPI modelling</span><span class="chip">Data Storytelling</span></div></div>
-        <div class="stack-col"><h3 data-t="stack.h3">Production &amp; MLOps</h3><div class="chips"><span class="chip">FastAPI</span><span class="chip">React</span><span class="chip">GCP</span><span class="chip">HF Spaces</span><span class="chip">Git</span><span class="chip">GitHub Actions</span><span class="chip">CI/CD</span></div></div>
-        <div class="stack-col"><h3 data-t="stack.h4">Automation</h3><div class="chips"><span class="chip">n8n</span><span class="chip">Claude Code</span><span class="chip">Codex</span><span class="chip">OpenCode</span><span class="chip">Hugging Face</span></div></div>
-        <div class="stack-col"><h3 data-t="stack.h5">Communication</h3><div class="chips"><span class="chip" data-t="stack.comm1">Spanish native</span><span class="chip" data-t="stack.comm2">English C2</span><span class="chip" data-t="stack.comm3">German A2</span><span class="chip" data-t="stack.comm4">Technical documentation</span><span class="chip" data-t="stack.comm5">Teaching &amp; stakeholder communication</span></div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- EDUCATION -->
-  <section class="block" id="education">
-    <div class="wrap">
-      <div class="sec-head reveal"><span class="eyebrow" data-t="edu.eyebrow">Background</span><h2 class="sec-title" data-t="edu.title">Education &amp; certifications.</h2></div>
-      <div class="edu-grid reveal">
-        <div class="edu-col">
-          <h3 data-t="edu.h1">Education</h3>
-          <div class="edu-item"><span class="y">2023–2026</span><div class="t"><span data-t="edu.deg1">Data &amp; AI Engineering</span></div><div class="s">Universidad Autónoma de Occidente (UAO)</div></div>
-          <div class="edu-item"><span class="y">2024</span><div class="t" data-t="edu.bootcamp">AI Bootcamp</div><div class="s">Universidad Tecnológica de Pereira</div></div>
-          <div class="edu-item"><span class="y">2022</span><div class="t" data-t="edu.dsa"><a href="https://www.credential.net/2217d97b-4f00-4bae-bd3c-d862c8e89fa8#acc.smEH7PVl" target="_blank" rel="noopener noreferrer">DS4A · Data Analytics <span style="color:var(--gold)">· honours</span></a></div><div class="s">Correlation One</div></div>
-        </div>
-        <div class="edu-col">
-          <h3 data-t="edu.h2">Certifications</h3>
-          <div class="cert-chips">
-            <span class="chip">EF SET · English C2</span><span class="chip">Python &amp; SQL · Talently</span><span class="chip">MLOps</span><span class="chip">Power BI</span><span class="chip">Data Viz for BI · Platzi</span><span class="chip">Google Cybersecurity</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- LEARN -->
-  <section class="block alt" id="learn">
-    <div class="wrap">
-      <div class="sec-head reveal">
-        <span class="eyebrow" data-t="learn.eyebrow">Learn with me</span>
-        <h2 class="sec-title" data-t="learn.title">Practical lessons on Data, AI and building an online career.</h2>
-        <p class="sec-body" data-t="learn.body">I share what I learn while building real projects, using AI-assisted development tools and navigating early-career decisions, without pretending there is one perfect roadmap.</p>
-      </div>
-      <div class="svc-grid reveal">
-        <article class="svc"><h3 data-t="learn.card1.h">Start in Data &amp; AI</h3><p data-t="learn.card1.p">Clear explanations about roles, learning paths, core skills and what beginners should prioritise.</p></article>
-        <article class="svc"><h3 data-t="learn.card2.h">Build projects with AI</h3><p data-t="learn.card2.p">Practical workflows with Claude Code, Codex, OpenCode and other tools, including what still requires human judgement.</p></article>
-        <article class="svc"><h3 data-t="learn.card3.h">Build online opportunities</h3><p data-t="learn.card3.p">Honest lessons from portfolio building, LinkedIn, freelancing, online teaching and trying to create sustainable remote work.</p></article>
-      </div>
-      <div class="hero-cta" style="margin-top:36px">
-        <a class="btn btn-gold" href="https://www.youtube.com/@sebasbelmos" target="_blank" rel="noopener noreferrer" data-cta="learn-youtube" data-t="learn.cta1">Watch on YouTube →</a>
-        <a class="btn btn-ghost" href="https://www.linkedin.com/in/sebasbelmos/" target="_blank" rel="noopener noreferrer" data-cta="learn-linkedin" data-t="learn.cta2">Follow on LinkedIn →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- NEXT STEP -->
-  <section class="block" id="next-step">
-    <div class="wrap">
-      <div class="sec-head reveal"><span class="eyebrow" data-t="next.eyebrow">Choose your next step</span><h2 class="sec-title" data-t="next.title">Work together, consider me for a role, or learn with me.</h2></div>
-      <div class="svc-grid reveal">
-        <article class="svc">
-          <h3 data-t="next.route1.h">Hire me for a project</h3>
-          <p data-t="next.route1.p">Need a data pipeline, dashboard, reporting workflow or practical AI tool? Tell me what is currently manual, unclear or difficult to maintain.</p>
-          <div style="margin-top:20px"><a class="btn btn-gold" id="nextProjectCta" href="mailto:&#115;&#101;&#98;&#97;&#115;&#98;&#101;&#108;&#109;&#111;&#115;&#100;&#101;&#118;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;?subject=Project%20enquiry%3A%20Sebastian%20Belalcazar" data-cta="project-enquiry" data-t="next.route1.cta">Discuss a project →</a></div>
-        </article>
-        <article class="svc">
-          <h3 data-t="next.route2.h">Consider me for a role</h3>
-          <p data-t="next.route2.p">I am open to Data, Analytics, Data Engineering and practical AI opportunities where I can build, learn and communicate clearly.</p>
-          <div class="btn-row">
-            <a class="btn btn-ghost" href="assets/SEBASTIAN_BELALCAZAR_MOSQUERA.pdf" download data-cta="role-cv" data-t="next.route2.cta1">Download CV</a>
-            <a class="btn btn-ghost" href="https://www.linkedin.com/in/sebasbelmos/" target="_blank" rel="noopener noreferrer" data-cta="role-linkedin" data-t="next.route2.cta2">View LinkedIn →</a>
-          </div>
-        </article>
-        <article class="svc">
-          <h3 data-t="next.route3.h">Learn with me</h3>
-          <p data-t="next.route3.p">Follow practical content on Data, AI-assisted projects, career decisions and building online opportunities.</p>
-          <div style="margin-top:20px"><a class="btn btn-ghost" href="https://www.youtube.com/@sebasbelmos" target="_blank" rel="noopener noreferrer" data-cta="learn-youtube" data-t="next.route3.cta">Visit YouTube →</a></div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="contact" id="contact">
-    <div class="wrap">
-      <span class="eyebrow" data-t="contact.eyebrow">Let's work together</span>
-      <h2 class="serif" data-t="contact.h2">Have something specific in mind?</h2>
-      <p data-t="contact.p">Send me a short message and I’ll tell you honestly whether I can help.</p>
-      <div class="contact-cta">
-        <a class="btn btn-gold" href="mailto:&#115;&#101;&#98;&#97;&#115;&#98;&#101;&#108;&#109;&#111;&#115;&#100;&#101;&#118;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;?subject=Let's%20work%20together" data-cta="footer-email" data-t="contact.cta1">Email me</a>
-        <a class="btn btn-ghost" href="https://www.linkedin.com/in/sebasbelmos/" target="_blank" rel="noopener noreferrer">LinkedIn →</a>
-        <a class="btn btn-ghost" href="https://github.com/SEBASBELMOS" target="_blank" rel="noopener noreferrer">GitHub →</a>
-      </div>
-      <button class="email-line" id="copyEmail" type="button">&#115;&#101;&#98;&#97;&#115;&#98;&#101;&#108;&#109;&#111;&#115;&#100;&#101;&#118;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109; <span class="cp" aria-live="polite" data-t="contact.copy">copy</span></button>
-    </div>
-  </section>
-</main>
-
-<footer>
-  <div class="wrap foot-in">
-    <span>© <span id="yr"></span> Sebastian Belalcazar · <span data-t="role">Data &amp; AI Engineer</span></span>
-    <span class="foot-links">
-      <a href="https://github.com/SEBASBELMOS" target="_blank" rel="noopener noreferrer">GitHub</a>
-      <a href="https://www.linkedin.com/in/sebasbelmos/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-    </span>
-  </div>
-</footer>
-
-<script>
-/* ---------- i18n: Spanish (Colombia, neutral) ---------- */
-const ES={
-  "skip":"Ir a proyectos destacados",
-  "role":"Ingeniero de Datos e IA",
-  "nav.about":"Sobre mí","nav.services":"Capacidades","nav.work":"Proyectos","nav.stack":"Stack","nav.learn":"Aprende","nav.cta":"Hablemos",
-
-  "hero.h1":"<span class='reveal-line d1'><span>Convierto los datos</span></span><span class='reveal-line d2'><span>complejos en sistemas</span></span><span class='reveal-line d3'><span>que ayudan a tomar</span></span><span class='reveal-line d4'><span><em>mejores decisiones</em>.</span></span>",
-  "hero.sub":"Construyo pipelines de datos, dashboards y herramientas con IA, desde sistemas internos hasta automatizaciones para <b>creadores, negocios de educación online y equipos digitales</b>.",
-  "hero.cta1":"Ver proyectos","hero.cta2":"Hablemos →",
-  "proof.l1":"ofertas de empleo procesadas","proof.d1":"Pipeline analítico end-to-end",
-  "proof.l2":"de datos satelitales procesados","proof.d2":"Pipeline de producción de GeoVision",
-  "proof.l3":"estudiantes internacionales","proof.d3":"Comunicación clara entre culturas",
-  "proof.l4":"inglés · español nativo","proof.d4":"Nivel certificado por EF SET",
-  "pos.eyebrow":"Sobre mí",
-  "pos.facts":"<li>Ingeniero de Datos e IA voluntario en <b>JurisIntel</b> (NLP LegalTech)</li><li>Ingeniero de Datos e IA, terminando mi carrera en la UAO</li><li>Sistemas end-to-end: ingesta → transformación → analítica → entrega</li><li>Experiencia de producción con FastAPI, React, Docker, pruebas y CI/CD</li><li>Desarrollo asistido por IA con Claude Code, Codex y OpenCode, siempre con revisión humana</li><li>Español nativo · inglés C2 · alemán A2</li>",
-  "pos.lead":"Construyo productos de datos <b>técnicamente sólidos, bien explicados y útiles</b> para las personas que realmente operan el negocio.",
-  "pos.p1":"Combino ingeniería de datos, business intelligence e IA práctica para convertir información dispersa y procesos manuales en sistemas que un equipo pueda entender, mantener y mejorar.",
-  "pos.p2":"Mi experiencia enseñando online también ha influido en mi forma de trabajar. Después de enseñar a más de 60 estudiantes internacionales, aprendí a explicar ideas complejas con claridad, adaptarme a personas diferentes y crear ciclos de retroalimentación útiles. Aplico ese mismo enfoque en los proyectos técnicos, la documentación y las conversaciones con las personas involucradas.",
-  "svc.eyebrow":"Capacidades","svc.title":"Sistemas prácticos que funcionan.","svc.body":"Especialmente interesado en proyectos para creadores, negocios de educación online y equipos digitales.",
-  "svc1.h":"Sistemas de datos y decisión","svc1.p":"Pipelines, dashboards, análisis y sistemas de reporting que convierten información dispersa en conocimiento útil para tomar mejores decisiones.",
-  "svc2.h":"Sistemas con IA y automatización","svc2.p":"Workflows enfocados en reducir tareas repetitivas, organizar conocimiento, conectar herramientas y aplicar IA manteniendo la revisión humana en el centro.",
-  "svc3.h":"Herramientas internas y prototipos","svc3.p":"Aplicaciones internas y prototipos diseñados para validar ideas, mejorar procesos y construir soluciones prácticas antes de invertir en plataformas más grandes.",
-  "case.eyebrow":"Caso principal","case.title":"GeoAI a escala de ciudad, desplegado y probado.",
-  "case.team":"Equipo de 3 · datos, backend y frontend",
-  "case.p":"Un sistema desplegado en producción que estima NO₂, SO₂ y O₃ en ~380 km² de Cali sobre una grilla de 1.920 celdas, con horizontes de un día. Me encargué de la ingeniería de datos (5 fuentes satelitales/terrestres hacia Zarr/Parquet), el backend en FastAPI, el frontend en React + Leaflet, Docker, las pruebas, el despliegue y la documentación.",
-  "case.link1":"Ver demo en vivo →","case.link2":"Docs de la API →","case.link3":"Ver proyecto →","case.wake":"La demo puede tardar unos segundos en activarse.",
-  "case.dt1":"Precisión","case.dt2":"Pruebas","case.dt3":"Latencia","case.dt4":"Datos",
-  "work.eyebrow":"Proyectos seleccionados","work.title":"El trabajo detrás de los números.",
-  "filter.all":"Todos","type.dataeng":"Ingeniería de datos","type.mlops":"MLOps","type.product":"Producto","type.ml":"ML aplicado","type.bi":"BI",
-  "proj.linkedin.metric":"123K+","proj.linkedin.tag":"Revela tendencias de contratación, habilidades y salarios desde 123K+ ofertas de empleo.",
-  "proj.linkedin.desc":"Pipeline end-to-end hacia un warehouse PostgreSQL en esquema estrella (desplegable en GCP, AWS RDS o Supabase), orquestado con Apache Airflow en capas raw → cleaned → analytics.",
-  "proj.linkedin.link1":"Ver proyecto →",
-  "proj.spotify.metric":"−28,6% dup.","proj.spotify.tag":"Limpieza y análisis de 114K+ registros musicales para insights de streaming.",
-  "proj.spotify.desc":"ETL de producción que integra tracks de Spotify y registros de los Grammy, orquestado con Airflow en GCP con agendamiento diario, monitoreo y manejo de errores; 81.941 filas enriquecidas.",
-  "proj.spotify.link1":"Ver proyecto →",
-  "proj.abodi.metric":"F1 0,89 · sintético","proj.abodi.badge":"POC · Datos sintéticos","proj.abodi.tag":"Detecta procesos judiciales en riesgo de vencer términos para que los abogados actúen a tiempo.",
-  "proj.abodi.desc":"Prueba de concepto evaluada con datos sintéticos construidos a partir de reglas de negocio; obtuvo un F1 de 0,89 en esa evaluación sintética. El clasificador XGBoost incluye MLflow, servicio con FastAPI, Docker Compose, monitoreo con Prometheus + Grafana y CI/CD.",
-  "proj.abodi.link1":"Ver proyecto →",
-  "proj.deutsch.metric":"full-stack IA","proj.deutsch.tag":"Una app web full-stack con IA para aprender alemán.",
-  "proj.deutsch.desc":"Desarrollada en solitario: backend en Express + frontend vanilla-JS de un archivo, chat y corrección con LLM (Groq), entrada por voz con AssemblyAI y repetición espaciada (Leitner) con sincronización de cuenta.",
-  "proj.deutsch.link1":"Ver proyecto →",
-  "proj.echoform.metric":"contenido → activos","proj.echoform.badge":"En desarrollo",
-  "proj.echoform.tag":"Un sistema de reutilización de contenido que transforma transcripciones en activos estructurados y editables para creadores y equipos digitales.",
-  "proj.echoform.desc":"Organiza una transcripción en salidas editables como content briefs, variantes de publicaciones, un artículo en Markdown o un plan de Shorts, manteniendo la revisión humana y el contexto de marca en el centro antes de publicar. Actualmente en desarrollo.",
-  "proj.happiness.metric":"R² 0,8639","proj.happiness.tag":"Predice qué tan feliz es un país a partir de sus datos económicos y sociales.",
-  "proj.happiness.desc":"Pipeline de regresión sobre 164 países con selección de Random Forest, trazabilidad en PostgreSQL y una arquitectura de streaming en tiempo real con Kafka para los eventos de predicción.",
-  "proj.happiness.link1":"Ver proyecto →",
-  "proj.colombia.metric":"en vivo","proj.colombia.tag":"Un dashboard interactivo sobre en qué campos y dónde se gradúan los colombianos.",
-  "proj.colombia.desc":"Dashboard en vivo en Looker Studio sobre datos abiertos oficiales del SNIES / datos.gov.co, analizando graduados de educación superior (2016–2020) por área, nivel y región.",
-  "proj.colombia.link1":"En vivo →","proj.colombia.link2":"Repo →",
-  "method.eyebrow":"Cómo trabajo","method.title":"De información dispersa a un sistema que tu equipo pueda mantener.",
-  "m1.h":"Entender el problema","m1.p":"Entender la decisión, las personas, las fuentes y el trabajo manual actual antes de elegir herramientas.",
-  "m2.h":"Construir la base de los datos","m2.p":"Limpiar, modelar y validar la información para que el resultado sea confiable.",
-  "m3.h":"Automatizar lo repetible","m3.p":"Usar Python, SQL, Airflow, n8n o IA solamente donde hagan el proceso más confiable.",
-  "m4.h":"Lanzar con pruebas","m4.p":"Entregar pruebas, documentación y una transferencia clara, en lugar de dejar una caja negra.",
-  "stack.eyebrow":"Stack","stack.title":"Lo que uso.",
-  "stack.h1":"Ingeniería de datos","stack.h2":"Business intelligence","stack.h3":"Producción y MLOps","stack.h4":"Automatización","stack.h5":"Comunicación",
-  "stack.comm1":"Español nativo","stack.comm2":"Inglés C2","stack.comm3":"Alemán A2","stack.comm4":"Documentación técnica","stack.comm5":"Enseñanza y comunicación con stakeholders",
-  "contact.eyebrow":"Trabajemos juntos",
-  "contact.h2":"¿Tienes algo específico en mente?",
-  "contact.p":"Envíame un mensaje corto y te diré con honestidad si puedo ayudarte.",
-  "contact.cta1":"Escríbeme","contact.copy":"copiar",
-  "learn.eyebrow":"Aprende conmigo","learn.title":"Aprendizajes prácticos sobre datos, IA y cómo construir una carrera online.",
-  "learn.body":"Comparto lo que aprendo mientras construyo proyectos reales, uso herramientas de desarrollo asistido por IA y tomo decisiones al inicio de mi carrera, sin vender la idea de que existe un camino perfecto.",
-  "learn.card1.h":"Empieza en Data e IA","learn.card1.p":"Explicaciones claras sobre roles, rutas de aprendizaje, habilidades fundamentales y qué debería priorizar alguien que está empezando.",
-  "learn.card2.h":"Construye proyectos con IA","learn.card2.p":"Flujos prácticos con Claude Code, Codex, OpenCode y otras herramientas, incluyendo lo que todavía necesita criterio humano.",
-  "learn.card3.h":"Construye oportunidades online","learn.card3.p":"Aprendizajes honestos sobre portafolio, LinkedIn, freelancing, enseñanza online y la búsqueda de un trabajo remoto sostenible.",
-  "learn.cta1":"Ver en YouTube →","learn.cta2":"Seguir en LinkedIn →",
-  "next.eyebrow":"Elige el siguiente paso","next.title":"Trabajemos juntos, considera mi perfil para un rol o aprende conmigo.",
-  "next.route1.h":"Trabajemos en un proyecto","next.route1.p":"¿Necesitas un pipeline de datos, un dashboard, un flujo de reportería o una herramienta práctica con IA? Cuéntame qué proceso es manual, confuso o difícil de mantener.","next.route1.cta":"Hablemos del proyecto →",
-  "next.route2.h":"Revisa mi perfil","next.route2.p":"Estoy abierto a oportunidades en Data, Analytics, Ingeniería de Datos e IA práctica donde pueda construir, aprender y comunicar con claridad.","next.route2.cta1":"Descargar CV","next.route2.cta2":"Ver LinkedIn →",
-  "next.route3.h":"Aprende conmigo","next.route3.p":"Sigue contenido práctico sobre datos, proyectos asistidos por IA, decisiones de carrera y cómo construir oportunidades online.","next.route3.cta":"Ir a YouTube →",
-  "tst.eyebrow":"Lo que otros dicen","tst.title":"La confianza de quienes han construido conmigo.",
-  "tst.q1":"Cuando Sebastian habla, los demás escuchamos. Un líder dentro y fuera de los proyectos, y de las mejores personas que una empresa podría tener.",
-  "tst.q2":"Los proyectos de Sebastián fueron inspiración para ideas que luego desarrollé con otros equipos. Disciplina, pasión y compromiso: una de las mentes más brillantes de la carrera.",
-  "tst.q3":"Su actitud y capacidad para adaptarse han sido clave para el éxito de nuestros proyectos; su compromiso asegura siempre los resultados esperados.",
-  "tst.r1":"Científico de Datos e Ingeniero de Datos","tst.r2":"Ingeniero de Datos y Analista de Negocios","tst.r3":"Cofundador de Abodi",
-  "edu.deg1":"Ingeniería de Datos e IA","edu.bootcamp":"Bootcamp de IA","edu.dsa":"<a href=\"https://www.credential.net/2217d97b-4f00-4bae-bd3c-d862c8e89fa8#acc.smEH7PVl\" target=\"_blank\" rel=\"noopener noreferrer\">DS4A · Analítica de datos <span style=\"color:var(--gold)\">· honores</span></a>","edu.eyebrow":"Formación","edu.title":"Educación y certificaciones.","edu.h1":"Educación","edu.h2":"Certificaciones",
-};
-
-/* ---------- work filtering (static semantic cards, show/hide only) ---------- */
-let lang='en';
-const filtersEl=document.getElementById('filters');
-const projectCards=[...document.querySelectorAll('#pgrid .card')];
-let activeFilter='All';
-function applyFilter(){
-  projectCards.forEach(c=>{c.style.display=(activeFilter==='All'||c.dataset.projectType===activeFilter)?'':'none'});
-  filtersEl.querySelectorAll('button').forEach(b=>{
-    const isActive=b.dataset.filter===activeFilter;
-    b.classList.toggle('active',isActive);
-    b.setAttribute('aria-pressed',isActive?'true':'false');
-  });
-}
-filtersEl.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;activeFilter=b.dataset.filter;applyFilter()});
-
-/* ---------- language switch ---------- */
-const tEls=[...document.querySelectorAll('[data-t]')],enCache={};
-tEls.forEach(el=>enCache[el.dataset.t]=el.innerHTML);
-const heroImg=document.querySelector('.hero-photo img');
-const langToggleEl=document.querySelector('.lang-toggle');
-const metaDesc=document.querySelector('meta[name="description"]');
-const ogTitle=document.querySelector('meta[property="og:title"]');
-const ogDesc=document.querySelector('meta[property="og:description"]');
-const twitterTitle=document.querySelector('meta[name="twitter:title"]');
-const twitterDesc=document.querySelector('meta[name="twitter:description"]');
-const nextProjectCta=document.getElementById('nextProjectCta');
-const cpBtn=document.getElementById('copyEmail');
-const menu=document.getElementById('menu'),navlinks=document.getElementById('navlinks');
-const META={
-  en:{title:'Sebastian Belalcazar | Data & AI Engineer',description:'Data & AI Engineer building reliable data pipelines, clear dashboards and practical AI systems. Explore selected projects and practical content on Data, AI and online careers.',social:'Reliable data pipelines, clear dashboards and practical AI systems, backed by deployed projects, measurable proof and clear communication.'},
-  es:{title:'Sebastian Belalcazar | Ingeniero de Datos e IA',description:'Ingeniero de Datos e IA que construye pipelines confiables, dashboards claros y sistemas prácticos con IA. Proyectos reales y contenido sobre Data, IA y carreras online.',social:'Pipelines de datos confiables, dashboards claros y sistemas prácticos con IA, respaldados por proyectos, evidencia medible y comunicación clara.'}
-};
-const MENU_LABELS={en:{open:'Open navigation menu',close:'Close navigation menu'},es:{open:'Abrir menú de navegación',close:'Cerrar menú de navegación'}};
-const COPY_FEEDBACK={en:{ok:'copied!',error:'copy failed'},es:{ok:'¡copiado!',error:'no se pudo copiar'}};
-function updateMenuButton(){
-  const open=navlinks.classList.contains('open');
-  menu.setAttribute('aria-expanded',open?'true':'false');
-  menu.setAttribute('aria-label',MENU_LABELS[lang][open?'close':'open']);
-  menu.textContent=open?'×':'☰';
-}
-function setMenuOpen(open,{restoreFocus=false}={}){
-  navlinks.classList.toggle('open',open);
-  updateMenuButton();
-  if(!open&&restoreFocus)menu.focus();
-}
-function applyLang(l){
-  lang=l==='es'?'es':'en';document.documentElement.lang=lang;
-  tEls.forEach(el=>{const k=el.dataset.t,v=lang==='es'?ES[k]:enCache[k];if(v!=null)el.innerHTML=v});
-  applyFilter();
-  document.querySelectorAll('.lang-btn').forEach(b=>{b.classList.toggle('active',b.dataset.l===lang);b.setAttribute('aria-pressed',b.dataset.l===lang)});
-  document.title=META[lang].title;
-  if(metaDesc)metaDesc.setAttribute('content',META[lang].description);
-  if(ogTitle)ogTitle.setAttribute('content',META[lang].title);
-  if(ogDesc)ogDesc.setAttribute('content',META[lang].social);
-  if(twitterTitle)twitterTitle.setAttribute('content',META[lang].title);
-  if(twitterDesc)twitterDesc.setAttribute('content',META[lang].social);
-  if(langToggleEl)langToggleEl.setAttribute('aria-label',lang==='es'?'Selector de idioma':'Language selector');
-  if(heroImg)heroImg.alt=lang==='es'?'Retrato de Sebastian Belalcazar':'Portrait of Sebastian Belalcazar';
-  updateMenuButton();
-  if(nextProjectCta){
-    const subject=lang==='es'?'Consulta de proyecto: Sebastian Belalcazar':'Project enquiry: Sebastian Belalcazar';
-    nextProjectCta.href=`mailto:${atob('c2ViYXNiZWxtb3NkZXZAZ21haWwuY29t')}?subject=${encodeURIComponent(subject)}`;
-  }
-  try{localStorage.setItem('lang',lang)}catch(e){}
-}
-document.querySelector('.lang-toggle').addEventListener('click',e=>{const b=e.target.closest('.lang-btn');if(b)applyLang(b.dataset.l)});
-let saved;try{saved=localStorage.getItem('lang')}catch(e){}
-applyLang((saved==='en'||saved==='es')?saved:((navigator.language||'en').toLowerCase().startsWith('es')?'es':'en'));
-document.getElementById('yr').textContent=new Date().getFullYear();
-
-/* ---------- copy email ---------- */
-async function copyText(text){
-  if(navigator.permissions?.query){
-    try{const permission=await navigator.permissions.query({name:'clipboard-write'});if(permission.state==='denied')throw new Error('clipboard-denied')}
-    catch(e){if(e.message==='clipboard-denied')throw e}
-  }
-  if(navigator.clipboard?.writeText&&window.isSecureContext){await navigator.clipboard.writeText(text);return}
-  const field=document.createElement('textarea');field.value=text;field.setAttribute('readonly','');field.style.position='fixed';field.style.opacity='0';
-  document.body.appendChild(field);field.select();const copied=document.execCommand('copy');field.remove();if(!copied)throw new Error('copy-failed');
-}
-if(cpBtn){const cp=cpBtn.querySelector('.cp');let resetTimer;cpBtn.addEventListener('click',async()=>{
-  clearTimeout(resetTimer);
-  try{await copyText(atob('c2ViYXNiZWxtb3NkZXZAZ21haWwuY29t'));cp.textContent=COPY_FEEDBACK[lang].ok}
-  catch(e){cp.textContent=COPY_FEEDBACK[lang].error}
-  resetTimer=setTimeout(()=>{cp.textContent=lang==='es'?ES['contact.copy']:enCache['contact.copy']},1800)})}
-
-/* ---------- nav + scroll progress + scrollspy ---------- */
-const nav=document.getElementById('nav');
-addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>20),{passive:true});
-const spyMap={};document.querySelectorAll('.nav-links a[href^="#"]').forEach(a=>{const id=a.getAttribute('href').slice(1);if(id!=='contact')spyMap[id]=a});
-const spy=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){Object.values(spyMap).forEach(a=>a.classList.remove('active'));const l=spyMap[e.target.id];if(l)l.classList.add('active')}}),{rootMargin:'-40% 0px -55% 0px'});
-Object.keys(spyMap).forEach(id=>{const el=document.getElementById(id);if(el)spy.observe(el)});
-menu.addEventListener('click',()=>setMenuOpen(!navlinks.classList.contains('open')));
-navlinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{setMenuOpen(false);setTimeout(()=>menu.focus(),0)}));
-document.addEventListener('keydown',e=>{if(e.key==='Escape'&&navlinks.classList.contains('open'))setMenuOpen(false,{restoreFocus:true})});
-
-/* ---------- cursor sheen ---------- */
-addEventListener('pointermove',e=>{document.documentElement.style.setProperty('--cx',e.clientX+'px');document.documentElement.style.setProperty('--cy',e.clientY+'px')},{passive:true});
-
-/* ---------- reveals ---------- */
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.14});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-
-/* ---------- signature gold prediction grid ---------- */
-const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
-function debounce(fn,wait){let t;return function(...args){clearTimeout(t);t=setTimeout(()=>fn.apply(this,args),wait)}}
-function makeGrid(canvas,opts){
-  if(!canvas)return;const ctx=canvas.getContext('2d');let W,H,cols,rows,cells=[],cw,DPR=Math.min(devicePixelRatio||1,2);
-  const cell=opts.cell||34,mouse={x:-999,y:-999};
-  function paintStatic(){ctx.clearRect(0,0,W,H);for(const c of cells){ctx.fillStyle=`rgba(201,162,75,${c.base+0.08})`;ctx.fillRect(c.px+1,c.py+1,cw-2,cw-2)}}
-  function build(){const r=canvas.getBoundingClientRect();W=r.width;H=r.height;canvas.width=W*DPR;canvas.height=H*DPR;ctx.setTransform(DPR,0,0,DPR,0,0);
-    cw=cell;cols=Math.ceil(W/cw)+1;rows=Math.ceil(H/cw)+1;cells=[];
-    for(let y=0;y<rows;y++)for(let x=0;x<cols;x++)cells.push({px:x*cw,py:y*cw,base:Math.random()*0.06,phase:Math.random()*6.28});
-    if(reduce)paintStatic()}
-  build();addEventListener('resize',debounce(build,150));
-  if(opts.mouse){canvas.addEventListener('mousemove',ev=>{const r=canvas.getBoundingClientRect();mouse.x=ev.clientX-r.left;mouse.y=ev.clientY-r.top});
-    canvas.addEventListener('mouseleave',()=>{mouse.x=mouse.y=-999})}
-  let t=0;
-  function draw(){t+=0.016;ctx.clearRect(0,0,W,H);const wave=(t*cw*1.1)%(W+H);
-    for(const c of cells){let a=c.base+0.05*(0.5+0.5*Math.sin(t*1.2+c.phase));
-      const d=Math.abs((c.px+c.py)-wave);if(d<60)a+=(1-d/60)*0.5;
-      if(opts.mouse&&mouse.x>-500){const dist=Math.hypot(c.px+cw/2-mouse.x,c.py+cw/2-mouse.y);if(dist<120)a+=(1-dist/120)*0.85}
-      a=Math.min(a,1);
-      if(a>0.02){ctx.fillStyle=`rgba(201,162,75,${a*0.5})`;ctx.fillRect(c.px+1,c.py+1,cw-2,cw-2);
-        if(a>0.45){ctx.strokeStyle=`rgba(232,217,168,${(a-0.45)*0.9})`;ctx.lineWidth=1;ctx.strokeRect(c.px+1,c.py+1,cw-2,cw-2)}}}
-    ctx.strokeStyle='rgba(201,162,75,0.05)';ctx.lineWidth=1;ctx.beginPath();
-    for(let x=0;x<=cols;x++){ctx.moveTo(x*cw,0);ctx.lineTo(x*cw,H)}for(let y=0;y<=rows;y++){ctx.moveTo(0,y*cw);ctx.lineTo(W,y*cw)}ctx.stroke();
-    if(running)requestAnimationFrame(draw)}
-  if(reduce)return; /* static frame painted by build() */
-  /* perf: animate only while the canvas is on screen and the tab is visible */
-  let running=false,inView=true;
-  function start(){if(running)return;running=true;requestAnimationFrame(draw)}
-  function stop(){running=false}
-  new IntersectionObserver(es=>es.forEach(e=>{inView=e.isIntersecting;(inView&&!document.hidden)?start():stop()}),{threshold:0}).observe(canvas);
-  document.addEventListener('visibilitychange',()=>document.hidden?stop():(inView&&start()));
-  start();
-}
-makeGrid(document.getElementById('grid-canvas'),{cell:38,mouse:true});
-makeGrid(document.getElementById('case-grid'),{cell:20,mouse:false});
-requestAnimationFrame(()=>document.body.classList.add('loaded'));
-</script>
-</body>
-</html>
+</body></html>

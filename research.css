@@ -1,0 +1,318 @@
+/* Research variant: a client-facing offer with evidence close to the decision. */
+.research-version .nav-shell{gap:20px}
+.research-version .nav-links{gap:22px;margin-right:8px}
+.research-version .nav-actions{gap:16px}
+.research-version .button-small{gap:12px}
+.research-version .hero{padding-top:54px;padding-bottom:54px;column-gap:48px}
+.research-version .hero h1{font-size:clamp(48px,4.7vw,68px);letter-spacing:-.055em;line-height:1.04}
+.research-version .hero-role{margin-top:24px}
+.research-version .hero-description{max-width:570px}
+.research-version .client-context{max-width:550px}
+{margin-top:0;padding:24px 20px 20px;box-shadow:0 15px 50px -35px #506a9155}
+{max-height:300px}
+.proof-strip{display:grid;grid-template-columns:1.6fr 1fr;gap:36px;align-items:center;border-block:1px solid var(--line);padding-block:30px}
+.proof-work>.eyebrow{letter-spacing:.06em}
+.proof-names{display:flex;flex-wrap:wrap;gap:20px 30px;margin-top:17px}
+.proof-names a{font:700 21px/1.3 var(--display);min-height:44px}
+.proof-names a>span{display:block;font:400 .875rem/1.5 var(--body);color:var(--muted);margin-top:5px}
+.proof-names a:hover{color:var(--gold-ink)}
+.proof-credentials{display:grid;gap:14px}
+.proof-credential{display:flex;align-items:center;gap:14px;padding:12px 16px;background:#fff;border:1px solid var(--line);border-radius:10px}
+.proof-credential>span:last-child{display:flex;flex-direction:column;gap:4px}
+.proof-credential strong{font-size:1rem;font-weight:600}
+.proof-credential>span:last-child>span{font-size:.875rem;color:var(--muted)}
+.proof-credential:hover{border-color:var(--gold);background:#fffdf7}
+.credential-mark{font:700 26px/1 var(--display);color:var(--gold-ink);width:34px;text-align:center;flex:none}
+.preply-mark{font-size:17px}
+.research-version .section{padding-block:86px}
+.research-version .approach-section .section-heading{align-items:flex-end}
+.research-version .section-heading h2{line-height:1.08}
+.research-version .section-intro{max-width:370px}
+.service-offers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.service-offer{display:flex;flex-direction:column;min-width:0;padding:28px;background:white;border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:14px}
+.offer-pain{font-size:.875rem;color:var(--gold-ink);font-weight:600;margin-bottom:14px;line-height:1.6}
+.service-offer h3{font-size:29px;letter-spacing:-.03em;line-height:1.12;min-height:2.25em}
+.offer-body{font-size:1rem;line-height:1.8;color:var(--muted);margin-top:20px}
+.offer-deliverables{list-style:none;padding:0;margin:22px 0;font-size:1rem;line-height:1.65}
+.offer-deliverables li{position:relative;padding-left:24px;margin-bottom:10px}
+.offer-deliverables li:before{content:'✓';position:absolute;left:0;color:var(--jade)}
+.offer-first{margin-top:auto;background:var(--paper);border-radius:9px;padding:16px}
+.offer-first strong{display:block;font-size:.875rem;margin-bottom:7px}
+.offer-first p{font-size:1rem;line-height:1.65;color:var(--muted)}
+.offer-stack{font-size:.875rem;line-height:1.7;color:var(--muted);margin:18px 0 10px}
+.offer-link{justify-content:space-between;gap:12px;font-size:1rem}
+.delivery-process{margin-top:52px;padding-top:34px;border-top:1px solid var(--line)}
+.delivery-process>h3{font-size:29px;letter-spacing:-.03em;margin-bottom:30px}
+.delivery-process ol{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:30px;list-style:none;margin:0;padding:0}
+.delivery-process li{display:flex;gap:14px;align-items:flex-start}
+.step-index{font:.875rem/1.6 var(--mono);color:var(--gold-ink);border-bottom:1px solid var(--gold);padding-bottom:5px}
+.delivery-process h4{font-size:1rem;line-height:1.5;font-weight:600;margin:0 0 9px}
+.delivery-process p{font-size:1rem;line-height:1.7;color:var(--muted)}
+.business-cases{display:grid;grid-template-columns:1fr 1fr;gap:24px;scroll-margin-top:20px}
+.business-case{padding:30px;border:1px solid #dcd8cc;border-radius:14px;background:linear-gradient(145deg,#fbf8ef,#f7f9fc);display:flex;flex-direction:column;min-width:0}
+.business-kicker{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.business-kicker>strong{font-size:1rem;font-weight:600}
+.business-kicker>span{font-size:.875rem;color:var(--muted)}
+.business-case h3{font-size:34px;letter-spacing:-.035em;line-height:1.1;margin-top:25px;max-width:430px}
+.business-flow{font-size:.875rem;color:var(--gold-ink);font-weight:600;line-height:1.7;margin:22px 0;padding-block:12px;border-block:1px solid #e4ddc9}
+.business-body{font-size:1rem;line-height:1.8;color:var(--muted)}
+.business-tools{font-size:.875rem;line-height:1.6;margin:20px 0;color:var(--muted)}
+.business-case .text-link{align-self:flex-start;margin-top:auto}
+.volunteer-note{display:flex;gap:28px;align-items:baseline;border-bottom:1px solid var(--line);padding:24px 0;margin-bottom:46px}
+.volunteer-note strong{min-width:160px;font-size:1rem}
+.volunteer-note p{font-size:1rem;color:var(--muted);line-height:1.7}
+.technical-heading{margin-bottom:22px;letter-spacing:.07em}
+.research-version .project-kicker{flex-wrap:wrap;gap:10px}
+.research-version .geo.featured{font-size:.875rem}
+.research-version .about-grid{align-items:start}
+.teaching-review{background:#fff;border:1px solid var(--line);border-radius:12px;padding:24px;margin-top:24px}
+.review-context{font-size:.875rem;font-weight:600;line-height:1.6;color:var(--gold-ink)}
+.teaching-review blockquote{font:700 24px/1.35 var(--display);letter-spacing:-.02em;margin:16px 0}
+.review-author{font-size:.875rem;color:var(--muted);margin-bottom:12px}
+.teaching-review .text-link{font-size:.875rem;gap:8px}
+.source-date{font-size:.875rem;line-height:1.5;color:var(--muted);margin-top:10px}
+.research-version .about-facts{gap:26px;flex-wrap:wrap}
+.research-version .about-facts>div{min-width:100px}
+.research-version .learn-section{gap:70px;grid-template-columns:1fr 1fr}
+.research-version .channel-link:first-child{padding:32px 20px;background:var(--gold-pale);border-radius:12px;border:1px solid #dcc88f;margin-bottom:10px}
+.research-version .social-channels{border-top:none}
+.research-version .channel-link:first-child .channel-icon{background:#fff9e9}
+.research-version .channel-link:first-child:hover{background:#eee0b7}
+.research-version .contact-section{padding:80px 0 36px;background:var(--ink)}
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px 70px;align-items:start}
+.research-version .contact-copy h2{font-size:clamp(26px,10cqi,62px);letter-spacing:-.045em;line-height:1.08;margin-top:20px}
+.contact-intro{font-size:1.125rem;line-height:1.8;color:#d4dce3;margin-top:26px;max-width:460px}
+.contact-next{margin-top:32px;border-left:2px solid var(--gold);padding-left:18px;max-width:440px}
+.contact-next h3{font-size:20px;line-height:1.3;margin-bottom:10px}
+.contact-next p{font-size:1rem;line-height:1.75;color:#d4dce3}
+.research-version .contact-note{grid-column:1/-1;margin:0;border-top:1px solid #ffffff24;padding-top:28px;color:#d4dce3;font-size:1rem;line-height:1.7}
+@media(max-width:1100px){
+  .research-version .nav-links{gap:16px;margin-right:0}
+  .research-version .nav-actions{gap:12px}
+  .research-version .button-small{font-size:.875rem;padding-inline:12px}
+  .service-offer{padding:22px}
+  .service-offer h3{font-size:26px}
+  .offer-link{font-size:.875rem}
+  .delivery-process ol{gap:20px}
+  .contact-grid{gap:40px;grid-template-columns:1fr 1.1fr}
+}
+@media(max-width:960px){
+  .research-version .hero{padding-top:42px;grid-template-columns:1fr}
+  .research-version .hero-copy{max-width:720px}
+  {margin-top:34px;max-width:600px}
+  .research-version .nav-links{gap:0;margin:0}
+  .research-version .nav-links a{padding:12px 10px}
+  .proof-strip{grid-template-columns:1fr;gap:26px}
+  .proof-credentials{grid-template-columns:1fr 1fr}
+  .service-offers{grid-template-columns:1fr}
+  .service-offer{display:grid;grid-template-columns:1fr 1fr;column-gap:30px;padding:28px}
+  .service-offer h3{grid-column:1;min-height:0;font-size:30px}
+  .offer-pain{grid-column:1/-1}
+  .offer-body{grid-column:1;grid-row:3;align-self:start}
+  .offer-deliverables{grid-column:2;grid-row:2/4;margin:0}
+  .offer-first{grid-column:1/-1;margin-top:22px}
+  .offer-stack{grid-column:1/-1}
+  .offer-link{grid-column:1/-1;font-size:1rem}
+  .delivery-process ol{grid-template-columns:1fr 1fr;gap:28px}
+  .business-cases{gap:20px}
+  .business-case{padding:24px}
+  .business-case h3{font-size:29px}
+  .research-version .learn-section{gap:36px}
+  .contact-grid{grid-template-columns:1fr}
+  .contact-intro,.contact-next{max-width:680px}
+}
+@media(max-width:640px){
+  .research-version .hero{padding-top:30px;padding-bottom:36px}
+  .research-version .hero h1{font-size:clamp(42px,10.8vw,62px)}
+  .research-version .hero-actions{gap:12px 20px}
+  .research-version .hero-actions .button{width:100%;justify-content:space-between}
+  .research-version .hero-context{margin-top:14px}
+  {padding:20px 16px 16px}
+  .research-version .nav-actions{gap:6px}
+  .proof-strip{padding-block:26px}
+  .proof-names{gap:22px}
+  .proof-names a{font-size:21px}
+  .proof-credentials{grid-template-columns:1fr}
+  .research-version .section{padding-block:62px}
+  .research-version .section-heading{margin-bottom:28px}
+  .research-version .section-heading h2{font-size:36px}
+  .research-version .section-intro{max-width:100%;font-size:1rem}
+  .service-offer{display:flex;padding:24px 22px}
+  .offer-deliverables{margin:22px 0 0}
+  .offer-first{margin-top:16px}
+  .delivery-process{margin-top:38px;padding-top:28px}
+  .delivery-process>h3{font-size:27px}
+  .delivery-process ol{grid-template-columns:1fr;gap:24px}
+  .business-cases{grid-template-columns:1fr}
+  .business-case{padding:24px 22px}
+  .business-case h3{font-size:31px}
+  .volunteer-note{display:block;margin-bottom:34px}
+  .volunteer-note p{margin-top:10px}
+  .research-version .learn-section{grid-template-columns:1fr}
+  .research-version .channel-link:first-child{padding:24px 16px}
+  .research-version .contact-section{padding-top:52px}
+  .contact-grid{gap:32px}
+  .contact-intro{font-size:1rem}
+  .research-version .contact-note{font-size:.875rem}
+  .teaching-review{padding:22px}
+}
+@media print{
+  .research-version .hero{display:block;padding:20px 0}
+  .proof-strip,.service-offers,.delivery-process ol,.business-cases,.contact-grid{display:block}
+  .service-offer,.business-case,.proof-credential,.teaching-review{break-inside:avoid;margin-bottom:16px}
+}
+
+/* Audit v3: real work as the hero evidence; the gold identity stays quiet. */
+.research-version .hero{align-items:center;grid-template-columns:1.08fr .92fr;gap:48px;padding-block:48px 58px}
+.hero-person{display:flex;align-items:center;gap:22px;margin-bottom:22px}
+.hero-person img{width:132px;height:142px;object-fit:cover;object-position:50% 20%;border-radius:12px;background:var(--mist)}
+.hero-person strong{font:700 25px/1.15 var(--display);display:block;max-width:180px}
+.hero-person p{font-size:1rem;color:var(--muted);margin-top:9px}
+.research-version .hero-role{margin-top:0;margin-bottom:18px;color:var(--gold-ink)}
+.research-version .hero h1{font-size:clamp(46px,4.5vw,64px)}
+.hero-proof{padding:30px;background:#fff;border:1px solid var(--line);border-radius:16px;border-top:4px solid var(--gold);box-shadow:0 18px 45px -30px #18232c33}
+.hero-proof .eyebrow{margin-bottom:12px}
+.proof-row{display:block;padding:24px 0;border-bottom:1px solid var(--line)}
+.proof-row:last-child{border-bottom:0;padding-bottom:8px}
+.proof-row strong{display:flex;align-items:center;gap:6px;font:700 22px/1.3 var(--display);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px}
+.proof-row strong>span:last-child{margin-left:auto}
+.proof-row>span{display:block;margin-top:12px;font-size:1rem;line-height:1.65;color:var(--muted)}
+.proof-row:hover strong{color:var(--gold-ink)}
+#hero-dashboard{margin:0}
+#hero-dashboard img{width:100%;aspect-ratio:16/10;object-fit:contain;border:1px solid var(--line);border-radius:7px}
+#hero-dashboard figcaption{margin-top:12px;font-size:.875rem;color:var(--muted)}
+.proof-strip{grid-template-columns:1.1fr 1.2fr;gap:30px;padding-block:26px}
+.proof-experience{font-size:1rem;line-height:1.8;margin-top:12px}
+.proof-credentials{grid-template-columns:1fr 1fr;gap:12px}
+.proof-credential{padding:15px 12px;gap:8px}
+.proof-credential .credential-mark{width:24px}
+.proof-credential strong{font-size:.875rem}
+.proof-credential>span:last-child>span{text-decoration:underline;text-underline-offset:3px}
+.service-offer{display:flex}
+.service-offer h3{min-height:2.25em}
+.offer-details{margin-top:auto}
+.offer-details>summary{display:none;cursor:pointer;font-size:.875rem;font-weight:600;text-decoration:underline;text-underline-offset:4px;padding-block:12px;min-height:44px}
+.offer-first{margin-top:0}
+.offer-stack{margin-top:20px}
+.offer-link{margin-top:auto;line-height:1.5;min-height:48px}
+.business-case{scroll-margin-top:110px}
+.business-case dl{margin:24px 0 0;font-size:1rem;line-height:1.65}
+.business-case dt{font-weight:600;font-size:.875rem;margin-top:16px}
+.business-case dt:first-child{margin-top:0}
+.business-case dd{margin:5px 0 0;color:var(--muted)}
+.business-case dd a{white-space:nowrap;color:var(--gold-ink);font-size:.875rem}
+.business-case-compact{grid-column:1/-1;padding:24px;background:transparent}
+.business-case-compact h3{font-size:25px;max-width:none;margin-top:12px}
+.business-case-compact dl{display:grid;grid-template-columns:repeat(3,1fr);column-gap:28px;margin-top:18px}
+.business-case-compact dt{grid-row:1;margin:0}
+.business-case-compact dd{grid-row:2}
+.business-case-compact .business-tools{margin-bottom:0}
+.technical-heading{margin-top:48px}
+#geovision-project{scroll-margin-top:110px}
+.geo-data>div>strong>span{font:inherit}
+.geo-data>div>strong small{font-size:14px}
+.review-rating{font-size:1rem;font-weight:600;margin-bottom:12px}
+.teaching-review blockquote small{display:block;font:400 14px/1.5 var(--body);color:var(--muted);margin-top:10px}
+.research-version .about-facts{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px}
+.about-facts small{display:block;font-size:14px;line-height:1.5;color:var(--muted);margin-top:7px}
+.about-facts strong>span{font:inherit;color:inherit}
+.past-brand{font-size:14px!important;line-height:1.75!important;border-left:2px solid var(--gold);padding-left:16px}
+.about-socials{display:flex;gap:24px;margin:22px 0;font-size:1rem}
+.research-version a.text-link,.research-version .about-socials a,.business-case dd a,.footer>div>a{ text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px}
+.research-version .contact-copy>.eyebrow{color:#e2c984}
+.research-version .contact-copy{color:#f7f9fc}
+.research-version .contact-copy p:not(.eyebrow),.research-version .contact-note{color:#d4dce3}
+.research-version .contact-note a,.research-version .contact-copy a{color:#f7f9fc;text-decoration:underline;text-underline-offset:4px}
+.research-version .contact-copy a:hover,.research-version .contact-note a:hover{color:#e2c984}
+.research-version .footer{flex-wrap:wrap}
+@media(min-width:641px) and (max-width:960px){
+  .research-version .hero{grid-template-columns:1fr;gap:30px}
+  .hero-proof{width:100%}
+  .proof-row{padding:18px 0}
+  .proof-strip{grid-template-columns:1fr}
+  .service-offer{display:flex}
+}
+@media(max-width:640px){
+  .research-version .hero{grid-template-columns:1fr;gap:30px;padding-block:28px 36px}
+  .hero-person{gap:18px;margin-bottom:20px}
+  .hero-person img{width:112px;height:122px}
+  .hero-person strong{font-size:24px}
+  .hero-person p{font-size:14px}
+  .research-version .hero h1{font-size:44px}
+  .research-version .hero-role{font-size:14px;letter-spacing:.06em}
+  .hero-proof{padding:22px}
+  .proof-row{padding:18px 0}
+  .proof-row strong{font-size:20px;flex-wrap:wrap}
+  .proof-row>span{font-size:14px;margin-top:9px}
+  .proof-strip{grid-template-columns:1fr;gap:20px}
+  .proof-credentials{grid-template-columns:1fr}
+  .research-version .section{padding-block:44px}
+  .service-offer{padding:22px;gap:0}
+  .service-offer h3{font-size:28px;min-height:0}
+  .offer-body{margin-top:14px;line-height:1.65}
+  .offer-details{margin-top:10px}
+  .offer-details>summary{display:list-item;list-style-position:inside}
+  .offer-deliverables{margin-top:12px}
+  .offer-first{margin-top:14px}
+  .offer-stack{margin:10px 0 2px}
+  .offer-link{margin-top:8px}
+  .delivery-process ol{grid-template-columns:1fr 1fr;gap:24px 18px}
+  .delivery-process li{display:block}
+  .delivery-process .step-index{display:inline-block;margin-bottom:10px}
+  .delivery-process p{font-size:14px;line-height:1.65}
+  .business-case{padding:22px}
+  .business-case h3{font-size:29px;margin-top:18px}
+  .business-case dl{margin-top:18px}
+  .business-case-compact h3{font-size:25px}
+  .business-case-compact dl{display:block}
+  .business-case-compact dt{margin-top:14px}
+  .business-case-compact dt:first-child{margin-top:0}
+  .technical-heading{margin-top:32px}
+  .research-version .about-grid{gap:28px}
+  .research-version .portrait{height:300px}
+  .research-version .portrait-label{font-size:21px}
+  .research-version .portrait-label span{font-size:14px;letter-spacing:.04em}
+  .research-version .about-facts{grid-template-columns:1fr 1fr;gap:24px 18px}
+  .research-version .about-facts>div:last-child{grid-column:1/-1}
+  .research-version .footer>div{margin-left:0;flex-wrap:wrap;gap:18px}
+}
+
+/* Follow-up: one link label per selected-work row. */
+.proof-row strong{text-decoration:none}
+.proof-row .proof-row-label{text-decoration:none}
+.proof-row:hover .proof-row-label,.proof-row:focus-visible .proof-row-label{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px}
+.proof-row .sr-only{margin:0}
+.restored-projects{margin-top:32px}
+.restored-projects .card-footer>a{font-size:14px;text-decoration:underline;text-underline-offset:4px;white-space:nowrap}
+.restored-projects .music-caption{line-height:1.5;max-width:calc(100% - 28px);text-align:center;bottom:14px}
+.restored-projects .pipeline-row{font:400 14px/1.5 var(--mono);gap:8px}
+@media(max-width:640px){
+  .research-version .restored-projects{grid-template-columns:1fr}
+  .research-version .restored-projects .project-card:last-child{display:block;grid-column:auto}
+  .research-version .restored-projects .card-visual{height:190px}
+}
+/* Keep the external arrow beside a wrapped label, including on narrow screens. */
+.proof-row strong{display:grid;grid-template-columns:minmax(0,1fr)24px;align-items:start}
+
+/* Simple contact: a selectable address and a single copying action. */
+.contact-grid{grid-template-columns:1fr 1.1fr;gap:40px 56px}
+.contact-details{min-width:0;padding-top:24px;color:#f7f9fc}
+.contact-details h3{font:600 22px/1.4 var(--body)}
+.contact-prompts{padding-left:24px;margin:22px 0 32px;color:#d4dce3;font-size:1rem;line-height:1.7}
+.contact-prompts li{padding-left:6px;margin-bottom:14px}
+.contact-prompts li::marker{color:#e2c984;font-weight:600}
+.contact-email-row{display:flex;align-items:center;flex-wrap:wrap;gap:18px}
+.contact-address{font:600 clamp(20px,2vw,26px)/1.5 var(--body);letter-spacing:-.025em;user-select:all;-webkit-user-select:all;overflow-wrap:anywhere;max-width:100%}
+#copy-email{background:var(--gold);color:var(--ink);border:1px solid var(--gold);min-height:48px;font-size:1rem;white-space:nowrap}
+#copy-email:hover{background:#efdaa2;border-color:#efdaa2}
+#copy-status{min-height:1.6em;font-size:1rem;line-height:1.6;color:#e2c984;margin:14px 0}
+#contact-linkedin{display:inline-block;font-size:1rem;line-height:1.7;padding-block:8px;text-decoration:underline;text-underline-offset:5px}
+#contact-linkedin:hover{color:#e2c984}
+.education .education-languages{font-size:1rem;line-height:1.75;margin:20px 0 0}
+.proof-row strong>[aria-hidden]{font-family:var(--body);font-weight:500;font-size:22px;line-height:1.3;text-align:center;width:24px}
+.restored-projects .pipeline-row{flex-wrap:nowrap;gap:6px}
+@media(max-width:960px){.contact-grid{grid-template-columns:1fr;gap:32px}.contact-details{padding-top:0}}
+@media(max-width:640px){.contact-address{font-size:22px}.contact-details h3{font-size:21px}.contact-email-row{gap:16px}}
+@media print{.contact-details,.contact-prompts,.contact-intro,.contact-next p,#copy-status{color:var(--ink)}#copy-email,#copy-status{display:none}}
+/* Size the heading against its actual column, keeping both phrases on one line. */
+.contact-copy{container-type:inline-size}

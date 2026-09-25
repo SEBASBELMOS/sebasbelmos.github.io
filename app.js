@@ -140,145 +140,97 @@
   "edu.bootcamp": "Bootcamp de IA",
   "link.newTab": "(se abre en una pestaña nueva)",
   "proof.github": "Código en GitHub",
-  "project.jobs.raw": "origen",
-  "project.jobs.clean": "limpios",
-  "project.jobs.analysis": "análisis",
-  "project.jobs.figure": "Más de 123.000 → PostgreSQL",
-  "project.spotify.figure": "Más de 114.000 registros → 81.941 enriquecidos",
-  "project.category.data": "Ingeniería de datos",
-  "project.status": "Código disponible",
-  "project.jobs.summary": "Más de 123.000 ofertas convertidas en una visión más clara de contratación, habilidades y salarios.",
-  "project.details": "Ver detalles",
-  "project.spotify.summary": "Más de 114.000 registros musicales. Menos duplicados, datos enriquecidos y una base para analizar.",
-  "project.category.ai": "IA y productos",
-  "project.deutsch.summary": "Un espacio para practicar alemán con conversaciones de IA, voz y repetición espaciada."
+  "filter.all": "Todos",
+  "filter.data": "Datos y analítica",
+  "filter.ai": "IA y productos",
+  "work.more": "Ver todos los proyectos <span aria-hidden=\"true\">↓</span>",
+  "work.github": "Más en GitHub <span aria-hidden=\"true\">↗</span>"
 };
   const $ = selector => document.querySelector(selector);
   const translatable = [...document.querySelectorAll('[data-t]')];
   const EN = Object.fromEntries(translatable.map(el => [el.dataset.t, el.innerHTML]));
   const labels = {
-    en:{'nav.home':'SEBASBELMOS — Home','nav.label':'Main navigation','menu.open':'Open menu','menu.close':'Close menu','geo.visual':'Illustrative spatial grid inspired by GeoVision in Cali, not actual pollution readings','footer.top':'Back to top','dialog.close':'Close project'},
-    es:{'nav.home':'SEBASBELMOS — Inicio','nav.label':'Navegación principal','menu.open':'Abrir menú','menu.close':'Cerrar menú','geo.visual':'Cuadrícula espacial ilustrativa inspirada en GeoVision en Cali; no representa lecturas reales de contaminación','footer.top':'Volver al inicio','dialog.close':'Cerrar proyecto'}
+    en:{'nav.home':'SEBASBELMOS — Home','nav.label':'Main navigation','menu.open':'Open menu','menu.close':'Close menu','geo.visual':'Illustrative spatial grid inspired by GeoVision in Cali, not actual pollution readings','footer.top':'Back to top','dialog.close':'Close project','filter.label':'Filter projects'},
+    es:{'nav.home':'SEBASBELMOS — Inicio','nav.label':'Navegación principal','menu.open':'Abrir menú','menu.close':'Cerrar menú','geo.visual':'Cuadrícula espacial ilustrativa inspirada en GeoVision en Cali; no representa lecturas reales de contaminación','footer.top':'Volver al inicio','dialog.close':'Cerrar proyecto','filter.label':'Filtrar proyectos'}
   };
   const ui = {
-    en:{problem:'The problem',built:'What I built',evidence:'Scope & evidence',copied:'Email copied',copyFail:'Select the address and copy it',live:'Explore the live app ↗',geoTitle:'GeoVision-CLIP Cali',geoSummary:'A university project connecting satellite imagery and other data sources in an explorable application.',geoProblem:'Data from different sources needs a consistent foundation before it can be explored in an application.',geoBuilt:'I owned data engineering, the FastAPI backend, React frontend, tests and deployment.',geoEvidence:['University project · team of 3.','93.1 GB of raw Sentinel-2 imagery · 1,920 spatial cells · 5 sources.','26/26 tests · live application available.']},
-    es:{problem:'El problema',built:'Lo que construí',evidence:'Alcance y evidencia',copied:'Correo copiado',copyFail:'Selecciona la dirección y cópiala',live:'Explorar la aplicación ↗',geoTitle:'GeoVision-CLIP Cali',geoSummary:'Un proyecto universitario que conecta imágenes satelitales y otras fuentes de datos en una aplicación explorable.',geoProblem:'Los datos de distintas fuentes necesitan una base consistente antes de explorarse en una aplicación.',geoBuilt:'Me encargué de la ingeniería de datos, el backend FastAPI, el frontend React, las pruebas y el despliegue.',geoEvidence:['Proyecto universitario · equipo de 3.','93,1 GB de imágenes originales de Sentinel-2 · 1.920 celdas espaciales · 5 fuentes.','26/26 pruebas · aplicación disponible.']}
+    en:{problem:'The problem',built:'What I built',evidence:'Scope & evidence',evidenceLabel:'Evidence & context',code:'View code',demo:'Open live app',details:'Project details',copied:'Email copied',copyFail:'Select the address and copy it',live:'Explore the live app ↗',more:'View all projects',less:'Show fewer projects',count:(n,t)=>`${n} of ${t} projects shown`,
+      category:{data:'Data engineering',ai:'AI & products',bi:'Data visualisation',ml:'Applied ML'},
+      statuses:{code:'Code available',poc:'POC · synthetic data',paused:'Paused prototype'},
+      pausedNote:'Paused prototype. There is no public demo.',
+      geoTitle:'GeoVision-CLIP Cali',geoSummary:'A university project connecting satellite imagery and other data sources in an explorable application.',geoProblem:'Data from different sources needs a consistent foundation before it can be explored in an application.',geoBuilt:'I owned data engineering, the FastAPI backend, React frontend, tests and deployment.',geoEvidence:['University project · team of 3.','93.1 GB of raw Sentinel-2 imagery · 1,920 spatial cells · 5 sources.','26/26 tests · live application available.']},
+    es:{problem:'El problema',built:'Lo que construí',evidence:'Alcance y evidencia',evidenceLabel:'Evidencia y contexto',code:'Ver código',demo:'Ver aplicación',details:'Ver detalles',copied:'Correo copiado',copyFail:'Selecciona la dirección y cópiala',live:'Explorar la aplicación ↗',more:'Ver todos los proyectos',less:'Mostrar menos proyectos',count:(n,t)=>`Mostrando ${n} de ${t} proyectos`,
+      category:{data:'Ingeniería de datos',ai:'IA y productos',bi:'Visualización de datos',ml:'ML aplicado'},
+      statuses:{code:'Código disponible',poc:'POC · datos sintéticos',paused:'Prototipo en pausa'},
+      pausedNote:'Prototipo en pausa. No tiene demo pública.',
+      geoTitle:'GeoVision-CLIP Cali',geoSummary:'Un proyecto universitario que conecta imágenes satelitales y otras fuentes de datos en una aplicación explorable.',geoProblem:'Los datos de distintas fuentes necesitan una base consistente antes de explorarse en una aplicación.',geoBuilt:'Me encargué de la ingeniería de datos, el backend FastAPI, el frontend React, las pruebas y el despliegue.',geoEvidence:['Proyecto universitario · equipo de 3.','93,1 GB de imágenes originales de Sentinel-2 · 1.920 celdas espaciales · 5 fuentes.','26/26 pruebas · aplicación disponible.']}
   };
+  // EchoForm is labelled as a paused prototype: it has no public demo.
   const projects = [
-  {
-    "id": "jobs",
-    "name": "LinkedIn Jobs ETL",
-    "category": "data",
-    "type": "data",
-    "status": "code",
-    "tech": [
-      "Python",
-      "Airflow",
-      "PostgreSQL",
-      "Power BI"
-    ],
-    "repo": "https://github.com/SEBASBELMOS/LinkedIn-Jobs-Posting",
-    "en": {
-      "summary": "123K+ job postings, transformed into a clearer picture of hiring, skills and salaries.",
-      "problem": "Job postings contain useful signals, but raw records are difficult to compare and analyse consistently.",
-      "built": "An end-to-end ETL pipeline with raw, cleaned and analytics layers, Apache Airflow orchestration and a star-schema PostgreSQL warehouse.",
-      "evidence": [
-        "123K+ job postings in the project dataset.",
-        "Dimensional modelling for skills, salary and hiring analysis.",
-        "Warehouse architecture designed for deployment on GCP, AWS RDS or Supabase."
-      ]
-    },
-    "es": {
-      "summary": "Más de 123.000 ofertas convertidas en una visión más clara de contratación, habilidades y salarios.",
-      "problem": "Las ofertas de empleo contienen señales útiles, pero los registros sin procesar son difíciles de comparar y analizar.",
-      "built": "Un pipeline ETL con capas raw, cleaned y analytics, orquestación en Apache Airflow y un warehouse PostgreSQL en esquema estrella.",
-      "evidence": [
-        "Más de 123.000 ofertas en el dataset del proyecto.",
-        "Modelado dimensional para analizar habilidades, salarios y contratación.",
-        "Arquitectura del warehouse preparada para despliegue en GCP, AWS RDS o Supabase."
-      ]
-    }
-  },
-  {
-    "id": "spotify",
-    "name": "Spotify Analytics ETL",
-    "category": "data",
-    "type": "data",
-    "status": "code",
-    "tech": [
-      "Airflow",
-      "PostgreSQL",
-      "GCP",
-      "Power BI"
-    ],
-    "repo": "https://github.com/SEBASBELMOS/spotify-analytics-etl-pipeline",
-    "en": {
-      "summary": "114K+ music records. Less duplication, richer data and a pipeline ready for analysis.",
-      "problem": "Combining Spotify tracks with Grammy records requires cleaning, deduplication and a repeatable integration process.",
-      "built": "An Airflow-orchestrated ETL pipeline on GCP, with daily scheduling, monitoring, error handling and a PostgreSQL analytical layer.",
-      "evidence": [
-        "114K+ source music records.",
-        "28.6% reduction in duplicates.",
-        "81,941 enriched rows in the resulting dataset."
-      ]
-    },
-    "es": {
-      "summary": "Más de 114.000 registros musicales. Menos duplicados, datos enriquecidos y una base para analizar.",
-      "problem": "Combinar canciones de Spotify con registros de los Grammy exige limpieza, deduplicación y una integración repetible.",
-      "built": "Un ETL orquestado con Airflow en GCP, con programación diaria, monitoreo, manejo de errores y una capa analítica en PostgreSQL.",
-      "evidence": [
-        "Más de 114.000 registros musicales de origen.",
-        "Reducción de duplicados del 28,6 %.",
-        "81.941 filas enriquecidas en el dataset resultante."
-      ]
-    }
-  },
-  {
-    "id": "deutsch",
-    "name": "DeutschLernen",
-    "category": "ai",
-    "type": "ai",
-    "status": "code",
-    "tech": [
-      "Node.js",
-      "Express",
-      "Groq",
-      "AssemblyAI"
-    ],
-    "repo": "https://github.com/SEBASBELMOS/deutschlernen",
-    "en": {
-      "summary": "A place to practise German with AI conversations, voice input and spaced repetition.",
-      "problem": "Learning a language takes repeated practice, useful feedback and a way to revisit what you have learnt.",
-      "built": "A solo full-stack learning app: Express backend, vanilla JavaScript frontend, LLM role-play and correction, voice input and a Leitner spaced-repetition system with account sync.",
-      "evidence": [
-        "Built as an independent full-stack product.",
-        "Connects my interest in language learning with practical AI.",
-        "Leitner spaced repetition with account synchronisation."
-      ]
-    },
-    "es": {
-      "summary": "Un espacio para practicar alemán con conversaciones de IA, voz y repetición espaciada.",
-      "problem": "Aprender un idioma requiere práctica constante, retroalimentación útil y una forma de repasar lo aprendido.",
-      "built": "Una aplicación full-stack desarrollada individualmente: backend Express, frontend JavaScript, conversación y corrección con LLM, entrada de voz y repetición espaciada Leitner con sincronización de cuentas.",
-      "evidence": [
-        "Producto full-stack desarrollado individualmente.",
-        "Une mi interés por los idiomas con la IA aplicada.",
-        "Repetición espaciada Leitner con sincronización de cuentas."
-      ]
-    }
-  }
-];
+    {id:'jobs',name:'LinkedIn Jobs ETL',category:'data',type:'data',status:'code',tech:['Python','Airflow','PostgreSQL','Power BI'],repo:'https://github.com/SEBASBELMOS/LinkedIn-Jobs-Posting',
+      en:{summary:'123K+ job postings, transformed into a clearer picture of hiring, skills and salaries.',problem:'Job postings contain useful signals, but raw records are difficult to compare and analyse consistently.',built:'An end-to-end ETL pipeline with raw, cleaned and analytics layers, Apache Airflow orchestration and a star-schema PostgreSQL warehouse.',evidence:['123K+ job postings in the project dataset.','Dimensional modelling for skills, salary and hiring analysis.','Warehouse architecture designed for deployment on GCP, AWS RDS or Supabase.']},
+      es:{summary:'Más de 123.000 ofertas convertidas en una visión más clara de contratación, habilidades y salarios.',problem:'Las ofertas de empleo contienen señales útiles, pero los registros sin procesar son difíciles de comparar y analizar.',built:'Un pipeline ETL con capas raw, cleaned y analytics, orquestación en Apache Airflow y un warehouse PostgreSQL en esquema estrella.',evidence:['Más de 123.000 ofertas en el dataset del proyecto.','Modelado dimensional para analizar habilidades, salarios y contratación.','Arquitectura del warehouse preparada para despliegue en GCP, AWS RDS o Supabase.']}},
+    {id:'spotify',name:'Spotify Analytics ETL',category:'data',type:'data',status:'code',tech:['Airflow','PostgreSQL','GCP','Power BI'],repo:'https://github.com/SEBASBELMOS/spotify-analytics-etl-pipeline',
+      en:{summary:'114K+ music records. Less duplication, richer data and a pipeline ready for analysis.',problem:'Combining Spotify tracks with Grammy records requires cleaning, deduplication and a repeatable integration process.',built:'An Airflow-orchestrated ETL pipeline on GCP, with daily scheduling, monitoring, error handling and a PostgreSQL analytical layer.',evidence:['114K+ source music records.','28.6% reduction in duplicates.','81,941 enriched rows in the resulting dataset.']},
+      es:{summary:'Más de 114.000 registros musicales. Menos duplicados, datos enriquecidos y una base para analizar.',problem:'Combinar canciones de Spotify con registros de los Grammy exige limpieza, deduplicación y una integración repetible.',built:'Un ETL orquestado con Airflow en GCP, con programación diaria, monitoreo, manejo de errores y una capa analítica en PostgreSQL.',evidence:['Más de 114.000 registros musicales de origen.','Reducción de duplicados del 28,6 %.','81.941 filas enriquecidas en el dataset resultante.']}},
+    {id:'deutsch',name:'DeutschLernen',category:'ai',type:'ai',status:'code',tech:['Node.js','Express','Groq','AssemblyAI'],repo:'https://github.com/SEBASBELMOS/deutschlernen',
+      en:{summary:'A place to practise German with AI conversations, voice input and spaced repetition.',problem:'Learning a language takes repeated practice, useful feedback and a way to revisit what you have learnt.',built:'A solo full-stack learning app: Express backend, vanilla JavaScript frontend, LLM role-play and correction, voice input and a Leitner spaced-repetition system with account sync.',evidence:['Built as an independent full-stack product.','Connects my interest in language learning with practical AI.','Leitner spaced repetition with account synchronisation.']},
+      es:{summary:'Un espacio para practicar alemán con conversaciones de IA, voz y repetición espaciada.',problem:'Aprender un idioma requiere práctica constante, retroalimentación útil y una forma de repasar lo aprendido.',built:'Una aplicación full-stack desarrollada individualmente: backend Express, frontend JavaScript, conversación y corrección con LLM, entrada de voz y repetición espaciada Leitner con sincronización de cuentas.',evidence:['Producto full-stack desarrollado individualmente.','Une mi interés por los idiomas con la IA aplicada.','Repetición espaciada Leitner con sincronización de cuentas.']}},
+    {id:'abodi',name:'Abodi ML',category:'ai',type:'ml',status:'poc',tech:['XGBoost','MLflow','FastAPI','Prometheus'],repo:'https://github.com/SEBASBELMOS/abodi_ml',
+      en:{summary:'A LegalTech proof of concept for flagging court cases at risk of missing deadlines.',problem:'Legal teams need to identify cases that may miss deadlines, so they can prioritise attention.',built:'An XGBoost classification proof of concept with MLflow tracking, FastAPI serving, Docker Compose, Prometheus and Grafana monitoring, and CI/CD.',evidence:['F1 = 0.89 in an evaluation on synthetic data.','Synthetic records were modelled from business rules.','This is a proof of concept, not a model validated on real court cases.']},
+      es:{summary:'Prueba de concepto LegalTech para señalar procesos en riesgo de incumplir plazos.',problem:'Los equipos jurídicos necesitan identificar procesos que podrían incumplir términos para priorizar su atención.',built:'Una prueba de concepto con XGBoost, seguimiento en MLflow, API FastAPI, Docker Compose, monitoreo Prometheus y Grafana, y CI/CD.',evidence:['F1 = 0,89 en una evaluación con datos sintéticos.','Registros sintéticos modelados a partir de reglas de negocio.','Es una prueba de concepto, no un modelo validado en expedientes reales.']}},
+    {id:'echoform',name:'EchoForm',category:'ai',type:'ai',status:'paused',tech:['AI agents','Supabase','Human review'],
+      en:{summary:'Turning transcripts into editable content assets, with the creator in control.',problem:'Creators and digital teams often repeat the same work when adapting one piece of content into different formats.',built:'A content repurposing system, currently paused. It organises transcripts into editable briefs, post variants, Markdown articles and shorts plans, with brand context and human review before publication.',evidence:['Current status: paused prototype.','Human review is part of the workflow.','Content assets remain editable before publication.']},
+      es:{summary:'De transcripciones a contenido editable, con el creador al mando.',problem:'Los creadores y equipos digitales repiten trabajo al adaptar una misma pieza de contenido a distintos formatos.',built:'Un sistema de reutilización de contenido, actualmente en pausa. Organiza transcripciones en briefs, variantes de publicaciones, artículos Markdown y planes de shorts, con contexto de marca y revisión humana antes de publicar.',evidence:['Estado actual: prototipo en pausa.','La revisión humana forma parte del flujo.','Los resultados permanecen editables antes de publicar.']}},
+    {id:'happiness',name:'Global Happiness ML',category:'ai',type:'ml',status:'code',tech:['scikit-learn','Kafka','PostgreSQL','Docker'],repo:'https://github.com/SEBASBELMOS/world-happiness-ml-pipeline',
+      en:{summary:'Exploring how economic and social indicators relate to happiness across 164 countries.',problem:'Country-level indicators offer a way to study and estimate happiness, but require a reproducible analytical workflow.',built:'A regression pipeline with Random Forest model selection, PostgreSQL traceability and a Kafka streaming architecture for prediction events.',evidence:['164 countries represented in the project.','Reported model R² = 0.8639.','Prediction events with PostgreSQL traceability.']},
+      es:{summary:'Explorar la relación entre indicadores económicos, sociales y felicidad en 164 países.',problem:'Los indicadores nacionales permiten estudiar y estimar la felicidad, pero requieren un flujo analítico reproducible.',built:'Un pipeline de regresión con selección de Random Forest, trazabilidad en PostgreSQL y arquitectura de streaming con Kafka para eventos de predicción.',evidence:['164 países representados en el proyecto.','R² reportado del modelo: 0,8639.','Eventos de predicción con trazabilidad en PostgreSQL.']}},
+    {id:'graduates',name:'Colombia Graduates',category:'data',type:'bi',status:'code',tech:['Looker Studio','SNIES','Open data'],repo:'https://github.com/SEBASBELMOS/colombia-graduates-dashboard',demo:'https://lookerstudio.google.com/reporting/fbf76da4-9963-4152-937b-44ca32ae93b8/page/p_uounofjj1c',
+      en:{summary:'Making Colombian higher-education data easier to explore, by field, level and region.',problem:'Public education data becomes more useful when people can compare fields of study, qualification levels and regions.',built:'An interactive Looker Studio dashboard based on official SNIES / datos.gov.co open data on higher-education graduates.',evidence:['Dataset covers 2016–2020.','Official public data, with a linked interactive dashboard.','Breakdowns by field of study, qualification level and region.']},
+      es:{summary:'Datos de educación superior en Colombia, explorables por área, nivel y región.',problem:'Los datos públicos de educación son más útiles cuando se pueden comparar áreas de estudio, niveles académicos y regiones.',built:'Un dashboard interactivo en Looker Studio con datos abiertos oficiales de SNIES / datos.gov.co sobre graduados de educación superior.',evidence:['El dataset abarca 2016–2020.','Datos públicos oficiales con un dashboard interactivo enlazado.','Desglose por área de estudio, nivel académico y región.']}}
+  ];
   let lang = navigator.language.toLowerCase().startsWith('es') ? 'es' : 'en';
   try { const saved = localStorage.getItem('sebasbelmos-lang'); if (['en','es'].includes(saved)) lang = saved; } catch { /* Optional preference. */ }
   const dialog = $('#case-dialog');
-  let lastCaseTrigger, activeCase = 'geovision';
+  const grid = $('#project-grid');
+  const more = $('#more-projects');
+  let lastCaseTrigger, activeCase = 'geovision', filter = 'all', expanded = false;
+
+  function visual(id) {
+    const es = lang === 'es';
+    const art = {
+      jobs:`<div class="mini-pipeline"><div class="pipeline-row"><span class="pipeline-node">${es?'origen':'raw'}</span><span class="pipeline-arrow">→</span><span class="pipeline-node">${es?'limpios':'cleaned'}</span><span class="pipeline-arrow">→</span><span class="pipeline-node accent">${es?'análisis':'analytics'}</span></div><p>${es?'Más de 123.000 → PostgreSQL':'123K+ → PostgreSQL'}</p></div>`,
+      spotify:`<div class="mini-spotify">${[22,41,57,30,71,85,61,95,74,50,67,90,53,76,40,64,28,43].map(h => `<i style="--bar:${h}px"></i>`).join('')}</div><span class="music-caption">${es?'Más de 114.000 registros → 81.941 enriquecidos':'114K+ records → 81,941 enriched'}</span>`,
+      deutsch:'<div class="chat-preview"><div class="chat-top"><span>DeutschLernen</span><span>DE · A2</span></div><div class="chat-line">Wie war dein Tag?</div><div class="chat-line reply">Heute habe ich viel gelernt.</div><div class="chat-input">Weiter üben</div></div>',
+      abodi:'<div class="mini-orbit"><span>§</span></div>',
+      echoform:'<div class="mini-echo"><div class="echo-source">E<span>↗</span></div><div class="echo-outputs"><span>content brief</span><span>article.md</span><span>shorts plan</span></div></div>',
+      happiness:'<svg class="mini-chart" viewBox="0 0 280 110"><path d="M10 5V100H275" stroke="#b6c4d0" fill="none"/><path d="M20 83L53 71 83 79 112 51 145 56 182 32 213 40 253 11" fill="none" stroke="#658bbd" stroke-width="3"/><g fill="#275dda"><circle cx="20" cy="83" r="4"/><circle cx="83" cy="79" r="4"/><circle cx="145" cy="56" r="4"/><circle cx="213" cy="40" r="4"/><circle cx="253" cy="11" r="4"/></g></svg>',
+      graduates:`<div class="mini-books">${[67,95,76,109,87,62].map(h=>`<i style="--book:${h}px"></i>`).join('')}</div>`
+    };
+    return `<div class="card-visual visual-${id}" aria-hidden="true">${art[id]}</div>`;
+  }
+
+  function renderProjects() {
+    if (!grid) return;
+    const t = ui[lang];
+    const matching = projects.filter(p => filter === 'all' || p.category === filter);
+    const shown = expanded || filter !== 'all' ? matching : matching.slice(0, 3);
+    grid.innerHTML = shown.map(p => `<article class="project-card" data-project="${p.id}">${visual(p.id)}<div class="card-copy"><div class="card-kicker"><span>${t.category[p.type]}</span><span class="card-status">${t.statuses[p.status]}</span></div><h3>${p.name}</h3><p class="card-description">${p[lang].summary}</p><ul class="tech-chips">${p.tech.map(x=>`<li>${x}</li>`).join('')}</ul><div class="card-footer"><button type="button" class="text-link" data-case="${p.id}" aria-haspopup="dialog">${t.details} <span aria-hidden="true">+</span><span class="sr-only"> — ${p.name}</span></button>${p.repo?`<a href="${p.repo}" target="_blank" rel="noopener noreferrer">GitHub ↗<span class="sr-only"> — ${p.name}</span></a>`:''}</div></div></article>`).join('');
+    if ($('#project-count')) $('#project-count').textContent = t.count(shown.length, matching.length);
+    if (more) {
+      more.hidden = filter !== 'all';
+      more.setAttribute('aria-expanded', String(expanded));
+      more.innerHTML = `${expanded ? t.less : t.more} <span aria-hidden="true">${expanded ? '↑' : '↓'}</span>`;
+    }
+  }
+
   function renderCase() {
     const t = ui[lang];
     const project = projects.find(p => p.id === activeCase);
     if(project){
       const content=project[lang];
-      const words=lang==='es'?{evidence:'Evidencia y contexto',code:'Ver código'}:{evidence:'Evidence & context',code:'View code'};
-      $('#case-content').innerHTML=`<h2 id="case-title">${project.name}</h2><p class="case-summary">${content.summary}</p><section class="case-detail"><h3>${t.problem}</h3><p>${content.problem}</p></section><section class="case-detail"><h3>${t.built}</h3><p>${content.built}</p></section><section class="case-detail"><h3>${words.evidence}</h3><ul>${content.evidence.map(e=>`<li>${e}</li>`).join('')}</ul></section><div class="case-detail"><ul class="tech-chips">${project.tech.map(x=>`<li>${x}</li>`).join('')}</ul></div><div class="case-links"><a class="button" href="${project.repo}" target="_blank" rel="noopener noreferrer">${words.code} ↗</a></div>`;
+      const eyebrow=t.category[project.type]+(project.status!=='code'?' · '+t.statuses[project.status]:'');
+      $('#case-content').innerHTML=`<p class="eyebrow">${eyebrow}</p><h2 id="case-title">${project.name}</h2><p class="case-summary">${content.summary}</p><section class="case-detail"><h3>${t.problem}</h3><p>${content.problem}</p></section><section class="case-detail"><h3>${t.built}</h3><p>${content.built}</p></section><section class="case-detail"><h3>${t.evidenceLabel}</h3><ul>${content.evidence.map(e=>`<li>${e}</li>`).join('')}</ul></section><div class="case-detail"><ul class="tech-chips">${project.tech.map(x=>`<li>${x}</li>`).join('')}</ul></div>${project.status==='paused'?`<p class="case-note">${t.pausedNote}</p>`:''}<div class="case-links">${project.repo?`<a class="button" href="${project.repo}" target="_blank" rel="noopener noreferrer">${t.code} ↗</a>`:''}${project.demo?`<a class="button button-outline" href="${project.demo}" target="_blank" rel="noopener noreferrer">${t.demo} ↗</a>`:''}</div>`;
       return;
     }
     $('#case-content').innerHTML = `<h2 id="case-title">${t.geoTitle}</h2><p class="case-summary">${t.geoSummary}</p><section class="case-detail"><h3>${t.problem}</h3><p>${t.geoProblem}</p></section><section class="case-detail"><h3>${t.built}</h3><p>${t.geoBuilt}</p></section><section class="case-detail"><h3>${t.evidence}</h3><ul>${t.geoEvidence.map(e=>`<li>${e}</li>`).join('')}</ul></section><div class="case-links"><a class="button" href="https://analiticalastdance-geovision-cali-frontend.hf.space" target="_blank" rel="noopener noreferrer">${t.live}</a></div>`;
@@ -295,14 +247,27 @@
     $('#copy-status').textContent='';
     document.title = lang==='es'?'Sebastian Belalcazar — Ingeniero de Datos e IA':'Sebastian Belalcazar — Data & AI Engineer';
     $('meta[name="description"]').content = lang==='es'?'Conecta tus datos, construye dashboards y automatiza tareas recurrentes. Habla de tu proyecto con Sebastian Belalcazar.':'Connect your data, build dashboards and automate recurring tasks. Discuss your project with Sebastian Belalcazar.';
+    renderProjects();
     if(dialog.open) renderCase();
     document.dispatchEvent(new Event('portfolio:language'));
     try {localStorage.setItem('sebasbelmos-lang',lang);}catch{/* Optional preference. */}
   }
   $('#language').addEventListener('click',()=>setLanguage(lang==='en'?'es':'en'));
-  document.querySelectorAll('[data-case]').forEach(button=>button.addEventListener('click',event=>{
-    lastCaseTrigger=event.currentTarget;activeCase=lastCaseTrigger.dataset.case;renderCase();dialog.showModal();dialog.scrollTop=0;document.body.classList.add('dialog-open');$('#close-dialog').focus();
+  document.querySelectorAll('[data-filter]').forEach(button=>button.addEventListener('click',()=>{
+    filter=button.dataset.filter;
+    document.querySelectorAll('[data-filter]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));
+    renderProjects();
   }));
+  if (more) more.addEventListener('click',()=>{
+    expanded=!expanded;renderProjects();
+    if(!expanded) $('.projects-toolbar')?.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'start'});
+  });
+  document.addEventListener('click',event=>{
+    const button=event.target.closest('[data-case]');
+    if(!button) return;
+    lastCaseTrigger=button;activeCase=button.dataset.case;renderCase();
+    dialog.showModal();dialog.scrollTop=0;document.body.classList.add('dialog-open');$('#close-dialog').focus();
+  });
   $('#close-dialog').addEventListener('click',()=>dialog.close());
   dialog.addEventListener('click',event=>{if(event.target!==dialog)return;const r=dialog.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)dialog.close();});
   dialog.addEventListener('close',()=>{document.body.classList.remove('dialog-open');lastCaseTrigger?.focus({preventScroll:true});});

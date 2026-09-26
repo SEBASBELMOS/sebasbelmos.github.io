@@ -6,12 +6,12 @@
   "nav.approach": "Servicios",
   "nav.work": "Trabajo",
   "nav.about": "Sobre mí",
-  "nav.contact": "Hablemos de tu proyecto <span aria-hidden=\"true\">↓</span>",
+  "nav.contact": "Hablemos de tu proyecto <span aria-hidden=\"true\">→</span>",
   "role": "Ingeniero de Datos e IA",
   "hero.title": "Menos trabajo manual.<br><span>Más claridad.</span>",
   "hero.description": "Conecto tus herramientas, organizo tus datos y automatizo tareas repetitivas. Para que tu equipo dedique menos tiempo a mover información y más a aprovecharla.",
   "hero.audience": "Para creadores, negocios de educación online y equipos digitales.",
-  "hero.contact": "Hablemos de tu proyecto <span aria-hidden=\"true\">↓</span>",
+  "hero.contact": "Hablemos de tu proyecto <span aria-hidden=\"true\">→</span>",
   "hero.work": "Ver mi trabajo <span aria-hidden=\"true\">→</span>",
   "hero.proof": "Trabajo seleccionado",
   "hero.betterlife": "MVP de finanzas personales, reportes y procesos.",
@@ -142,7 +142,7 @@
   "filter.all": "Todos",
   "filter.data": "Datos y analítica",
   "filter.ai": "IA y productos",
-  "work.more": "Ver todos los proyectos <span aria-hidden=\"true\">↓</span>",
+  "work.more": "Ver todos los proyectos <span aria-hidden=\"true\">+</span>",
   "work.github": "Más en GitHub <span aria-hidden=\"true\">↗</span>"
 };
   const $ = selector => document.querySelector(selector);
@@ -227,7 +227,7 @@
     if (more) {
       more.hidden = filter !== 'all';
       more.setAttribute('aria-expanded', String(expanded));
-      more.innerHTML = `${expanded ? t.less : t.more} <span aria-hidden="true">${expanded ? '↑' : '↓'}</span>`;
+      more.innerHTML = `${expanded ? t.less : t.more} <span aria-hidden="true">${expanded ? '−' : '+'}</span>`;
     }
   }
 

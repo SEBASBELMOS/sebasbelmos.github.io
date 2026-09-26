@@ -213,7 +213,7 @@
 .geo-data>div>strong small{font-size:14px}
 .review-rating{font-size:1rem;font-weight:600;margin-bottom:12px}
 .teaching-review blockquote small{display:block;font:400 14px/1.5 var(--body);color:var(--muted);margin-top:10px}
-.research-version .about-facts{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px}
+.research-version .about-facts{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .about-facts small{display:block;font-size:14px;line-height:1.5;color:var(--muted);margin-top:7px}
 .about-facts strong>span{font:inherit;color:inherit}
 .past-brand{font-size:14px!important;line-height:1.75!important;border-left:2px solid var(--gold);padding-left:16px}
@@ -273,7 +273,6 @@
   .research-version .portrait-label{font-size:21px}
   .research-version .portrait-label span{font-size:14px;letter-spacing:.04em}
   .research-version .about-facts{grid-template-columns:1fr 1fr;gap:24px 18px}
-  .research-version .about-facts>div:last-child{grid-column:1/-1}
   .research-version .footer>div{margin-left:0;flex-wrap:wrap;gap:18px}
 }
 

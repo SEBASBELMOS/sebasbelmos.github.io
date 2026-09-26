@@ -70,7 +70,7 @@
 .teaching-review blockquote{font:700 24px/1.35 var(--display);letter-spacing:-.02em;margin:16px 0}
 .review-author{font-size:.875rem;color:var(--muted);margin-bottom:12px}
 .teaching-review .text-link{font-size:.875rem;gap:8px}
-.source-date{font-size:.875rem;line-height:1.5;color:var(--muted);margin-top:10px}
+
 .research-version .about-facts{gap:26px;flex-wrap:wrap}
 .research-version .about-facts>div{min-width:100px}
 .research-version .learn-section{gap:70px;grid-template-columns:1fr 1fr}

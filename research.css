@@ -216,7 +216,6 @@
 .research-version .about-facts{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .about-facts small{display:block;font-size:14px;line-height:1.5;color:var(--muted);margin-top:7px}
 .about-facts strong>span{font:inherit;color:inherit}
-.past-brand{font-size:14px!important;line-height:1.75!important;border-left:2px solid var(--gold);padding-left:16px}
 .about-socials{display:flex;gap:24px;margin:22px 0;font-size:1rem}
 .research-version a.text-link,.research-version .about-socials a,.business-case dd a,.footer>div>a{ text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px}
 .research-version .contact-copy>.eyebrow{color:#e2c984}
@@ -325,3 +324,9 @@
 @media print{.contact-details,.contact-prompts,.contact-intro,.contact-next p,#copy-status{color:var(--ink)}#copy-email,#copy-status{display:none}}
 /* Size the heading against its actual column, keeping both phrases on one line. */
 .contact-copy{container-type:inline-size}
+
+/* Compact, accessible social links using local vector marks. */
+.footer .footer-links{display:flex;align-items:center;gap:8px}
+.footer .footer-links a{display:grid;place-items:center;width:44px;height:44px;padding:0;border-radius:8px;color:var(--muted);text-decoration:none}
+.footer .footer-links a:hover{background:var(--gold-pale);color:var(--gold-ink)}
+.footer .footer-links svg{width:24px;height:24px}

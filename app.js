@@ -111,8 +111,6 @@
   "about.teaching": "He dado más de 700 clases de español en Preply a más de 60 estudiantes internacionales. Enseñar me ha entrenado para escuchar, explicar paso a paso y adaptarme a distintos niveles. Llevo esos hábitos a tu proyecto, su documentación y nuestras conversaciones.",
   "about.lessons": "clases de español impartidas",
   "about.languages": "Español nativo · Inglés C2",
-  "about.music": "Antes creé una marca de contenido musical bilingüe, Música 4 Soul, que llegó a más de 153.000 seguidores en TikTok.",
-  "about.music.status": "Proyecto anterior, actualmente inactivo.",
   "about.cv": "Descargar mi CV <span aria-hidden=\"true\">↓</span>",
   "about.education": "Formación y credenciales",
   "edu.ds4a": "DS4A · Data Analytics, con honores",

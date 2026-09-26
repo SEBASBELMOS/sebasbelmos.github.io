@@ -311,6 +311,16 @@
 .education .education-languages{font-size:1rem;line-height:1.75;margin:20px 0 0}
 .proof-row strong>[aria-hidden]{font-family:var(--body);font-weight:500;font-size:22px;line-height:1.3;text-align:center;width:24px}
 .restored-projects .pipeline-row{flex-wrap:nowrap;gap:6px}
+/* New project illustrations: NYC Taxi Lakehouse (4-node pipeline) and SaludRed (bed-availability grid). */
+.visual-lakehouse{background:#e9effa}
+.visual-saludred{background:#e7eee8}
+.restored-projects .visual-lakehouse .pipeline-row{flex-wrap:wrap;row-gap:6px}
+.visual-lakehouse .pipeline-node{padding:10px 8px}
+.mini-beds{width:100%;max-width:220px;text-align:center}
+.beds-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:7px}
+.beds-grid i{display:block;aspect-ratio:4/3;border-radius:5px;background:#fff;border:1px solid #cddbd6;box-shadow:0 2px 6px #1c3d2c0f}
+.beds-grid i.filled{background:var(--jade);border-color:var(--jade)}
+.mini-beds>p{margin-top:14px;font:.875rem var(--mono);color:#3f6b58}
 @media(max-width:960px){.contact-grid{grid-template-columns:1fr;gap:32px}.contact-details{padding-top:0}}
 @media(max-width:640px){.contact-address{font-size:22px}.contact-details h3{font-size:21px}.contact-email-row{gap:16px}}
 @media print{.contact-details,.contact-prompts,.contact-intro,.contact-next p,#copy-status{color:var(--ink)}#copy-email,#copy-status{display:none}}

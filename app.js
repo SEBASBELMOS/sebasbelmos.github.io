@@ -10,13 +10,12 @@
   "role": "Ingeniero de Datos e IA",
   "hero.title": "Menos trabajo manual.<br><span>Más claridad.</span>",
   "hero.description": "Conecto tus herramientas, organizo tus datos y automatizo tareas repetitivas. Para que tu equipo dedique menos tiempo a mover información y más a aprovecharla.",
-  "hero.audience": "Para creadores, negocios de educación online y equipos digitales.",
+  "hero.audience": "Para negocios liderados por creadores, negocios de educación online y equipos digitales pequeños.",
   "hero.contact": "Hablemos de tu proyecto <span aria-hidden=\"true\">→</span>",
   "hero.work": "Ver mi trabajo <span aria-hidden=\"true\">→</span>",
   "hero.proof": "Trabajo seleccionado",
   "hero.betterlife": "MVP de finanzas personales, reportes y procesos.",
-  "proof.volunteer": "Voluntariado",
-  "hero.jurisintel": "NLP de documentos jurídicos y seguimiento de casos.",
+  "hero.bilbao": "Automatización de captación, calificación y asignación de leads.",
   "hero.live": "Aplicación en vivo",
   "hero.geovision": "Proyecto universitario: datos, backend y frontend.",
   "hero.demo.caption": "Demo con datos ficticios",
@@ -141,6 +140,14 @@
   "work.github": "Más en GitHub <span aria-hidden=\"true\">↗</span>"
 };
   const $ = selector => document.querySelector(selector);
+  // Create the optional demo before collecting translations, only when enabled.
+  if(window.PORTFOLIO_CONFIG?.HERO_DASHBOARD){
+    const figure=document.createElement('figure');
+    figure.id='hero-dashboard';
+    figure.hidden=true;
+    figure.innerHTML='<img id="hero-dashboard-image" alt="" width="1600" height="1000"><figcaption><span data-t="hero.demo.caption">Demo with fictional data</span></figcaption>';
+    $('.hero-proof').append(figure);
+  }
   const translatable = [...document.querySelectorAll('[data-t]')];
   const EN = Object.fromEntries(translatable.map(el => [el.dataset.t, el.innerHTML]));
   const labels = {
@@ -346,7 +353,7 @@
     $('#menu-toggle').setAttribute('aria-label',labels[lang][$('#menu-toggle').getAttribute('aria-expanded')==='true'?'menu.close':'menu.open']);
     $('#copy-status').textContent='';
     document.title = lang==='es'?'Sebastian Belalcazar — Ingeniero de Datos e IA':'Sebastian Belalcazar — Data & AI Engineer';
-    $('meta[name="description"]').content = lang==='es'?'Conecta tus datos, construye dashboards y automatiza tareas recurrentes. Habla de tu proyecto con Sebastian Belalcazar.':'Connect your data, build dashboards and automate recurring tasks. Discuss your project with Sebastian Belalcazar.';
+    $('meta[name="description"]').content = lang==='es'?'Conecta tus datos, construye dashboards y automatiza tareas recurrentes. Para negocios liderados por creadores, negocios de educación online y equipos digitales pequeños. Habla de tu proyecto con Sebastian Belalcazar.':'Connect your data, build dashboards and automate recurring tasks. For creator-led businesses, online education businesses and small digital teams. Discuss your project with Sebastian Belalcazar.';
     renderProjects();
     if(dialog.open) renderCase();
     document.dispatchEvent(new Event('portfolio:language'));

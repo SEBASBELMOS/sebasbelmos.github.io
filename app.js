@@ -90,7 +90,7 @@
   "geo.cells.number": "1.920",
   "geo.cells": "Celdas espaciales",
   "geo.sources": "Fuentes de datos",
-  "geo.note": "Vista espacial ilustrativa",
+  "gallery.preview": "Ver capturas",
   "geo.featured": "Proyecto universitario · equipo de 3",
   "geo.category": "IA geoespacial",
   "geo.heading": "Una ciudad vista<br><span>desde sus datos.</span>",
@@ -144,8 +144,8 @@
   const translatable = [...document.querySelectorAll('[data-t]')];
   const EN = Object.fromEntries(translatable.map(el => [el.dataset.t, el.innerHTML]));
   const labels = {
-    en:{'nav.home':'SEBASBELMOS — Home','nav.label':'Main navigation','menu.open':'Open menu','menu.close':'Close menu','geo.visual':'Illustrative spatial grid inspired by GeoVision in Cali, not actual pollution readings','footer.top':'Back to top','dialog.close':'Close project','filter.label':'Filter projects'},
-    es:{'nav.home':'SEBASBELMOS — Inicio','nav.label':'Navegación principal','menu.open':'Abrir menú','menu.close':'Cerrar menú','geo.visual':'Cuadrícula espacial ilustrativa inspirada en GeoVision en Cali; no representa lecturas reales de contaminación','footer.top':'Volver al inicio','dialog.close':'Cerrar proyecto','filter.label':'Filtrar proyectos'}
+    en:{'nav.home':'SEBASBELMOS — Home','nav.label':'Main navigation','menu.open':'Open menu','menu.close':'Close menu','geo.visual':'View GeoVision screenshots','footer.top':'Back to top','dialog.close':'Close project','filter.label':'Filter projects'},
+    es:{'nav.home':'SEBASBELMOS — Inicio','nav.label':'Navegación principal','menu.open':'Abrir menú','menu.close':'Cerrar menú','geo.visual':'Ver capturas de GeoVision','footer.top':'Volver al inicio','dialog.close':'Cerrar proyecto','filter.label':'Filtrar proyectos'}
   };
   const ui = {
     en:{problem:'The problem',built:'What I built',evidence:'Scope & evidence',evidenceLabel:'Evidence & context',code:'View code',demo:'Open live app',details:'Project details',copied:'Email copied',copyFail:'Select the address and copy it',live:'Explore the live app ↗',more:'View all projects',less:'Show fewer projects',count:(n,t)=>`${n} of ${t} projects shown`,
@@ -185,9 +185,9 @@
     {id:'happiness',name:'Global Happiness ML',category:'ai',type:'ml',status:'code',tech:['scikit-learn','Kafka','PostgreSQL','Docker'],repo:'https://github.com/SEBASBELMOS/world-happiness-ml-pipeline',
       en:{summary:'Exploring how economic and social indicators relate to happiness across 164 countries.',problem:'Country-level indicators offer a way to study and estimate happiness, but require a reproducible analytical workflow.',built:'A regression pipeline with Random Forest model selection, PostgreSQL traceability and a Kafka streaming architecture for prediction events.',evidence:['164 countries represented in the project.','Reported model R² = 0.8639.','Prediction events with PostgreSQL traceability.']},
       es:{summary:'Explorar la relación entre indicadores económicos, sociales y felicidad en 164 países.',problem:'Los indicadores nacionales permiten estudiar y estimar la felicidad, pero requieren un flujo analítico reproducible.',built:'Un pipeline de regresión con selección de Random Forest, trazabilidad en PostgreSQL y arquitectura de streaming con Kafka para eventos de predicción.',evidence:['164 países representados en el proyecto.','R² reportado del modelo: 0,8639.','Eventos de predicción con trazabilidad en PostgreSQL.']}},
-    {id:'graduates',name:'Colombia Graduates',category:'data',type:'bi',status:'code',tech:['Looker Studio','SNIES','Open data'],repo:'https://github.com/SEBASBELMOS/colombia-graduates-dashboard',demo:'https://lookerstudio.google.com/reporting/fbf76da4-9963-4152-937b-44ca32ae93b8/page/p_uounofjj1c',
-      en:{summary:'Making Colombian higher-education data easier to explore, by field, level and region.',problem:'Public education data becomes more useful when people can compare fields of study, qualification levels and regions.',built:'An interactive Looker Studio dashboard based on official SNIES / datos.gov.co open data on higher-education graduates.',evidence:['Dataset covers 2016–2020.','Official public data, with a linked interactive dashboard.','Breakdowns by field of study, qualification level and region.']},
-      es:{summary:'Datos de educación superior en Colombia, explorables por área, nivel y región.',problem:'Los datos públicos de educación son más útiles cuando se pueden comparar áreas de estudio, niveles académicos y regiones.',built:'Un dashboard interactivo en Looker Studio con datos abiertos oficiales de SNIES / datos.gov.co sobre graduados de educación superior.',evidence:['El dataset abarca 2016–2020.','Datos públicos oficiales con un dashboard interactivo enlazado.','Desglose por área de estudio, nivel académico y región.']}}
+    {id:'graduates',name:'Colombia Graduates',category:'data',type:'bi',status:'code',tech:['Looker Studio','SNIES','Open data'],repo:'https://github.com/SEBASBELMOS/colombia-graduates-dashboard',archiveReport:'https://github.com/SEBASBELMOS/colombia-graduates-dashboard/blob/main/Proyecto_Final_-_Equipo_113.pdf',
+      en:{summary:'Making Colombian higher-education data easier to explore, by field, level and region.',problem:'Public education data becomes more useful when people can compare fields of study, qualification levels and regions.',built:'An interactive Looker Studio dashboard based on official SNIES / datos.gov.co open data on higher-education graduates.',evidence:['DS4A final project, built with Jimmy Moreno (team of 2).','Dataset covers 2016–2020.','Official open data from SNIES / datos.gov.co; the dataset was later removed, so the dashboard is shown as an archived export.','Breakdowns by field of study, qualification level and region.']},
+      es:{summary:'Datos de educación superior en Colombia, explorables por área, nivel y región.',problem:'Los datos públicos de educación son más útiles cuando se pueden comparar áreas de estudio, niveles académicos y regiones.',built:'Un dashboard interactivo en Looker Studio con datos abiertos oficiales de SNIES / datos.gov.co sobre graduados de educación superior.',evidence:['Proyecto final de DS4A, desarrollado con Jimmy Moreno (equipo de 2).','El dataset abarca 2016–2020.','Datos abiertos oficiales de SNIES / datos.gov.co; el dataset se retiró después, así que el dashboard se muestra como una exportación archivada.','Desglose por área de estudio, nivel académico y región.']}}
   ];
   let lang = navigator.language.toLowerCase().startsWith('es') ? 'es' : 'en';
   try { const saved = localStorage.getItem('sebasbelmos-lang'); if (['en','es'].includes(saved)) lang = saved; } catch { /* Optional preference. */ }
@@ -196,38 +196,82 @@
   const more = $('#more-projects');
   let lastCaseTrigger, activeCase = 'geovision', filter = 'all', expanded = false;
 
-  const saludredScreenshots = [
-    {file:'02-resumen-red.png',en:['Network overview','Bed availability across the network and upcoming requests.'],es:['Resumen de la red','Disponibilidad de camas en la red y próximas solicitudes.']},
-    {file:'03-cola-atencion.png',en:['Priority queue','Requests ordered by clinical priority and waiting time.'],es:['Cola de atención','Solicitudes ordenadas por prioridad clínica y tiempo de espera.']},
-    {file:'05-gestion-camas.png',en:['Bed management','A view of bed status by institution.'],es:['Gestión de camas','Vista del estado de las camas por institución.']},
-    {file:'06-analisis.png',en:['Analytics','Waiting times and a recommendation for the next patient.'],es:['Analítica','Tiempos de espera y recomendación para el próximo paciente.']},
-    {file:'07-agrupamiento.png',en:['Patient clustering','Patient groups and bed turnaround.'],es:['Agrupamiento','Grupos de pacientes y tiempo de alistamiento de camas.']}
-  ];
-  let saludredShot = 0;
-  const screenshotPath = shot => `/assets/projects/saludred/${shot.file}`;
-  function saludredGallery() {
-    const es = lang === 'es', shot = saludredScreenshots[saludredShot];
-    return `<section class="saludred-gallery" aria-labelledby="saludred-gallery-title">
-      <h3 id="saludred-gallery-title">${es?'Dentro de SaludRed':'Inside SaludRed'}</h3>
-      <p class="saludred-gallery-note">${es?'Capturas del prototipo académico, solo con datos sintéticos. Interfaz en español.':'Screenshots of the academic prototype, using synthetic data only. Interface in Spanish.'}</p>
-      <div class="saludred-gallery-controls" role="group" aria-label="${es?'Elegir una captura':'Choose a screenshot'}">${saludredScreenshots.map((item,i)=>`<button type="button" data-saludred-shot="${i}" aria-pressed="${i===saludredShot}" aria-controls="saludred-figure">${item[lang][0]}</button>`).join('')}</div>
-      <figure id="saludred-figure"><img id="saludred-screenshot" src="${screenshotPath(shot)}" width="1440" height="900" alt="${shot[lang][1]}"><figcaption id="saludred-caption" aria-live="polite">${shot[lang][1]}</figcaption></figure>
-      <a class="saludred-full-image" href="${screenshotPath(shot)}" target="_blank" rel="noopener noreferrer">${es?'Abrir imagen a tamaño completo':'Open full-size image'} ↗</a>
+  const galleries = {
+    graduates: {
+      name:'Colombia Graduates', folder:'graduates',
+      en:{title:'Inside the dashboard',note:'Archived export of the Looker Studio dashboard, a DS4A team project of 2. The original open dataset was later removed from datos.gov.co, so the live dashboard no longer loads. Interface in Spanish.'},
+      es:{title:'Dentro del dashboard',note:'Exportación archivada del dashboard en Looker Studio, un proyecto de DS4A en equipo de 2. El dataset abierto original se retiró después de datos.gov.co, así que el dashboard en vivo ya no carga. Interfaz en español.'},
+      shots:[
+        {file:'01-dashboard.webp',en:['Dashboard','The full dashboard: 2,324,900 graduates from 2016 to 2020, with filters by level, methodology, sex and sector.'],es:['Dashboard','El dashboard completo: 2.324.900 graduados de 2016 a 2020, con filtros por nivel, metodología, sexo y sector.']},
+        {file:'02-programas.webp',en:['Top programmes','The programmes with the most graduates, by year.'],es:['Programas principales','Los programas con más graduados, por año.']}
+      ]
+    },
+    saludred: {
+      name:'SaludRed', folder:'saludred',
+      en:{title:'Inside SaludRed',note:'Screenshots of the academic prototype, using synthetic data only. Interface in Spanish.'},
+      es:{title:'Dentro de SaludRed',note:'Capturas del prototipo académico, solo con datos sintéticos. Interfaz en español.'},
+      shots: [
+        {file:'02-resumen-red.webp',en:['Network overview','Bed availability across the network and upcoming requests.'],es:['Resumen de la red','Disponibilidad de camas en la red y próximas solicitudes.']},
+        {file:'03-cola-atencion.webp',en:['Priority queue','Requests ordered by clinical priority and waiting time.'],es:['Cola de atención','Solicitudes ordenadas por prioridad clínica y tiempo de espera.']},
+        {file:'05-gestion-camas.webp',en:['Bed management','A view of bed status by institution.'],es:['Gestión de camas','Vista del estado de las camas por institución.']},
+        {file:'06-analisis.webp',en:['Analytics','Waiting times and a recommendation for the next patient.'],es:['Analítica','Tiempos de espera y recomendación para el próximo paciente.']},
+        {file:'07-agrupamiento.webp',en:['Patient clustering','Patient groups and bed turnaround.'],es:['Agrupamiento','Grupos de pacientes y tiempo de alistamiento de camas.']}
+      ]
+    },
+    deutsch: {
+      name:'DeutschLernen', folder:'deutschlernen',
+      en:{title:'Inside DeutschLernen',note:'Screenshots of the app with a demo account, no real user data. Interface in Spanish.'},
+      es:{title:'Dentro de DeutschLernen',note:'Capturas de la app con una cuenta de demostración, sin datos de usuarios reales. Interfaz en español.'},
+      shots:[
+        {file:'01-hoy.webp',en:['Today','Daily dashboard with streak, weekly goal and quick sessions.'],es:['Hoy','Panel diario con racha, meta semanal y sesiones rápidas.']},
+        {file:'02-practicar.webp',en:['Practice','Practice modes: conversation, corrections, listening, dictation and shadowing.'],es:['Practicar','Modos de práctica: conversación, correcciones, comprensión, dictado y shadowing.']},
+        {file:'03-gramatica.webp',en:['Grammar','Mastery by topic, with a review that targets the weakest areas first.'],es:['Gramática','Dominio por tema, con un repaso que ataca primero lo más flojo.']},
+        {file:'04-drills.webp',en:['Drills','Perfekt drill: choose the auxiliary and the Partizip II.'],es:['Drills','Drill de Perfekt: elige el auxiliar y el Partizip II.']},
+        {file:'05-vocabulario.webp',en:['Vocabulary','Thematic vocabulary packs to save and review.'],es:['Vocabulario','Paquetes de vocabulario por temas para guardar y repasar.']}
+      ]
+    },
+    geovision: {
+      name:'GeoVision', folder:'geovision',
+      en:{title:'Inside GeoVision',note:'Screenshots of the live app, a team project of 3. Interface in Spanish.'},
+      es:{title:'Dentro de GeoVision',note:'Capturas de la aplicación en vivo, un proyecto en equipo de 3. Interfaz en español.'},
+      shots:[
+        {file:'01-concentracion.webp',en:['Concentration','Corrected O₃ prediction for T+1 across 1,920 cells.'],es:['Concentración','Predicción corregida de O₃ a T+1 en 1.920 celdas.']},
+        {file:'02-incertidumbre.webp',en:['Uncertainty','Prediction uncertainty (sigma) for each cell.'],es:['Incertidumbre','Incertidumbre de la predicción (sigma) en cada celda.']},
+        {file:'03-clusters-lisa.webp',en:['LISA clusters','Spatial hotspots and coldspots.'],es:['Clusters LISA','Puntos calientes y fríos espaciales.']},
+        {file:'04-perfiles-kmeans.webp',en:['K-means profiles','Areas ranked by risk using k-means profiles.'],es:['Perfiles k-means','Zonas ordenadas por riesgo con perfiles k-means.']},
+        {file:'05-resumen-area.webp',en:['Area summary','Summary within a 2 km radius for T+1, T+3 and T+7.'],es:['Resumen del área','Resumen en un radio de 2 km para T+1, T+3 y T+7.']}
+      ]
+    }
+  };
+  let galleryShot = 0;
+  const screenshotPath = (id, shot) => `/assets/projects/${galleries[id].folder}/${shot.file}`;
+  function projectGallery(id) {
+    const gallery = galleries[id];
+    if(!gallery) return '';
+    const es = lang === 'es', shot = gallery.shots[galleryShot];
+    return `<section class="project-gallery" aria-labelledby="project-gallery-title">
+      <h3 id="project-gallery-title">${gallery[lang].title}</h3>
+      <p class="project-gallery-note">${gallery[lang].note}</p>
+      <div class="project-gallery-controls" role="group" aria-label="${es?'Elegir una captura':'Choose a screenshot'}">${gallery.shots.map((item,i)=>`<button type="button" data-gallery-shot="${i}" aria-pressed="${i===galleryShot}" aria-controls="project-figure">${item[lang][0]}</button>`).join('')}</div>
+      <figure id="project-figure"><img id="project-screenshot" src="${screenshotPath(id,shot)}" width="1440" height="900" alt="${shot[lang][1]}"><figcaption id="project-caption" aria-live="polite">${shot[lang][1]}</figcaption></figure>
+      <a class="project-full-image" href="${screenshotPath(id,shot)}" target="_blank" rel="noopener noreferrer">${es?'Abrir imagen a tamaño completo':'Open full-size image'} ↗</a>
     </section>`;
+  }
+  function screenshotPreview(id) {
+    const gallery = galleries[id], es = lang === 'es';
+    return `<button type="button" class="card-visual visual-${id} screenshot-preview" data-case="${id}" aria-haspopup="dialog" aria-label="${es?'Ver capturas de '+gallery.name:'View '+gallery.name+' screenshots'}"><img src="${screenshotPath(id,gallery.shots[0])}" alt="" width="1440" height="900" loading="lazy"><span class="screenshot-preview-label">${es?'Ver capturas':'View screenshots'} <span aria-hidden="true">→</span></span></button>`;
   }
 
   function visual(id) {
     const es = lang === 'es';
-    if(id === 'saludred') return `<button type="button" class="card-visual visual-saludred saludred-preview" data-case="saludred" aria-haspopup="dialog" aria-label="${es?'Ver capturas de SaludRed':'View SaludRed screenshots'}"><img src="${screenshotPath(saludredScreenshots[0])}" alt="" width="1440" height="900" loading="lazy"><span class="saludred-preview-label">${es?'Ver capturas':'View screenshots'} <span aria-hidden="true">→</span></span></button>`;
+    if(galleries[id]) return screenshotPreview(id);
     const art = {
       lakehouse:`<div class="mini-pipeline visual-lakehouse-pipeline"><div class="pipeline-row"><span class="pipeline-node">${es?'origen':'source'}</span><span class="pipeline-arrow">→</span><span class="pipeline-node">${es?'lago':'lake'}</span><span class="pipeline-arrow">→</span><span class="pipeline-node">Iceberg</span><span class="pipeline-arrow">→</span><span class="pipeline-node accent">ClickHouse</span></div><p>${es?'3.475.226 filas':'3,475,226 rows'}</p></div>`,
       jobs:`<div class="mini-pipeline"><div class="pipeline-row"><span class="pipeline-node">${es?'origen':'raw'}</span><span class="pipeline-arrow">→</span><span class="pipeline-node">${es?'limpios':'cleaned'}</span><span class="pipeline-arrow">→</span><span class="pipeline-node accent">${es?'análisis':'analytics'}</span></div><p>${es?'Más de 123.000 → PostgreSQL':'123K+ → PostgreSQL'}</p></div>`,
       spotify:`<div class="mini-spotify">${[22,41,57,30,71,85,61,95,74,50,67,90,53,76,40,64,28,43].map(h => `<i style="--bar:${h}px"></i>`).join('')}</div><span class="music-caption">${es?'Más de 114.000 registros → 81.941 enriquecidos':'114K+ records → 81,941 enriched'}</span>`,
-      deutsch:'<div class="chat-preview"><div class="chat-top"><span>DeutschLernen</span><span>DE · A2</span></div><div class="chat-line">Wie war dein Tag?</div><div class="chat-line reply">Heute habe ich viel gelernt.</div><div class="chat-input">Weiter üben</div></div>',
       abodi:'<div class="mini-orbit"><span>§</span></div>',
       echoform:'<div class="mini-echo"><div class="echo-source">E<span>↗</span></div><div class="echo-outputs"><span>content brief</span><span>article.md</span><span>shorts plan</span></div></div>',
       happiness:'<svg class="mini-chart" viewBox="0 0 280 110"><path d="M10 5V100H275" stroke="#b6c4d0" fill="none"/><path d="M20 83L53 71 83 79 112 51 145 56 182 32 213 40 253 11" fill="none" stroke="#658bbd" stroke-width="3"/><g fill="#275dda"><circle cx="20" cy="83" r="4"/><circle cx="83" cy="79" r="4"/><circle cx="145" cy="56" r="4"/><circle cx="213" cy="40" r="4"/><circle cx="253" cy="11" r="4"/></g></svg>',
-      graduates:`<div class="mini-books">${[67,95,76,109,87,62].map(h=>`<i style="--book:${h}px"></i>`).join('')}</div>`
     };
     return `<div class="card-visual visual-${id}" aria-hidden="true">${art[id]}</div>`;
   }
@@ -249,14 +293,14 @@
   function renderCase() {
     const t = ui[lang];
     const project = projects.find(p => p.id === activeCase);
-    dialog.classList.toggle('case-with-gallery', activeCase === 'saludred');
+    dialog.classList.toggle('case-with-gallery', Boolean(galleries[activeCase]));
     if(project){
       const content=project[lang];
       const eyebrow=t.category[project.type]+(project.status!=='code'?' · '+t.statuses[project.status]:'');
-      $('#case-content').innerHTML=`<p class="eyebrow">${eyebrow}</p><h2 id="case-title">${project.name}</h2><p class="case-summary">${content.summary}</p>${project.id==='saludred'?saludredGallery():''}<section class="case-detail"><h3>${t.problem}</h3><p>${content.problem}</p></section><section class="case-detail"><h3>${t.built}</h3><p>${content.built}</p></section><section class="case-detail"><h3>${t.evidenceLabel}</h3><ul>${content.evidence.map(e=>`<li>${e}</li>`).join('')}</ul></section><div class="case-detail"><ul class="tech-chips">${project.tech.map(x=>`<li>${x}</li>`).join('')}</ul></div>${project.status==='paused'?`<p class="case-note">${t.pausedNote}</p>`:''}<div class="case-links">${project.repo?`<a class="button" href="${project.repo}" target="_blank" rel="noopener noreferrer">${t.code} ↗</a>`:''}${project.demo?`<a class="button button-outline" href="${project.demo}" target="_blank" rel="noopener noreferrer">${t.demo} ↗</a>`:''}</div>`;
+      $('#case-content').innerHTML=`<p class="eyebrow">${eyebrow}</p><h2 id="case-title">${project.name}</h2><p class="case-summary">${content.summary}</p>${projectGallery(project.id)}<section class="case-detail"><h3>${t.problem}</h3><p>${content.problem}</p></section><section class="case-detail"><h3>${t.built}</h3><p>${content.built}</p></section><section class="case-detail"><h3>${t.evidenceLabel}</h3><ul>${content.evidence.map(e=>`<li>${e}</li>`).join('')}</ul></section><div class="case-detail"><ul class="tech-chips">${project.tech.map(x=>`<li>${x}</li>`).join('')}</ul></div>${project.status==='paused'?`<p class="case-note">${t.pausedNote}</p>`:''}<div class="case-links">${project.repo?`<a class="button" href="${project.repo}" target="_blank" rel="noopener noreferrer">${t.code} ↗</a>`:''}${project.archiveReport?`<a class="button button-outline" href="${project.archiveReport}" target="_blank" rel="noopener noreferrer">${lang==='es'?'Informe archivado (PDF)':'Archived report (PDF)'}</a>`:''}${project.demo?`<a class="button button-outline" href="${project.demo}" target="_blank" rel="noopener noreferrer">${t.demo} ↗</a>`:''}</div>`;
       return;
     }
-    $('#case-content').innerHTML = `<h2 id="case-title">${t.geoTitle}</h2><p class="case-summary">${t.geoSummary}</p><section class="case-detail"><h3>${t.problem}</h3><p>${t.geoProblem}</p></section><section class="case-detail"><h3>${t.built}</h3><p>${t.geoBuilt}</p></section><section class="case-detail"><h3>${t.evidence}</h3><ul>${t.geoEvidence.map(e=>`<li>${e}</li>`).join('')}</ul></section><div class="case-links"><a class="button" href="https://analiticalastdance-geovision-cali-frontend.hf.space" target="_blank" rel="noopener noreferrer">${t.live}</a></div>`;
+    $('#case-content').innerHTML = `<h2 id="case-title">${t.geoTitle}</h2><p class="case-summary">${t.geoSummary}</p>${projectGallery('geovision')}<section class="case-detail"><h3>${t.problem}</h3><p>${t.geoProblem}</p></section><section class="case-detail"><h3>${t.built}</h3><p>${t.geoBuilt}</p></section><section class="case-detail"><h3>${t.evidence}</h3><ul>${t.geoEvidence.map(e=>`<li>${e}</li>`).join('')}</ul></section><div class="case-links"><a class="button" href="https://huggingface.co/spaces/analiticalastdance/geovision-cali-frontend" target="_blank" rel="noopener noreferrer">${t.live}</a></div>`;
   }
   function setLanguage(next) {
     lang = next;
@@ -288,19 +332,19 @@
   document.addEventListener('click',event=>{
     const button=event.target.closest('[data-case]');
     if(!button) return;
-    lastCaseTrigger=button;activeCase=button.dataset.case;saludredShot=0;renderCase();
+    lastCaseTrigger=button;activeCase=button.dataset.case;galleryShot=0;renderCase();
     dialog.showModal();dialog.scrollTop=0;document.body.classList.add('dialog-open');$('#close-dialog').focus();
   });
   dialog.addEventListener('click', event => {
-    const button = event.target.closest('[data-saludred-shot]');
+    const button = event.target.closest('[data-gallery-shot]');
     if(!button) return;
-    saludredShot = Number(button.dataset.saludredShot);
-    const shot = saludredScreenshots[saludredShot];
-    $('#saludred-screenshot').src = screenshotPath(shot);
-    $('#saludred-screenshot').alt = shot[lang][1];
-    $('#saludred-caption').textContent = shot[lang][1];
-    $('.saludred-full-image').href = screenshotPath(shot);
-    dialog.querySelectorAll('[data-saludred-shot]').forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+    galleryShot = Number(button.dataset.galleryShot);
+    const shot = galleries[activeCase].shots[galleryShot];
+    $('#project-screenshot').src = screenshotPath(activeCase,shot);
+    $('#project-screenshot').alt = shot[lang][1];
+    $('#project-caption').textContent = shot[lang][1];
+    $('.project-full-image').href = screenshotPath(activeCase,shot);
+    dialog.querySelectorAll('[data-gallery-shot]').forEach(item => item.setAttribute('aria-pressed', String(item === button)));
   });
   $('#close-dialog').addEventListener('click',()=>dialog.close());
   dialog.addEventListener('click',event=>{if(event.target!==dialog)return;const r=dialog.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)dialog.close();});
@@ -337,14 +381,6 @@
     image.addEventListener('load',()=>{$('#hero-dashboard').hidden=false;$('#hero-selected-work').hidden=true;});
     image.addEventListener('error',()=>{$('#hero-dashboard').hidden=true;$('#hero-selected-work').hidden=false;});
     image.src='assets/demo/dashboard-hero.webp';
-  }
-  // Existing schematic GeoVision artwork; explicitly labelled as illustrative.
-  const svgNS='http://www.w3.org/2000/svg';
-  for(let row=0;row<15;row++)for(let col=0;col<9;col++){
-    if((row<2&&(col<3||col>6))||(row>11&&(col<2||col>6))||(row>6&&row<11&&col===0))continue;
-    const tile=document.createElementNS(svgNS,'rect');
-    for(const [key,value] of Object.entries({x:190+col*15,y:53+row*15,width:12,height:12,rx:1,fill:['#3e927d','#8db86c','#5faa94','#b5c87d'][(row+col)%4],opacity:.3}))tile.setAttribute(key,value);
-    $('#geo-cells').append(tile);
   }
   setLanguage(lang);
 })();

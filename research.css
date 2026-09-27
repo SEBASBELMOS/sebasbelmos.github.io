@@ -325,23 +325,28 @@
 .footer .footer-links a:hover{background:var(--gold-pale);color:var(--gold-ink)}
 .footer .footer-links svg{width:24px;height:24px}
 
-/* Real SaludRed screenshots, with controls that work without automatic motion. */
-.restored-projects .saludred-preview{display:block;padding:0;border:1px solid var(--line);background:#edf4f2;text-align:left;cursor:pointer}
-.saludred-preview>img{display:block;width:100%;height:100%;object-fit:cover;object-position:top left}
-.saludred-preview-label{position:absolute;bottom:12px;left:12px;right:12px;display:flex;justify-content:space-between;gap:12px;padding:10px 14px;border:1px solid #cddbd6;border-radius:8px;background:#fff;color:var(--ink);font:600 14px/1.5 var(--body);box-shadow:0 3px 12px #18232c12}
-.saludred-preview:hover .saludred-preview-label{background:var(--gold-pale)}
-.saludred-preview:focus-visible{outline:3px solid var(--gold-ink);outline-offset:-4px}
+/* Project screenshots, with controls that work without automatic motion. */
+.restored-projects .screenshot-preview{display:block;padding:0;border:1px solid var(--line);background:#edf4f2;text-align:left;cursor:pointer}
+.screenshot-preview>img{display:block;width:100%;height:100%;object-fit:cover;object-position:top left}
+.screenshot-preview-label{position:absolute;bottom:12px;left:12px;right:12px;display:flex;justify-content:space-between;gap:12px;padding:10px 14px;border:1px solid #cddbd6;border-radius:8px;background:#fff;color:var(--ink);font:600 14px/1.5 var(--body);box-shadow:0 3px 12px #18232c12}
+.screenshot-preview:hover .screenshot-preview-label{background:var(--gold-pale)}
+.screenshot-preview:focus-visible{outline:3px solid var(--gold-ink);outline-offset:-4px}
 dialog.case-with-gallery{width:min(980px,calc(100% - 32px))}
-.saludred-gallery{margin:28px 0 32px;padding-bottom:24px;border-bottom:1px solid var(--line)}
-.saludred-gallery h3{font:600 22px/1.4 var(--body)}
-.saludred-gallery-note{margin:8px 0 16px;color:var(--muted);font:400 14px/1.6 var(--body)}
-.saludred-gallery-controls{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
-.saludred-gallery-controls button{min-height:44px;padding:10px 14px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--ink);font:500 14px/1.5 var(--body);cursor:pointer}
-.saludred-gallery-controls button:hover{border-color:var(--jade)}
-.saludred-gallery-controls button[aria-pressed="true"]{background:var(--jade);border-color:var(--jade);color:white}
-.saludred-gallery-controls button:focus-visible,.saludred-full-image:focus-visible{outline:3px solid var(--gold-ink);outline-offset:3px}
-.saludred-gallery figure{margin:0}
-.saludred-gallery figure img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:8px;background:white}
-.saludred-gallery figcaption{margin-top:12px;font:400 14px/1.6 var(--body);color:var(--muted)}
-.saludred-full-image{display:inline-block;padding:12px 0;font:600 14px/1.5 var(--body);text-decoration:underline;text-underline-offset:4px}
-@media(max-width:640px){.saludred-gallery-controls{gap:6px}.saludred-gallery-controls button{padding:10px 12px}}
+.project-gallery{margin:28px 0 32px;padding-bottom:24px;border-bottom:1px solid var(--line)}
+.project-gallery h3{font:600 22px/1.4 var(--body)}
+.project-gallery-note{margin:8px 0 16px;color:var(--muted);font:400 14px/1.6 var(--body)}
+.project-gallery-controls{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.project-gallery-controls button{min-height:44px;padding:10px 14px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--ink);font:500 14px/1.5 var(--body);cursor:pointer}
+.project-gallery-controls button:hover{border-color:var(--jade)}
+.project-gallery-controls button[aria-pressed="true"]{background:var(--jade);border-color:var(--jade);color:white}
+.project-gallery-controls button:focus-visible,.project-full-image:focus-visible{outline:3px solid var(--gold-ink);outline-offset:3px}
+.project-gallery figure{margin:0}
+.project-gallery figure img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:8px;background:white}
+.project-gallery figcaption{margin-top:12px;font:400 14px/1.6 var(--body);color:var(--muted)}
+.project-full-image{display:inline-block;padding:12px 0;font:600 14px/1.5 var(--body);text-decoration:underline;text-underline-offset:4px}
+@media(max-width:640px){.project-gallery-controls{gap:6px}.project-gallery-controls button{padding:10px 12px}}
+
+/* Featured screenshot keeps its full aspect ratio above the existing metrics. */
+.geo-screenshot-art{gap:20px}
+.geo-screenshot-preview{position:relative;display:block;width:100%;padding:0;border:1px solid var(--line);border-radius:8px;overflow:hidden;text-align:left;background:#edf4f2}
+.geo-screenshot-preview>img{height:auto;object-fit:contain}

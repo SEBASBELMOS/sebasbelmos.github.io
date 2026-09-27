@@ -196,11 +196,31 @@
   const more = $('#more-projects');
   let lastCaseTrigger, activeCase = 'geovision', filter = 'all', expanded = false;
 
+  const saludredScreenshots = [
+    {file:'02-resumen-red.png',en:['Network overview','Bed availability across the network and upcoming requests.'],es:['Resumen de la red','Disponibilidad de camas en la red y próximas solicitudes.']},
+    {file:'03-cola-atencion.png',en:['Priority queue','Requests ordered by clinical priority and waiting time.'],es:['Cola de atención','Solicitudes ordenadas por prioridad clínica y tiempo de espera.']},
+    {file:'05-gestion-camas.png',en:['Bed management','A view of bed status by institution.'],es:['Gestión de camas','Vista del estado de las camas por institución.']},
+    {file:'06-analisis.png',en:['Analytics','Waiting times and a recommendation for the next patient.'],es:['Analítica','Tiempos de espera y recomendación para el próximo paciente.']},
+    {file:'07-agrupamiento.png',en:['Patient clustering','Patient groups and bed turnaround.'],es:['Agrupamiento','Grupos de pacientes y tiempo de alistamiento de camas.']}
+  ];
+  let saludredShot = 0;
+  const screenshotPath = shot => `/assets/projects/saludred/${shot.file}`;
+  function saludredGallery() {
+    const es = lang === 'es', shot = saludredScreenshots[saludredShot];
+    return `<section class="saludred-gallery" aria-labelledby="saludred-gallery-title">
+      <h3 id="saludred-gallery-title">${es?'Dentro de SaludRed':'Inside SaludRed'}</h3>
+      <p class="saludred-gallery-note">${es?'Capturas del prototipo académico, solo con datos sintéticos. Interfaz en español.':'Screenshots of the academic prototype, using synthetic data only. Interface in Spanish.'}</p>
+      <div class="saludred-gallery-controls" role="group" aria-label="${es?'Elegir una captura':'Choose a screenshot'}">${saludredScreenshots.map((item,i)=>`<button type="button" data-saludred-shot="${i}" aria-pressed="${i===saludredShot}" aria-controls="saludred-figure">${item[lang][0]}</button>`).join('')}</div>
+      <figure id="saludred-figure"><img id="saludred-screenshot" src="${screenshotPath(shot)}" width="1440" height="900" alt="${shot[lang][1]}"><figcaption id="saludred-caption" aria-live="polite">${shot[lang][1]}</figcaption></figure>
+      <a class="saludred-full-image" href="${screenshotPath(shot)}" target="_blank" rel="noopener noreferrer">${es?'Abrir imagen a tamaño completo':'Open full-size image'} ↗</a>
+    </section>`;
+  }
+
   function visual(id) {
     const es = lang === 'es';
+    if(id === 'saludred') return `<button type="button" class="card-visual visual-saludred saludred-preview" data-case="saludred" aria-haspopup="dialog" aria-label="${es?'Ver capturas de SaludRed':'View SaludRed screenshots'}"><img src="${screenshotPath(saludredScreenshots[0])}" alt="" width="1440" height="900" loading="lazy"><span class="saludred-preview-label">${es?'Ver capturas':'View screenshots'} <span aria-hidden="true">→</span></span></button>`;
     const art = {
       lakehouse:`<div class="mini-pipeline visual-lakehouse-pipeline"><div class="pipeline-row"><span class="pipeline-node">${es?'origen':'source'}</span><span class="pipeline-arrow">→</span><span class="pipeline-node">${es?'lago':'lake'}</span><span class="pipeline-arrow">→</span><span class="pipeline-node">Iceberg</span><span class="pipeline-arrow">→</span><span class="pipeline-node accent">ClickHouse</span></div><p>${es?'3.475.226 filas':'3,475,226 rows'}</p></div>`,
-      saludred:`<div class="mini-beds"><div class="beds-grid">${[1,0,1,1,0,1,0,0,1,0,1,0].map(f=>`<i class="${f?'filled':''}"></i>`).join('')}</div><p>${es?'Cola por prioridad · Camas · Analítica':'Priority queue · Beds · Analytics'}</p></div>`,
       jobs:`<div class="mini-pipeline"><div class="pipeline-row"><span class="pipeline-node">${es?'origen':'raw'}</span><span class="pipeline-arrow">→</span><span class="pipeline-node">${es?'limpios':'cleaned'}</span><span class="pipeline-arrow">→</span><span class="pipeline-node accent">${es?'análisis':'analytics'}</span></div><p>${es?'Más de 123.000 → PostgreSQL':'123K+ → PostgreSQL'}</p></div>`,
       spotify:`<div class="mini-spotify">${[22,41,57,30,71,85,61,95,74,50,67,90,53,76,40,64,28,43].map(h => `<i style="--bar:${h}px"></i>`).join('')}</div><span class="music-caption">${es?'Más de 114.000 registros → 81.941 enriquecidos':'114K+ records → 81,941 enriched'}</span>`,
       deutsch:'<div class="chat-preview"><div class="chat-top"><span>DeutschLernen</span><span>DE · A2</span></div><div class="chat-line">Wie war dein Tag?</div><div class="chat-line reply">Heute habe ich viel gelernt.</div><div class="chat-input">Weiter üben</div></div>',
@@ -229,10 +249,11 @@
   function renderCase() {
     const t = ui[lang];
     const project = projects.find(p => p.id === activeCase);
+    dialog.classList.toggle('case-with-gallery', activeCase === 'saludred');
     if(project){
       const content=project[lang];
       const eyebrow=t.category[project.type]+(project.status!=='code'?' · '+t.statuses[project.status]:'');
-      $('#case-content').innerHTML=`<p class="eyebrow">${eyebrow}</p><h2 id="case-title">${project.name}</h2><p class="case-summary">${content.summary}</p><section class="case-detail"><h3>${t.problem}</h3><p>${content.problem}</p></section><section class="case-detail"><h3>${t.built}</h3><p>${content.built}</p></section><section class="case-detail"><h3>${t.evidenceLabel}</h3><ul>${content.evidence.map(e=>`<li>${e}</li>`).join('')}</ul></section><div class="case-detail"><ul class="tech-chips">${project.tech.map(x=>`<li>${x}</li>`).join('')}</ul></div>${project.status==='paused'?`<p class="case-note">${t.pausedNote}</p>`:''}<div class="case-links">${project.repo?`<a class="button" href="${project.repo}" target="_blank" rel="noopener noreferrer">${t.code} ↗</a>`:''}${project.demo?`<a class="button button-outline" href="${project.demo}" target="_blank" rel="noopener noreferrer">${t.demo} ↗</a>`:''}</div>`;
+      $('#case-content').innerHTML=`<p class="eyebrow">${eyebrow}</p><h2 id="case-title">${project.name}</h2><p class="case-summary">${content.summary}</p>${project.id==='saludred'?saludredGallery():''}<section class="case-detail"><h3>${t.problem}</h3><p>${content.problem}</p></section><section class="case-detail"><h3>${t.built}</h3><p>${content.built}</p></section><section class="case-detail"><h3>${t.evidenceLabel}</h3><ul>${content.evidence.map(e=>`<li>${e}</li>`).join('')}</ul></section><div class="case-detail"><ul class="tech-chips">${project.tech.map(x=>`<li>${x}</li>`).join('')}</ul></div>${project.status==='paused'?`<p class="case-note">${t.pausedNote}</p>`:''}<div class="case-links">${project.repo?`<a class="button" href="${project.repo}" target="_blank" rel="noopener noreferrer">${t.code} ↗</a>`:''}${project.demo?`<a class="button button-outline" href="${project.demo}" target="_blank" rel="noopener noreferrer">${t.demo} ↗</a>`:''}</div>`;
       return;
     }
     $('#case-content').innerHTML = `<h2 id="case-title">${t.geoTitle}</h2><p class="case-summary">${t.geoSummary}</p><section class="case-detail"><h3>${t.problem}</h3><p>${t.geoProblem}</p></section><section class="case-detail"><h3>${t.built}</h3><p>${t.geoBuilt}</p></section><section class="case-detail"><h3>${t.evidence}</h3><ul>${t.geoEvidence.map(e=>`<li>${e}</li>`).join('')}</ul></section><div class="case-links"><a class="button" href="https://analiticalastdance-geovision-cali-frontend.hf.space" target="_blank" rel="noopener noreferrer">${t.live}</a></div>`;
@@ -267,8 +288,19 @@
   document.addEventListener('click',event=>{
     const button=event.target.closest('[data-case]');
     if(!button) return;
-    lastCaseTrigger=button;activeCase=button.dataset.case;renderCase();
+    lastCaseTrigger=button;activeCase=button.dataset.case;saludredShot=0;renderCase();
     dialog.showModal();dialog.scrollTop=0;document.body.classList.add('dialog-open');$('#close-dialog').focus();
+  });
+  dialog.addEventListener('click', event => {
+    const button = event.target.closest('[data-saludred-shot]');
+    if(!button) return;
+    saludredShot = Number(button.dataset.saludredShot);
+    const shot = saludredScreenshots[saludredShot];
+    $('#saludred-screenshot').src = screenshotPath(shot);
+    $('#saludred-screenshot').alt = shot[lang][1];
+    $('#saludred-caption').textContent = shot[lang][1];
+    $('.saludred-full-image').href = screenshotPath(shot);
+    dialog.querySelectorAll('[data-saludred-shot]').forEach(item => item.setAttribute('aria-pressed', String(item === button)));
   });
   $('#close-dialog').addEventListener('click',()=>dialog.close());
   dialog.addEventListener('click',event=>{if(event.target!==dialog)return;const r=dialog.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)dialog.close();});

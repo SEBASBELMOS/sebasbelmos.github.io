@@ -309,16 +309,10 @@
 .education .education-languages{font-size:1rem;line-height:1.75;margin:20px 0 0}
 .proof-row strong>[aria-hidden]{font-family:var(--body);font-weight:500;font-size:22px;line-height:1.3;text-align:center;width:24px}
 .restored-projects .pipeline-row{flex-wrap:nowrap;gap:6px}
-/* New project illustrations: NYC Taxi Lakehouse (4-node pipeline) and SaludRed (bed-availability grid). */
+/* NYC Taxi Lakehouse pipeline. */
 .visual-lakehouse{background:#e9effa}
-.visual-saludred{background:#e7eee8}
 .restored-projects .visual-lakehouse .pipeline-row{flex-wrap:wrap;row-gap:6px}
 .visual-lakehouse .pipeline-node{padding:10px 8px}
-.mini-beds{width:100%;max-width:220px;text-align:center}
-.beds-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:7px}
-.beds-grid i{display:block;aspect-ratio:4/3;border-radius:5px;background:#fff;border:1px solid #cddbd6;box-shadow:0 2px 6px #1c3d2c0f}
-.beds-grid i.filled{background:var(--jade);border-color:var(--jade)}
-.mini-beds>p{margin-top:14px;font:.875rem var(--mono);color:#3f6b58}
 @media(max-width:960px){.contact-grid{grid-template-columns:1fr;gap:32px}.contact-details{padding-top:0}}
 @media(max-width:640px){.contact-address{font-size:22px}.contact-details h3{font-size:21px}.contact-email-row{gap:16px}}
 @media print{.contact-details,.contact-prompts,.contact-intro,.contact-next p,#copy-status{color:var(--ink)}#copy-email,#copy-status{display:none}}
@@ -330,3 +324,24 @@
 .footer .footer-links a{display:grid;place-items:center;width:44px;height:44px;padding:0;border-radius:8px;color:var(--muted);text-decoration:none}
 .footer .footer-links a:hover{background:var(--gold-pale);color:var(--gold-ink)}
 .footer .footer-links svg{width:24px;height:24px}
+
+/* Real SaludRed screenshots, with controls that work without automatic motion. */
+.restored-projects .saludred-preview{display:block;padding:0;border:1px solid var(--line);background:#edf4f2;text-align:left;cursor:pointer}
+.saludred-preview>img{display:block;width:100%;height:100%;object-fit:cover;object-position:top left}
+.saludred-preview-label{position:absolute;bottom:12px;left:12px;right:12px;display:flex;justify-content:space-between;gap:12px;padding:10px 14px;border:1px solid #cddbd6;border-radius:8px;background:#fff;color:var(--ink);font:600 14px/1.5 var(--body);box-shadow:0 3px 12px #18232c12}
+.saludred-preview:hover .saludred-preview-label{background:var(--gold-pale)}
+.saludred-preview:focus-visible{outline:3px solid var(--gold-ink);outline-offset:-4px}
+dialog.case-with-gallery{width:min(980px,calc(100% - 32px))}
+.saludred-gallery{margin:28px 0 32px;padding-bottom:24px;border-bottom:1px solid var(--line)}
+.saludred-gallery h3{font:600 22px/1.4 var(--body)}
+.saludred-gallery-note{margin:8px 0 16px;color:var(--muted);font:400 14px/1.6 var(--body)}
+.saludred-gallery-controls{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.saludred-gallery-controls button{min-height:44px;padding:10px 14px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--ink);font:500 14px/1.5 var(--body);cursor:pointer}
+.saludred-gallery-controls button:hover{border-color:var(--jade)}
+.saludred-gallery-controls button[aria-pressed="true"]{background:var(--jade);border-color:var(--jade);color:white}
+.saludred-gallery-controls button:focus-visible,.saludred-full-image:focus-visible{outline:3px solid var(--gold-ink);outline-offset:3px}
+.saludred-gallery figure{margin:0}
+.saludred-gallery figure img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:8px;background:white}
+.saludred-gallery figcaption{margin-top:12px;font:400 14px/1.6 var(--body);color:var(--muted)}
+.saludred-full-image{display:inline-block;padding:12px 0;font:600 14px/1.5 var(--body);text-decoration:underline;text-underline-offset:4px}
+@media(max-width:640px){.saludred-gallery-controls{gap:6px}.saludred-gallery-controls button{padding:10px 12px}}

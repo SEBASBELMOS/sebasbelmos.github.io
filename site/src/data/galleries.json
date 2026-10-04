@@ -1,0 +1,412 @@
+{
+ "graduates": {
+  "folder": "graduates",
+  "es": {
+   "title": "Dentro del dashboard",
+   "note": "Exportación archivada del dashboard en Looker Studio, un proyecto de DS4A en equipo de 2. El dataset abierto original se retiró después de datos.gov.co, así que el dashboard en vivo ya no carga. Interfaz en español."
+  },
+  "en": {
+   "title": "Inside the dashboard",
+   "note": "Archived export of the Looker Studio dashboard, a DS4A team project of 2. The original open dataset was later removed from datos.gov.co, so the live dashboard no longer loads. Interface in Spanish."
+  },
+  "shots": [
+   {
+    "file": "01-dashboard.webp",
+    "en": [
+     "Dashboard",
+     "The full dashboard: 2,324,900 graduates from 2016 to 2020, with filters by level, methodology, sex and sector."
+    ],
+    "es": [
+     "Dashboard",
+     "El dashboard completo: 2.324.900 graduados de 2016 a 2020, con filtros por nivel, metodología, sexo y sector."
+    ]
+   },
+   {
+    "file": "02-programas.webp",
+    "en": [
+     "Top programmes",
+     "The programmes with the most graduates, by year."
+    ],
+    "es": [
+     "Programas principales",
+     "Los programas con más graduados, por año."
+    ]
+   }
+  ]
+ },
+ "saludred": {
+  "folder": "saludred",
+  "es": {
+   "title": "Dentro de SaludRed",
+   "note": "Capturas del prototipo académico, solo con datos sintéticos. Interfaz en español."
+  },
+  "en": {
+   "title": "Inside SaludRed",
+   "note": "Screenshots of the academic prototype, using synthetic data only. Interface in Spanish."
+  },
+  "shots": [
+   {
+    "file": "02-resumen-red.webp",
+    "en": [
+     "Network overview",
+     "Bed availability across the network and upcoming requests."
+    ],
+    "es": [
+     "Resumen de la red",
+     "Disponibilidad de camas en la red y próximas solicitudes."
+    ]
+   },
+   {
+    "file": "03-cola-atencion.webp",
+    "en": [
+     "Priority queue",
+     "Requests ordered by clinical priority and waiting time."
+    ],
+    "es": [
+     "Cola de atención",
+     "Solicitudes ordenadas por prioridad clínica y tiempo de espera."
+    ]
+   },
+   {
+    "file": "05-gestion-camas.webp",
+    "en": [
+     "Bed management",
+     "A view of bed status by institution."
+    ],
+    "es": [
+     "Gestión de camas",
+     "Vista del estado de las camas por institución."
+    ]
+   },
+   {
+    "file": "06-analisis.webp",
+    "en": [
+     "Analytics",
+     "Waiting times and a recommendation for the next patient."
+    ],
+    "es": [
+     "Analítica",
+     "Tiempos de espera y recomendación para el próximo paciente."
+    ]
+   },
+   {
+    "file": "07-agrupamiento.webp",
+    "en": [
+     "Patient clustering",
+     "Patient groups and bed turnaround."
+    ],
+    "es": [
+     "Agrupamiento",
+     "Grupos de pacientes y tiempo de alistamiento de camas."
+    ]
+   }
+  ]
+ },
+ "deutsch": {
+  "folder": "deutschlernen",
+  "es": {
+   "title": "Dentro de DeutschLernen",
+   "note": "Capturas de la app con una cuenta de demostración, sin datos de usuarios reales. Interfaz en español."
+  },
+  "en": {
+   "title": "Inside DeutschLernen",
+   "note": "Screenshots of the app with a demo account, no real user data. Interface in Spanish."
+  },
+  "shots": [
+   {
+    "file": "01-hoy.webp",
+    "en": [
+     "Today",
+     "Daily dashboard with streak, weekly goal and quick sessions."
+    ],
+    "es": [
+     "Hoy",
+     "Panel diario con racha, meta semanal y sesiones rápidas."
+    ]
+   },
+   {
+    "file": "02-practicar.webp",
+    "en": [
+     "Practice",
+     "Practice modes: conversation, corrections, listening, dictation and shadowing."
+    ],
+    "es": [
+     "Practicar",
+     "Modos de práctica: conversación, correcciones, comprensión, dictado y shadowing."
+    ]
+   },
+   {
+    "file": "03-gramatica.webp",
+    "en": [
+     "Grammar",
+     "Mastery by topic, with a review that targets the weakest areas first."
+    ],
+    "es": [
+     "Gramática",
+     "Dominio por tema, con un repaso que ataca primero lo más flojo."
+    ]
+   },
+   {
+    "file": "04-drills.webp",
+    "en": [
+     "Drills",
+     "Perfekt drill: choose the auxiliary and the Partizip II."
+    ],
+    "es": [
+     "Drills",
+     "Drill de Perfekt: elige el auxiliar y el Partizip II."
+    ]
+   },
+   {
+    "file": "05-vocabulario.webp",
+    "en": [
+     "Vocabulary",
+     "Thematic vocabulary packs to save and review."
+    ],
+    "es": [
+     "Vocabulario",
+     "Paquetes de vocabulario por temas para guardar y repasar."
+    ]
+   }
+  ]
+ },
+ "lakehouse": {
+  "folder": "lakehouse",
+  "es": {
+   "title": "Dentro del pipeline",
+   "note": "Capturas del pipeline ejecutándose en local con Docker Compose."
+  },
+  "en": {
+   "title": "Inside the pipeline",
+   "note": "Screenshots of the pipeline running locally with Docker Compose."
+  },
+  "shots": [
+   {
+    "file": "01-data-lake.webp",
+    "en": [
+     "Data lake",
+     "The raw Parquet file in the MinIO data lake."
+    ],
+    "es": [
+     "Data lake",
+     "El archivo Parquet original en el data lake de MinIO."
+    ]
+   },
+   {
+    "file": "02-clickhouse.webp",
+    "en": [
+     "Row count",
+     "ClickHouse returns 3,475,226 rows for the loaded table."
+    ],
+    "es": [
+     "Conteo de filas",
+     "ClickHouse devuelve 3.475.226 filas para la tabla cargada."
+    ]
+   },
+   {
+    "file": "03-verificacion.webp",
+    "en": [
+     "Verification",
+     "A notebook runs the checks across MinIO, Iceberg, Nessie, ClickHouse and Azure."
+    ],
+    "es": [
+     "Verificación",
+     "Un notebook ejecuta los checks en MinIO, Iceberg, Nessie, ClickHouse y Azure."
+    ]
+   }
+  ]
+ },
+ "jobs": {
+  "folder": "linkedin",
+  "es": {
+   "title": "Dentro del proyecto",
+   "note": "Dashboard de Power BI y diagramas del proyecto, un proyecto en equipo de 2."
+  },
+  "en": {
+   "title": "Inside the project",
+   "note": "Power BI dashboard and diagrams from the project, a team project of 2."
+  },
+  "shots": [
+   {
+    "file": "01-panorama.webp",
+    "en": [
+     "Market overview",
+     "Remote vs on-site postings, top hiring companies and postings by industry."
+    ],
+    "es": [
+     "Panorama del mercado",
+     "Ofertas remotas frente a presenciales, empresas que más publican y ofertas por industria."
+    ]
+   },
+   {
+    "file": "02-empleos-salarios.webp",
+    "en": [
+     "Jobs and salaries",
+     "Postings by work type and experience level, with salary trends."
+    ],
+    "es": [
+     "Empleos y salarios",
+     "Ofertas por tipo de trabajo y nivel de experiencia, con tendencias salariales."
+    ]
+   },
+   {
+    "file": "03-pipeline.webp",
+    "en": [
+     "ETL pipeline",
+     "Kaggle data and the Glassdoor API, orchestrated with Airflow into a PostgreSQL warehouse on GCP, then Power BI."
+    ],
+    "es": [
+     "Pipeline ETL",
+     "Datos de Kaggle y la API de Glassdoor, orquestados con Airflow hacia un warehouse PostgreSQL en GCP, y luego Power BI."
+    ]
+   },
+   {
+    "file": "04-esquema-estrella.webp",
+    "en": [
+     "Star schema",
+     "A jobs fact table with time, job, location and company dimensions."
+    ],
+    "es": [
+     "Esquema estrella",
+     "Una tabla de hechos de ofertas con dimensiones de tiempo, empleo, ubicación y empresa."
+    ]
+   }
+  ]
+ },
+ "spotify": {
+  "folder": "spotify",
+  "es": {
+   "title": "Dentro del dashboard",
+   "note": "Dashboard de Power BI exportado del proyecto, más su diagrama de arquitectura."
+  },
+  "en": {
+   "title": "Inside the dashboard",
+   "note": "Power BI dashboard exported from the project, plus its architecture diagram."
+  },
+  "shots": [
+   {
+    "file": "01-resumen.webp",
+    "en": [
+     "Overview",
+     "Popularity by artist, tracks by genre and Grammy wins by category."
+    ],
+    "es": [
+     "Resumen",
+     "Popularidad por artista, canciones por género y premios Grammy por categoría."
+    ]
+   },
+   {
+    "file": "02-generos.webp",
+    "en": [
+     "Genres",
+     "Explicit tracks by genre, duration categories and live performances."
+    ],
+    "es": [
+     "Géneros",
+     "Canciones explícitas por género, categorías de duración y presentaciones en vivo."
+    ]
+   },
+   {
+    "file": "03-energia.webp",
+    "en": [
+     "Mood and energy",
+     "Energy by track mood over time, and danceability vs energy."
+    ],
+    "es": [
+     "Ánimo y energía",
+     "Energía según el ánimo de la canción a lo largo del tiempo, y bailabilidad frente a energía."
+    ]
+   },
+   {
+    "file": "04-grammy.webp",
+    "en": [
+     "Grammy winners",
+     "Grammy-winning tracks by artist and album."
+    ],
+    "es": [
+     "Ganadores del Grammy",
+     "Canciones ganadoras del Grammy por artista y álbum."
+    ]
+   },
+   {
+    "file": "05-arquitectura.webp",
+    "en": [
+     "Architecture",
+     "Kaggle data and the Spotify API, orchestrated with Airflow into PostgreSQL on GCP and Google Drive, then Power BI."
+    ],
+    "es": [
+     "Arquitectura",
+     "Datos de Kaggle y la API de Spotify, orquestados con Airflow hacia PostgreSQL en GCP y Google Drive, y luego Power BI."
+    ]
+   }
+  ]
+ },
+ "geovision": {
+  "folder": "geovision",
+  "es": {
+   "title": "Dentro de GeoVision",
+   "note": "Capturas de la aplicación en vivo, un proyecto en equipo de 3. Interfaz en español."
+  },
+  "en": {
+   "title": "Inside GeoVision",
+   "note": "Screenshots of the live app, a team project of 3. Interface in Spanish."
+  },
+  "shots": [
+   {
+    "file": "01-concentracion.webp",
+    "en": [
+     "Concentration",
+     "Corrected O₃ prediction for T+1 across 1,920 cells."
+    ],
+    "es": [
+     "Concentración",
+     "Predicción corregida de O₃ a T+1 en 1.920 celdas."
+    ]
+   },
+   {
+    "file": "02-incertidumbre.webp",
+    "en": [
+     "Uncertainty",
+     "Prediction uncertainty (sigma) for each cell."
+    ],
+    "es": [
+     "Incertidumbre",
+     "Incertidumbre de la predicción (sigma) en cada celda."
+    ]
+   },
+   {
+    "file": "03-clusters-lisa.webp",
+    "en": [
+     "LISA clusters",
+     "Spatial hotspots and coldspots."
+    ],
+    "es": [
+     "Clusters LISA",
+     "Puntos calientes y fríos espaciales."
+    ]
+   },
+   {
+    "file": "04-perfiles-kmeans.webp",
+    "en": [
+     "K-means profiles",
+     "Areas ranked by risk using k-means profiles."
+    ],
+    "es": [
+     "Perfiles k-means",
+     "Zonas ordenadas por riesgo con perfiles k-means."
+    ]
+   },
+   {
+    "file": "05-resumen-area.webp",
+    "en": [
+     "Area summary",
+     "Summary within a 2 km radius for T+1, T+3 and T+7."
+    ],
+    "es": [
+     "Resumen del área",
+     "Resumen en un radio de 2 km para T+1, T+3 y T+7."
+    ]
+   }
+  ]
+ }
+}

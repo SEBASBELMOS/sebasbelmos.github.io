@@ -1,0 +1,607 @@
+/* ---------- Grounds ----------
+   Paper is the canvas, grey the soft band, ink anchors GeoVision and closes
+   the site (contact and footer share it). There is no cobalt ground. */
+.band { background: var(--grey); }
+.field--ink { background: var(--ink); color: var(--white); }
+.field { overflow-x: clip; }
+
+/* ---------- Hero ---------- */
+.hero-grid {
+  /* Longest promise line, in em (ES "Menos trabajo manual."). */
+  --hero-fit: 12.6;
+  /* The promise fits the content box and the first viewport, 96–112px on desktop. */
+  --hero-size: clamp(40px, min(calc((min(100vw, var(--max)) - 2 * var(--gutter)) / var(--hero-fit)), calc((100svh - var(--header-h)) * .135)), 112px);
+  padding-block: clamp(32px, 6vh, 64px) var(--pad);
+}
+:lang(en) .hero-grid { --hero-fit: 11.4; }
+.hero-before { display: block; margin-bottom: 8px; }
+/* The struck line: about 40% smaller than the promise, same family, lighter. */
+.hero-struck-line {
+  display: block;
+  font-size: calc(var(--hero-size) * .56);
+  font-stretch: 125%;
+  font-weight: 760;
+  letter-spacing: -.015em;
+  line-height: 1.05;
+  color: var(--ink-2);
+  white-space: nowrap;
+}
+.hero-struck { margin-bottom: clamp(14px, 2.2vh, 24px); }
+.hero-title { font-size: var(--hero-size); }
+/* Desktop: one strike over the whole line. Phones: one per wrapped line. */
+.struck-part { position: relative; }
+.strike-line { display: none; }
+.marked--strike .strike-whole {
+  left: -.06em;
+  width: calc(100% + .12em);
+  top: .19em;
+  height: .8em;
+}
+/* The lower band is one left column (columns 1–7); the right half stays empty. */
+.hero-lower {
+  margin-top: clamp(28px, 4.4vh, 48px);
+  max-width: calc((min(100vw, var(--max)) - 2 * var(--gutter)) * 7 / 12);
+}
+.hero-support { font-size: clamp(18px, 1.45vw, 21px); max-width: 46ch; }
+/* The niche is metadata: one line on desktop, at most two on phones. */
+.hero-niche { margin-top: 10px; font-size: 15px; line-height: 1.45; color: var(--ink-2); }
+.hero-ctas { margin-top: 24px; }
+.hero-cta { font-size: 20px; }
+
+@media (max-width: 699px) {
+  .hero-grid {
+    --hero-size: clamp(36px, 11.25vw, 46px);
+    padding-block: 28px var(--pad);
+  }
+  .hero-struck-line { white-space: normal; font-size: calc(var(--hero-size) * .6); }
+  .struck-part { display: block; width: max-content; max-width: 100%; }
+  .marked--strike .strike-whole { display: none; }
+  .marked--strike .strike-line {
+    display: block;
+    /* Starts on the content edge, never in the gutter. */
+    left: .02em;
+    width: calc(100% + .04em);
+    top: .19em;
+    height: .8em;
+  }
+  .hero-title .line { display: inline; }
+  .hero-title .line:first-child { display: block; }
+  .hero-lower { margin-top: 24px; max-width: none; }
+  .hero-support { font-size: 18px; }
+  .hero-ctas { margin-top: 18px; }
+  .hero-cta { font-size: 19px; }
+}
+
+/* ---------- Founder reality: labelled rows on grey ---------- */
+.reality { padding-block: var(--pad); }
+.reality-title {
+  font-size: clamp(34px, 4.2vw, 60px);
+  max-width: 75%;
+  margin-bottom: clamp(40px, 6vh, 64px);
+}
+.reality-title-2 { color: var(--ink-2); }
+.ledger { border-bottom: 1px solid var(--rule); }
+/* Desktop: the category label in a narrow column beside the situation. */
+.ledger-row {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  column-gap: var(--gutter);
+  align-items: baseline;
+  border-top: 1px solid var(--rule);
+  padding-block: 22px 24px;
+}
+.ledger-situation {
+  font-size: clamp(22px, 2vw, 28px);
+  font-weight: 650;
+  line-height: 1.2;
+}
+.reality-close {
+  margin-top: 56px;
+  max-width: 75%;
+  font-size: clamp(28px, 3.2vw, 44px);
+  font-weight: 720;
+  line-height: 1.1;
+}
+@media (max-width: 699px) {
+  .reality-title, .reality-close { max-width: none; }
+  .ledger-row { grid-template-columns: minmax(0, 1fr); row-gap: 4px; padding-block: 16px 18px; }
+  .ledger-situation { font-size: 22px; }
+  .reality-close { margin-top: 36px; }
+}
+
+/* ---------- Thesis: one statement on paper ---------- */
+.thesis { padding-block: var(--pad-loose) var(--pad); }
+.thesis-statement { font-size: clamp(34px, 4.4vw, 63px); }
+.thesis-statement .line + .line { margin-top: .12em; }
+.thesis-support {
+  margin-top: clamp(28px, 4vh, 40px);
+  max-width: 54ch;
+  font-size: clamp(18px, 1.45vw, 21px);
+}
+
+/* ---------- Shared case parts ---------- */
+.case { padding-block: var(--pad); }
+.case-record { margin-top: 14px; color: var(--ink-2); }
+.case-title {
+  font-size: clamp(28px, 3.2vw, 46px);
+  max-width: 67%;
+}
+@media (max-width: 699px) {
+  .case-title { max-width: none; }
+}
+
+/* ---------- Bilbao2: continues the thesis's paper under a hairline ---------- */
+.bilbao { padding-top: 0; }
+.cases-head {
+  border-top: 1px solid var(--rule);
+  padding-top: var(--pad);
+  padding-bottom: clamp(40px, 6vh, 72px);
+}
+.cases-title { font-size: clamp(34px, 3.9vw, 56px); }
+/* Two separate blocks: a metric heading, then its own sequence. They sit side
+   by side when both fit, and stack otherwise. */
+.flows {
+  margin-top: clamp(40px, 6vh, 64px);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px clamp(56px, 6vw, 104px);
+}
+.flow { min-width: 0; }
+.flow-head { display: flex; flex-wrap: wrap; align-items: baseline; column-gap: 12px; }
+.flow-n { font-size: clamp(48px, 4.2vw, 60px); }
+.flow-label { font-size: clamp(18px, 1.4vw, 20px); font-weight: 560; }
+.flow-seq {
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  row-gap: 4px;
+  font-size: clamp(22px, 1.75vw, 25px);
+  font-weight: 650;
+  line-height: 1.25;
+  letter-spacing: -.01em;
+}
+.flow-seq li { margin-right: .4em; white-space: nowrap; }
+.flow-seq .arrow-icon { margin-left: .4em; color: var(--ink-2); }
+.seq-arrow--down { display: none; }
+.flow-did {
+  margin-top: clamp(32px, 5vh, 48px);
+  max-width: 60ch;
+  font-size: clamp(18px, 1.4vw, 20px);
+}
+/* Phones: blocks stack and each sequence reads top to bottom, one item per
+   line, with down arrows. */
+@media (max-width: 759px) {
+  .flows { flex-direction: column; gap: 32px; }
+  .flow-seq { flex-direction: column; align-items: flex-start; font-size: 22px; }
+  .seq-arrow--right { display: none; }
+  .seq-arrow--down { display: inline-block; }
+}
+
+/* ---------- BetterLife: two periods, equal weight ---------- */
+.chrono {
+  margin-top: clamp(40px, 6vh, 64px);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.period--1 { padding-right: clamp(24px, 3.6vw, 56px); }
+/* A plain 1px rule between the periods; no drawn mark, no arrow. */
+.period--2 { padding-left: clamp(24px, 3.6vw, 56px); border-left: 1px solid var(--rule); }
+.period-head { margin-top: 14px; display: flex; flex-direction: column; gap: 8px; }
+.period-metric { font-size: clamp(48px, 4.2vw, 60px); }
+.period-unit { font-size: 20px; font-weight: 600; line-height: 1.3; }
+.period-time { margin-top: 2px; font-size: 18px; color: var(--ink-2); }
+.qualifier { margin-top: 18px; font-size: 16px; color: var(--ink-2); max-width: 46ch; }
+.period-title { margin-top: 14px; font-size: clamp(28px, 2.6vw, 38px); font-weight: 740; line-height: 1.1; }
+.period-body { margin-top: 16px; font-size: 18px; max-width: 50ch; }
+.period-scope { margin-top: 18px; color: var(--ink-2); }
+@media (max-width: 759px) {
+  .chrono { grid-template-columns: minmax(0, 1fr); }
+  .period--1 { padding: 0 0 28px; }
+  .period--2 { padding: 28px 0 0; border-left: 0; border-top: 1px solid var(--rule); }
+}
+
+/* ---------- GeoVision: lightbox on ink ---------- */
+.geo .case-record { color: var(--on-ink-2); }
+.geo-grid {
+  margin-top: clamp(40px, 6vh, 64px);
+  display: grid;
+  /* The text column widens to about 384px at 1440, which takes about 12% off
+     the screenshot's area; below 1200 it stays at 320px. */
+  grid-template-columns: minmax(0, 1fr) clamp(320px, 26.6vw, 392px);
+  column-gap: clamp(32px, 3.6vw, 56px);
+  align-items: start;
+}
+.geo-media {
+  /* Bleeds to the left viewport edge. */
+  margin-left: calc(-1 * var(--gutter) - (100vw - min(100vw, var(--max))) / 2);
+  min-width: 0;
+}
+.geo-tabs {
+  display: flex;
+  gap: 4px 22px;
+  padding-left: var(--gutter);
+  margin-bottom: 14px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.geo-tabs[hidden] { display: none; }
+.geo-tabs button {
+  flex: 0 0 auto;
+  min-height: 44px;
+  padding: 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--on-ink-2);
+  border-bottom: 2px solid transparent;
+  transition: color .18s ease-out, border-color .18s ease-out;
+}
+.geo-tabs button:hover { color: var(--white); }
+.geo-tabs button[aria-selected='true'] { color: #fff; border-bottom-color: #fff; }
+/* The whole app frame: only the footer strip is cropped. */
+.geo-frame {
+  position: relative;
+  aspect-ratio: 1440 / 866;
+  overflow: hidden;
+  background: #1C1C21;
+  outline: 1px solid var(--on-ink-rule);
+  outline-offset: -1px;
+}
+.geo-layer { position: absolute; inset: 0; opacity: 0; transition: opacity .25s ease-in-out; }
+.geo-layer.is-active { opacity: 1; }
+.geo-layer img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: top;
+}
+html:not(.js) .geo-layer:not(:first-child) { display: none; }
+.geo-caption { color: var(--on-ink-2); margin-top: 12px; padding-left: var(--gutter); }
+.geo-caption-title { color: var(--white); font-weight: 600; }
+/* Facts: one record line under the caption, numbers and labels at one size. */
+.geo-facts { margin-top: 10px; padding-left: var(--gutter); }
+.geo-facts .dot-list { font-size: 16px; color: var(--on-ink-2); }
+.geo-facts b { font-weight: 700; color: var(--white); }
+/* Phones: one metric per line, no separators. */
+@media (max-width: 760px) {
+  .geo-facts .dot-list { display: block; margin-left: 0; clip-path: none; }
+  .geo-facts .dot-list li { display: block; padding-left: 0; }
+  .geo-facts .dot-list li + li { margin-top: 4px; }
+  .geo-facts .dot-list li + li::before { content: none; }
+}
+.geo-nojs { margin-top: 20px; padding-left: var(--gutter); font-size: 15px; color: var(--on-ink-2); }
+.geo-nojs ul { margin-top: 6px; display: grid; gap: 6px; }
+.geo-nojs a { color: var(--white); }
+html.js .geo-nojs { display: none; }
+.geo-side { display: flex; flex-direction: column; gap: 28px; padding-top: 58px; }
+.geo-text p { font-size: 17px; line-height: 1.5; color: var(--white); }
+.geo-text p + p { margin-top: 12px; }
+.geo-links { display: flex; flex-wrap: wrap; gap: 4px 24px; }
+.geo-links a {
+  display: inline-flex; align-items: center; min-height: 44px;
+  color: #fff; font-weight: 600; font-size: 17px;
+  text-decoration: underline 1px; text-underline-offset: .28em;
+}
+.geo-links a:hover { text-decoration-thickness: 2px; }
+@media (max-width: 1099px) {
+  .geo-grid { grid-template-columns: 1fr; row-gap: 40px; }
+  .geo-media { margin-left: 0; }
+  .geo-tabs, .geo-caption, .geo-facts, .geo-nojs { padding-left: 0; }
+  .geo-side { padding-top: 0; display: grid; grid-template-columns: 1fr 1fr; column-gap: var(--gutter); row-gap: 20px; align-items: start; }
+  .geo-text { grid-row: span 2; }
+}
+/* Phones: a full-bleed, map-only crop; the tabs scroll under a fade. */
+@media (max-width: 699px) {
+  .geo-media { margin-inline: calc(-1 * var(--gutter)); }
+  .geo-tabs {
+    padding-inline: var(--gutter);
+    -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 56px), transparent);
+    mask-image: linear-gradient(to right, #000 calc(100% - 56px), transparent);
+  }
+  .geo-frame { aspect-ratio: 97 / 100; outline: 0; }
+  .geo-layer img { object-position: 0 50%; }
+  .geo-caption, .geo-facts, .geo-nojs { padding-inline: var(--gutter); }
+  .geo-side { display: flex; }
+}
+
+/* ---------- Archive: one clickable editorial row between two hairlines ----------
+   The whole row is the link. The rules run full-bleed; the content keeps the
+   page grid (the label column matches the reality rows). Hover and focus turn
+   the row to ink; reduced motion drops the transition, not the state. */
+.archive-path { padding-block: clamp(40px, 6vh, 64px); }
+.archive-row {
+  display: block;
+  min-height: 64px;
+  border-block: 1px solid var(--rule);
+  color: var(--ink);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color .18s ease-out, color .18s ease-out, border-color .18s ease-out;
+}
+.archive-row-inner {
+  display: block;
+  padding-block: 24px 26px;
+}
+/* One line, left-aligned: the text and the arrow. */
+.archive-row-title {
+  display: block;
+  font-size: clamp(28px, 2.1vw, 30px);
+  font-weight: 700;
+  line-height: 1.15;
+}
+.archive-row .arrow-icon { transition: transform .18s ease-out; }
+.archive-row:hover, .archive-row:focus-visible {
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+}
+.archive-row:hover .arrow-icon, .archive-row:focus-visible .arrow-icon { transform: translateX(4px); }
+/* The ring stays visible on the ink: paper, inset. */
+.archive-row:focus-visible { outline: 2px solid var(--paper); outline-offset: -6px; }
+@media (max-width: 699px) {
+  .archive-row-inner { padding-block: 20px 22px; }
+  /* Sized so the line fits on one line down to 360. */
+  .archive-row-title { font-size: clamp(22px, 6.15vw, 26px); }
+}
+
+/* ---------- How I work ---------- */
+.process { padding-block: var(--pad); }
+.process-title { font-size: clamp(32px, 3.75vw, 54px); font-weight: 760; }
+.process-under { margin-top: 16px; font-size: 18px; color: var(--ink-2); max-width: 56ch; }
+/* Four steps, each under its own 1px rule; no boxes. */
+.process-steps {
+  margin-top: clamp(40px, 6vh, 64px);
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  column-gap: clamp(20px, 2.4vw, 40px);
+}
+.process-steps li { border-top: 1px solid var(--rule); padding-top: 16px; display: flex; flex-direction: column; gap: 8px; }
+.process-no { color: var(--ink-2); }
+.process-step-title { font-size: 26px; }
+.process-steps p { font-size: 17px; max-width: 34ch; }
+@media (max-width: 760px) {
+  .process-steps { grid-template-columns: minmax(0, 1fr); row-gap: 22px; }
+}
+
+/* ---------- About ---------- */
+.why { padding-block: var(--pad); }
+.why-title { font-size: clamp(32px, 3.8vw, 56px); max-width: 75%; }
+/* Portrait column plus text column; teaching sits below the text, smaller. */
+.why-grid {
+  margin-top: clamp(40px, 6vh, 64px);
+  display: grid;
+  grid-template-columns: 300px minmax(0, 1fr);
+  grid-template-areas:
+    'portrait text'
+    'portrait teach';
+  grid-template-rows: auto 1fr;
+  column-gap: clamp(32px, 4.4vw, 72px);
+  row-gap: 44px;
+  align-items: start;
+}
+.why-portrait { grid-area: portrait; }
+.why-portrait img { width: 300px; aspect-ratio: 300 / 375; object-fit: cover; background: #C9C6BE; }
+.why-portrait figcaption { margin-top: 10px; font-size: 14px; color: var(--ink-2); line-height: 1.45; }
+.why-portrait-sub { display: block; }
+.why-text { grid-area: text; }
+.why-lead { font-size: 26px; font-weight: 700; }
+.why-text p { margin-top: 14px; font-size: 18px; max-width: 60ch; }
+.why-teach { grid-area: teach; border-top: 1px solid var(--rule); padding-top: 28px; max-width: 60ch; }
+/* The teaching intro is a lead-in sentence, not a headline: smaller than the about H3. */
+.teach-title { font-size: 20px; font-weight: 650; letter-spacing: -.01em; line-height: 1.25; color: var(--ink); }
+/* Three short items, smaller than the case metrics. */
+.teach-list { margin-top: 16px; display: flex; flex-wrap: wrap; gap: 14px 40px; }
+.teach-list li { display: flex; flex-direction: column; }
+.teach-n {
+  font-stretch: 112%;
+  font-weight: 760;
+  font-size: clamp(24px, 1.9vw, 28px);
+  line-height: 1.1;
+  letter-spacing: -.01em;
+  color: var(--ink);
+}
+.teach-label { margin-top: 2px; font-size: 16px; color: var(--ink-2); }
+.teach-text { margin-top: 18px; font-size: 17px; }
+.why-quote { margin-top: 24px; }
+.quote-label { color: var(--ink-2); }
+.why-quote blockquote { margin-top: 6px; font-size: 18px; line-height: 1.5; font-weight: 480; }
+.marked--under .mark--under {
+  left: -.04em;
+  top: calc(100% - .3em);
+  width: calc(100% + .08em);
+}
+.quote-by { margin-top: 10px; font-size: 15px; color: var(--ink-2); }
+.quote-by a { color: var(--ink); font-weight: 600; display: block; width: max-content; max-width: 100%; padding-block: 8px 3px; }
+@media (max-width: 1099px) {
+  .why-title { max-width: none; }
+  .why-grid { grid-template-columns: 220px minmax(0, 1fr); }
+  .why-portrait img { width: 100%; }
+}
+/* Phones: a small portrait beside its caption, then text, then teaching. */
+@media (max-width: 699px) {
+  .why-grid {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: 'portrait' 'text' 'teach';
+    row-gap: 32px;
+  }
+  .why-portrait { display: grid; grid-template-columns: 128px minmax(0, 1fr); column-gap: 16px; align-items: end; }
+  .why-portrait img { width: 128px; }
+  .why-portrait figcaption { margin-top: 0; }
+  .why-lead { font-size: 24px; }
+  .teach-list { display: grid; grid-template-columns: repeat(3, minmax(0, auto)); justify-content: start; gap: 14px 24px; }
+}
+
+/* ---------- Contact: the ink chapter, continuous with the footer ---------- */
+.contact { padding-block: var(--pad-loose) var(--pad); }
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--gutter);
+  row-gap: 48px;
+  align-items: start;
+}
+.contact-title { grid-column: 1 / -1; grid-row: 1; font-size: clamp(40px, 5.6vw, 84px); }
+.contact-sub { grid-column: 1 / span 5; grid-row: 2; font-size: 20px; color: var(--on-ink-2); max-width: 48ch; }
+.contact-reach { grid-column: 6 / -1; grid-row: 2; }
+.email-row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+/* Gold is a micro-accent on ink only: the hover and focus underline. */
+.email {
+  color: var(--white);
+  font-stretch: 104%;
+  font-weight: 680;
+  font-size: clamp(28px, 2.9vw, 40px);
+  letter-spacing: -.01em;
+  line-height: 1.2;
+  white-space: nowrap;
+  text-decoration: underline 2px transparent;
+  text-underline-offset: .22em;
+  transition: text-decoration-color .18s ease-out;
+}
+.email:hover, .email:focus-visible { text-decoration-color: var(--gold); }
+.copy-btn {
+  flex: 0 0 44px;
+  width: 44px; height: 44px;
+  display: grid; place-items: center;
+  border: 1px solid rgba(255, 255, 255, .35);
+  color: var(--white);
+  transition: border-color .18s ease-out, background-color .18s ease-out;
+}
+.copy-btn svg { width: 18px; height: 18px; }
+.copy-btn:hover { border-color: var(--white); background: rgba(255, 255, 255, .08); }
+.copy-status { font-size: 15px; font-weight: 600; color: var(--gold); white-space: nowrap; }
+/* Socials: a monochrome mark plus its name; no cards, circles or outlines. */
+.contact-social { margin-top: 32px; display: flex; flex-wrap: wrap; gap: 0 32px; }
+.contact-social a {
+  display: inline-flex; align-items: center; gap: 10px; min-height: 44px;
+  color: var(--white); text-decoration: none; font-size: 17px; font-weight: 600;
+}
+.social-icon { width: 18px; height: 18px; flex-shrink: 0; }
+.contact-social a:hover .social-label, .contact-social a:focus-visible .social-label {
+  text-decoration: underline 1px; text-underline-offset: .28em;
+}
+/* Where the row cannot hold address, button and feedback, the feedback sits below. */
+@media (max-width: 1279px) {
+  .copy-status { position: absolute; left: 0; top: 100%; margin-top: 4px; }
+}
+@media (max-width: 899px) {
+  .contact-grid { display: block; }
+  .contact-sub { margin-top: 32px; }
+  .contact-reach { margin-top: 40px; }
+}
+@media (max-width: 699px) {
+  .contact-sub { font-size: 18px; }
+  .email-row { gap: 10px; }
+  /* A narrower cut of the same face keeps the address and button on one row at 360. */
+  .email { font-size: clamp(20px, 5.6vw, 24px); font-stretch: 92%; }
+  .contact-social { margin-top: 28px; gap: 0 24px; }
+}
+
+/* ---------- Dot-separated record lists ----------
+   Items wrap naturally. Each item carries its separator on its left; the list
+   is pulled left by one separator width and that strip is clipped, so the dot
+   that would open a wrapped line is never shown and none dangles at the end. */
+.dot-list {
+  --sep: 1.1em;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: calc(-1 * var(--sep));
+  clip-path: inset(-.4em -.4em -.4em var(--sep));
+  line-height: 1.5;
+}
+.dot-list li { position: relative; padding-left: var(--sep); }
+.dot-list li + li::before {
+  content: '·' / '';
+  position: absolute;
+  left: 0;
+  width: var(--sep);
+  text-align: center;
+}
+
+/* ---------- Technical archive page ---------- */
+.archive-page { padding-block: clamp(40px, 6vh, 72px) var(--pad); }
+.archive-back { display: inline-block; font-size: 16px; font-weight: 560; padding-block: 10px 3px; }
+.archive-title { margin-top: 28px; font-size: clamp(40px, 4.4vw, 56px); }
+.archive-intro { margin-top: 16px; font-size: 18px; color: var(--ink-2); max-width: 60ch; }
+.records { margin-top: clamp(40px, 6vh, 64px); border-bottom: 1px solid var(--rule); }
+.record { border-top: 1px solid var(--rule); }
+.record summary {
+  list-style: none;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: minmax(0, 300px) minmax(0, 1fr) 44px;
+  grid-template-areas:
+    'name summary toggle'
+    'context tech toggle';
+  column-gap: var(--gutter);
+  row-gap: 6px;
+  padding-block: 22px;
+  align-items: baseline;
+}
+.record summary::-webkit-details-marker { display: none; }
+.record-name { grid-area: name; font-size: 26px; }
+.record-context { grid-area: context; color: var(--ink-2); }
+.record-summary { grid-area: summary; font-size: 17px; line-height: 1.45; max-width: 70ch; }
+.record-tech { grid-area: tech; color: var(--ink-2); }
+.record-toggle {
+  grid-area: toggle;
+  align-self: center;
+  justify-self: end;
+  width: 44px; height: 44px;
+  display: grid; place-items: center;
+  font-size: 28px; font-weight: 400; line-height: 1;
+  transition: transform .18s ease-out;
+}
+.record[open] .record-toggle { transform: rotate(45deg); }
+.record summary:hover .record-name { text-decoration: underline 2px var(--blue); text-underline-offset: .18em; }
+.record-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  column-gap: var(--gutter);
+  row-gap: 28px;
+  padding-bottom: 32px;
+}
+.record-fields div + div { margin-top: 16px; }
+.record-fields dt, .record-evidence h3, .record-shots h3 { color: var(--ink-2); margin-bottom: 6px; }
+.record-fields dd { font-size: 17px; max-width: 60ch; }
+.record-evidence ul { display: grid; gap: 6px; }
+.record-evidence li { font-size: 16px; padding-left: 1em; text-indent: -1em; }
+.record-evidence li::before { content: '– '; color: var(--ink-2); }
+.record-links { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 0 24px; }
+.record-links a { display: inline-block; font-weight: 600; padding-block: 10px 3px; }
+.record-shots { grid-column: 1 / -1; min-width: 0; }
+.shot-strip {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  scroll-snap-type: x proximity;
+}
+.shot-strip li { flex: 0 0 min(320px, 78vw); scroll-snap-align: start; }
+.shot-strip a { display: block; text-decoration: none; }
+.shot-strip img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top left; background: var(--grey); border: 1px solid var(--rule); }
+.shot-title { display: block; margin-top: 6px; font-size: 15px; color: var(--ink-2); }
+.shot-strip a:hover .shot-title { color: var(--ink); text-decoration: underline; }
+.record-shots .caption { margin-top: 6px; max-width: 80ch; }
+.archive-foot { margin-top: 48px; display: flex; flex-wrap: wrap; align-items: center; gap: 20px 32px; }
+.archive-foot .pen-link { font-weight: 560; padding-block: 10px 3px; }
+@media (max-width: 799px) {
+  .record summary {
+    grid-template-columns: minmax(0, 1fr) 44px;
+    grid-template-areas: 'name toggle' 'context context' 'summary summary' 'tech tech';
+  }
+  .record-body { grid-template-columns: 1fr; }
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: 0s !important; }
+  .geo-layer { transition: none; }
+}

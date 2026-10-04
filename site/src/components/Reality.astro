@@ -1,0 +1,25 @@
+---
+import { copy, type Lang } from '../i18n';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = copy[lang].reality;
+---
+<section class="reality band" id="realidad" aria-labelledby="reality-title">
+  <div class="wrap">
+    <h2 class="t-head reality-title" id="reality-title">
+      <span class="line">{t.title[0]}</span>
+      <span class="line reality-title-2">{t.title[1]}</span>
+    </h2>
+    <!-- Four rows: a small category label beside the situation itself. -->
+    <ul class="ledger">
+      {t.rows.map(([label, situation]) => (
+        <li class="ledger-row">
+          <p class="t-label ledger-label">{label}</p>
+          <p class="t-head ledger-situation">{situation}</p>
+        </li>
+      ))}
+    </ul>
+    <p class="t-head reality-close">{t.close}</p>
+  </div>
+</section>

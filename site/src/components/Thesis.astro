@@ -1,0 +1,17 @@
+---
+import { copy, type Lang } from '../i18n';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = copy[lang].thesis;
+---
+<!-- The thesis: one statement and one supporting sentence, on paper. -->
+<section class="thesis" id="tesis" aria-labelledby="thesis-title">
+  <div class="wrap">
+    <h2 class="t-poster thesis-statement" id="thesis-title">
+      <span class="line">{t.statement[0]}</span>
+      <span class="line">{t.statement[1]}</span>
+    </h2>
+    <p class="thesis-support">{t.support}</p>
+  </div>
+</section>

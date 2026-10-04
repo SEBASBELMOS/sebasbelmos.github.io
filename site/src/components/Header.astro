@@ -1,0 +1,39 @@
+---
+import Arrow from './Arrow.astro';
+import { asset, copy, homeHref, base, type Lang } from '../i18n';
+
+interface Props {
+  lang: Lang;
+  page: 'home' | 'work';
+}
+
+const { lang, page } = Astro.props;
+const t = copy[lang].ui;
+const home = homeHref(lang);
+// On the archive page, section anchors point back to the homepage.
+const anchor = (hash: string) => (page === 'home' ? hash : `${home}${hash}`);
+const esHref = page === 'home' ? base : `${base}work/`;
+const enHref = page === 'home' ? `${base}en/` : `${base}en/work/`;
+
+---
+<header class="site-header">
+  <div class="wrap header-row">
+    <a class="wordmark" href={home} aria-label={t.home}>
+      <span class="wordmark-s" aria-hidden="true"><img src={asset('brand-s.png')} width="15" height="20" alt="" /></span>
+      <span class="wordmark-text" aria-hidden="true">SEBASBELMOS</span>
+    </a>
+    <nav class="header-nav" aria-label={t.nav}>
+      <ul>
+        {t.navItems.map(([label, hash]) => <li><a class="pen-link" href={anchor(hash)}>{label}</a></li>)}
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <nav class="lang-switch" aria-label={t.language}>
+        <a href={esHref} lang="es" hreflang="es" aria-current={lang === 'es' ? 'page' : undefined}>ES</a>
+        <span class="lang-sep" aria-hidden="true">/</span>
+        <a href={enHref} lang="en" hreflang="en" aria-current={lang === 'en' ? 'page' : undefined}>EN</a>
+      </nav>
+      <a class="header-write" href={anchor('#contacto')}>{t.write}<Arrow /></a>
+    </div>
+  </div>
+</header>

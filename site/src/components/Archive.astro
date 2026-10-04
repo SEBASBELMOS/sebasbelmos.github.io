@@ -1,0 +1,75 @@
+---
+import Arrow from './Arrow.astro';
+import projects from '../data/archive-data.json';
+import galleries from '../data/galleries.json';
+import { asset, copy, homeHref, type Lang } from '../i18n';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = copy[lang].archive;
+const newTab = copy[lang].geo.newTab;
+const home = homeHref(lang);
+type Gallery = (typeof galleries)[keyof typeof galleries];
+const galleryFor = (id: string) => (galleries as Record<string, Gallery>)[id];
+---
+<div class="wrap archive-page">
+  <a class="pen-link archive-back" href={`${home}#casos`}><Arrow dir="left" />{t.back}</a>
+  <h1 class="t-head archive-title">{t.title}</h1>
+  <p class="archive-intro">{t.intro}</p>
+  <div class="records">
+    {projects.map((p) => {
+      const c = p[lang as 'es' | 'en'];
+      const g = galleryFor(p.id);
+      return (
+        <details class="record" id={p.id}>
+          <summary>
+            <h2 class="t-head record-name">{p.name}</h2>
+            <span class="t-record record-context">{p.context?.[lang as 'es' | 'en']}</span>
+            <span class="record-summary">{c.summary}</span>
+            <span class="t-record record-tech">{p.tech.join(' · ')}</span>
+            <span class="record-toggle" aria-hidden="true">+</span>
+          </summary>
+          <div class="record-body">
+            <dl class="record-fields">
+              <div><dt class="t-record">{t.problem}</dt><dd>{c.problem}</dd></div>
+              <div><dt class="t-record">{t.built}</dt><dd>{c.built}</dd></div>
+            </dl>
+            <div class="record-evidence">
+              <h3 class="t-record">{t.evidence}</h3>
+              <ul>{c.evidence.map((item) => <li>{item}</li>)}</ul>
+              <p class="record-links">
+                {p.repo && <a class="pen-link" href={p.repo} target="_blank" rel="noopener noreferrer">GitHub<Arrow dir="out" /><span class="sr-only"> {newTab}</span></a>}
+                {p.live && <a class="pen-link" href={p.live} target="_blank" rel="noopener noreferrer">{t.view}<Arrow dir="out" /><span class="sr-only"> {newTab}</span></a>}
+                {p.archiveReport && <a class="pen-link" href={p.archiveReport} target="_blank" rel="noopener noreferrer">{t.report}<Arrow dir="out" /><span class="sr-only"> {newTab}</span></a>}
+              </p>
+            </div>
+            {g && (
+              <div class="record-shots">
+                <h3 class="t-record">{t.shots}</h3>
+                <ul class="shot-strip">
+                  {g.shots.map((s) => {
+                    const src = asset(`projects/${g.folder}/${s.file}`);
+                    const [title, caption] = s[lang as 'es' | 'en'];
+                    return (
+                      <li>
+                        <a href={src} target="_blank" rel="noopener noreferrer">
+                          <img src={src} alt={`${title}. ${caption}`} width="320" height="200" loading="lazy" decoding="async" />
+                          <span class="shot-title">{title}</span>
+                        </a>
+                      </li>
+                    );
+                  })}
+                </ul>
+                <p class="caption">{g[lang as 'es' | 'en'].note}</p>
+              </div>
+            )}
+          </div>
+        </details>
+      );
+    })}
+  </div>
+  <p class="archive-foot">
+    <a class="pen-link" href={`${home}#casos`}><Arrow dir="left" />{t.back}</a>
+    <a class="cta-link" href={`${home}#contacto`}>{t.contact}<Arrow /></a>
+  </p>
+</div>

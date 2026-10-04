@@ -1,0 +1,40 @@
+---
+// One hand-drawn pen mark, made of one or more strokes. Each stroke's
+// centreline mask is fully visible by default, so the mark is drawn without
+// JS; site.ts only animates the reveal, stroke after stroke.
+import { marks, type MarkName } from '../lib/pen';
+import { nextMarkId } from '../lib/uid';
+
+interface Props {
+  name: MarkName;
+  /** Groups the renders of one gesture (the phone strike has one per line). */
+  gesture?: string;
+  class?: string;
+}
+
+const { name, gesture = name, class: extra = '' } = Astro.props;
+const m = marks[name];
+const [x, y, w, h] = m.viewBox.split(' ').map(Number);
+const pad = Math.max(w, h) * 0.2;
+// A gesture can be rendered more than once on a page (the phone strike has
+// one render per line), so mask ids must be unique per render.
+const uid = `pen-${name}-${nextMarkId()}`;
+---
+<svg
+  class:list={['mark', `mark--${name}`, extra]}
+  data-mark={gesture}
+  viewBox={m.viewBox}
+  preserveAspectRatio="none"
+  style={`aspect-ratio:${w} / ${h}`}
+  aria-hidden="true"
+  focusable="false"
+>
+  <defs>
+    {m.strokes.map((s, i) => (
+      <mask id={`${uid}-${i}`} maskUnits="userSpaceOnUse" x={x - pad} y={y - pad} width={w + pad * 2} height={h + pad * 2}>
+        <path d={s.line} fill="none" stroke="#fff" stroke-width={s.maskWidth} stroke-linecap="round" stroke-linejoin="round" pathLength="1" class="mark-reveal" data-weight={s.weight.toFixed(3)} />
+      </mask>
+    ))}
+  </defs>
+  {m.strokes.map((s, i) => <path d={s.ink} mask={`url(#${uid}-${i})`} class="mark-ink" data-nib={s.width} />)}
+</svg>

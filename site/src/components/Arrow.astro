@@ -1,0 +1,30 @@
+---
+// The one arrow of the site: a single 1.6px stroke on a 16×16 grid, drawn in
+// currentColor. It replaces the typed arrow glyphs (→ ↓ ↗ ←), which fell back
+// to a system font and never matched Mona's weight.
+// right: in-page and onward links · down: anchors further down the page ·
+// out: external links (diagonal, up-right) · left: "back" links.
+// A word joiner (U+2060) binds the arrow to the adjacent word, so it never
+// wraps alone; the gap is a margin, so a link underline stops at the text.
+interface Props {
+  dir?: 'right' | 'down' | 'out' | 'left';
+  class?: string;
+}
+
+const { dir = 'right', class: extra = '' } = Astro.props;
+const WJ = '\u2060';
+const paths = {
+  right: 'M2.5 8H13.2M8.8 3.6L13.2 8L8.8 12.4',
+  left: 'M13.5 8H2.8M7.2 3.6L2.8 8L7.2 12.4',
+  down: 'M8 2.5V13.2M3.6 8.8L8 13.2L12.4 8.8',
+  out: 'M3.6 12.4L12.2 3.8M5.6 3.6H12.4V10.4',
+} as const;
+---
+{dir !== 'left' && WJ}<svg
+  class:list={['arrow-icon', `arrow-icon--${dir}`, extra]}
+  viewBox="0 0 16 16"
+  width="16"
+  height="16"
+  aria-hidden="true"
+  focusable="false"
+><path d={paths[dir]} fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg>{dir === 'left' && WJ}

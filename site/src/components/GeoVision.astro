@@ -1,0 +1,77 @@
+---
+import Arrow from './Arrow.astro';
+import gallery from '../data/geo-gallery.json';
+import { asset, copy, links, type Lang } from '../i18n';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = copy[lang].geo;
+const shots = gallery.shots.map((s, i) => ({
+  i,
+  src: asset(`projects/${gallery.folder}/${s.file}`),
+  title: s[lang][0],
+  caption: s[lang][1],
+}));
+---
+<article class="case geo field field--ink" id="geovision" aria-labelledby="geo-title">
+  <div class="wrap">
+    <h3 class="t-head case-title" id="geo-title">{t.title}</h3>
+    <p class="t-record case-record">{t.record}</p>
+    <div class="geo-grid">
+      <div class="geo-media" data-geo>
+        <div class="geo-tabs" role="tablist" aria-label={t.tabs} hidden>
+          {shots.map((s) => (
+            <button
+              type="button"
+              role="tab"
+              id={`geo-tab-${s.i}`}
+              aria-controls={`geo-panel-${s.i}`}
+              aria-selected={s.i === 0 ? 'true' : 'false'}
+              tabindex={s.i === 0 ? '0' : '-1'}
+              data-caption={s.caption}
+            >{s.title}</button>
+          ))}
+        </div>
+        <div class="geo-frame">
+          {shots.map((s) => (
+            <div
+              class:list={['geo-layer', s.i === 0 && 'is-active']}
+              id={`geo-panel-${s.i}`}
+              role="tabpanel"
+              aria-labelledby={`geo-tab-${s.i}`}
+              aria-hidden={s.i === 0 ? undefined : 'true'}
+            >
+              <img src={s.src} alt={`${t.shotAlt}: ${s.title}. ${s.caption}`} width="1440" height="900" loading="lazy" decoding="async" />
+            </div>
+          ))}
+        </div>
+        <p class="geo-caption caption" data-geo-caption><span class="geo-caption-title">{shots[0].title}.</span> {shots[0].caption}</p>
+        <!-- The facts are a record line; the separators are drawn in CSS and the
+             one that would open a wrapped line is clipped. -->
+        <div class="geo-facts">
+          <ul class="t-record dot-list" aria-label={t.factsLabel}>
+            {t.facts.map(([n, label]) => <li><b>{n}</b> {label}</li>)}
+          </ul>
+        </div>
+        <div class="geo-nojs">
+          <p class="t-record">{t.otherShots}</p>
+          <ul>
+            {shots.slice(1).map((s) => (
+              <li><a href={s.src}>{s.title}</a>: {s.caption}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+      <div class="geo-side">
+        <div class="geo-text">
+          <p>{t.problem}</p>
+          <p>{t.did}</p>
+        </div>
+        <p class="geo-links">
+          <a href={links.geoApp} target="_blank" rel="noopener noreferrer">{t.app}<Arrow dir="out" /><span class="sr-only"> {t.newTab}</span></a>
+          <a href={links.geoCode} target="_blank" rel="noopener noreferrer">{t.code}<Arrow dir="out" /><span class="sr-only"> {t.newTab}</span></a>
+        </p>
+      </div>
+    </div>
+  </div>
+</article>

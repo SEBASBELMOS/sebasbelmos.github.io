@@ -1,0 +1,69 @@
+{
+  "name": "GeoVision",
+  "folder": "geovision",
+  "en": {
+    "title": "Inside GeoVision",
+    "note": "Screenshots of the live app, a team project of 3. Interface in Spanish."
+  },
+  "es": {
+    "title": "Dentro de GeoVision",
+    "note": "Capturas de la aplicación en vivo, un proyecto en equipo de 3. Interfaz en español."
+  },
+  "shots": [
+    {
+      "file": "01-concentracion.webp",
+      "en": [
+        "Concentration",
+        "Corrected O₃ prediction for T+1 across 1,920 cells."
+      ],
+      "es": [
+        "Concentración",
+        "Predicción corregida de O₃ a T+1 en 1.920 celdas."
+      ]
+    },
+    {
+      "file": "02-incertidumbre.webp",
+      "en": [
+        "Uncertainty",
+        "Prediction uncertainty (sigma) for each cell."
+      ],
+      "es": [
+        "Incertidumbre",
+        "Incertidumbre de la predicción (sigma) en cada celda."
+      ]
+    },
+    {
+      "file": "03-clusters-lisa.webp",
+      "en": [
+        "LISA clusters",
+        "Spatial hotspots and coldspots."
+      ],
+      "es": [
+        "Clusters LISA",
+        "Puntos calientes y fríos espaciales."
+      ]
+    },
+    {
+      "file": "04-perfiles-kmeans.webp",
+      "en": [
+        "K-means profiles",
+        "Areas ranked by risk using k-means profiles."
+      ],
+      "es": [
+        "Perfiles k-means",
+        "Zonas ordenadas por riesgo con perfiles k-means."
+      ]
+    },
+    {
+      "file": "05-resumen-area.webp",
+      "en": [
+        "Area summary",
+        "Summary within a 2 km radius for T+1, T+3 and T+7."
+      ],
+      "es": [
+        "Resumen del área",
+        "Resumen en un radio de 2 km para T+1, T+3 y T+7."
+      ]
+    }
+  ]
+}

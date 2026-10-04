@@ -1,0 +1,29 @@
+---
+// GitHub Pages serves this for any missing path. Spanish first, with the
+// English way out on the same page; no new styles, only existing classes.
+import Base from '../layouts/Base.astro';
+import Arrow from '../components/Arrow.astro';
+import { base, workHref } from '../i18n';
+---
+<Base lang="es" page="work" notFound>
+  <section class="hero not-found" aria-labelledby="nf-title">
+    <div class="wrap hero-grid">
+      <p class="t-label hero-before">404</p>
+      <h1 class="t-head not-found-title" id="nf-title">Esta página no existe.</h1>
+      <div class="hero-lower">
+        <p class="t-read hero-support">Puede que el enlace haya cambiado. Lo demás sigue aquí.</p>
+        <p class="hero-ctas not-found-links">
+          <a class="cta-link" href={base}>Volver al inicio<Arrow /></a>
+          <a class="cta-link" href={workHref('es')}>Ver los 11 proyectos<Arrow /></a>
+          <a class="cta-link" href={`${base}en/`} lang="en" hreflang="en">English<Arrow /></a>
+        </p>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .not-found { padding-block: clamp(72px, 14vh, 160px); }
+  .not-found-title { font-size: clamp(40px, 5vw, 68px); margin-top: 12px; }
+  .not-found-links { display: flex; flex-wrap: wrap; gap: 16px 36px; }
+</style>

@@ -1,0 +1,44 @@
+---
+import Mark from './Mark.astro';
+import Arrow from './Arrow.astro';
+import { asset, copy, links, type Lang } from '../i18n';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = copy[lang].why;
+const newTab = copy[lang].geo.newTab;
+---
+<section class="why" id="sobre-mi" aria-labelledby="why-title">
+  <div class="wrap">
+    <h2 class="t-head why-title" id="why-title">{t.title}</h2>
+    <div class="why-grid">
+      <figure class="why-portrait">
+        <img src={asset('sebastian.webp')} width="1122" height="1402" alt={t.portraitAlt} loading="lazy" decoding="async" />
+        <figcaption>{t.portraitCaption}<span class="why-portrait-sub">{t.portraitSub}</span></figcaption>
+      </figure>
+      <div class="why-text">
+        <h3 class="t-head why-lead">{t.lead}</h3>
+        <p>{t.p1}</p>
+      </div>
+      <!-- Teaching: supporting evidence, set smaller than the case metrics. -->
+      <div class="why-teach">
+        <h3 class="t-head teach-title">{t.teachTitle}</h3>
+        <ul class="teach-list">
+          {t.teach.map(([n, label]) => (
+            <li><b class="teach-n">{n}</b> <span class="teach-label">{label}</span></li>
+          ))}
+        </ul>
+        <p class="teach-text">{t.teachText}</p>
+        <figure class="why-quote">
+          <figcaption class="t-record quote-label">{t.quoteLabel}</figcaption>
+          <blockquote>
+            <p>{t.quote[0]}<span class="marked marked--under">{t.quote[1]}<Mark name="under" /></span>{t.quote[2]}</p>
+          </blockquote>
+          <p class="quote-by">
+            {t.quoteBy}{' '}<a class="pen-link" href={links.preply} target="_blank" rel="noopener noreferrer">{t.quoteLink}<Arrow dir="out" /><span class="sr-only"> {newTab}</span></a>
+          </p>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,6 +1,17 @@
 .DS_Store
 .atl/
+.impeccable/
 _drafts/
 docs/
 versions/
 *.md
+
+# Site source: dependencies, build output and QA artefacts stay local.
+site/node_modules/
+site/dist/
+site/.astro/
+site/.impeccable/
+site/qa/shots/
+site/qa/*.json
+site/public/**/*.webp.json
+site/public/**/*.png.json

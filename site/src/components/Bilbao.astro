@@ -1,0 +1,40 @@
+---
+import Arrow from './Arrow.astro';
+import { copy, type Lang } from '../i18n';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = copy[lang].bilbao;
+const intro = copy[lang].casesIntro;
+// Two separate blocks, each with its own heading. Tools are never aligned
+// under stages: the mapping between the two sequences is not documented.
+const blocks = [
+  { id: 'stages', n: t.stagesCount, label: t.stagesLabel, items: t.stages },
+  { id: 'tools', n: t.toolsCount, label: t.toolsLabel, items: t.tools },
+];
+---
+<!-- The cases open here: the intro heading carries the #casos anchor. -->
+<section class="case bilbao" aria-labelledby="casos">
+  <div class="wrap">
+    <header class="cases-head">
+      <h2 class="t-head cases-title" id="casos">{intro.title}</h2>
+    </header>
+    <article id="bilbao2" aria-labelledby="bilbao-title">
+      <h3 class="t-head case-title" id="bilbao-title">{t.title}</h3>
+      <p class="t-record case-record">{t.record}</p>
+      <div class="flows">
+        {blocks.map((b) => (
+          <section class:list={['flow', `flow--${b.id}`]} aria-labelledby={`flow-${b.id}`}>
+            <h4 class="flow-head" id={`flow-${b.id}`}><span class="t-metric flow-n">{b.n}</span> <span class="flow-label">{b.label}</span></h4>
+            <ol class="flow-seq">
+              {b.items.map((item, i) => (
+                <li>{item}{i < b.items.length - 1 && <><Arrow class="seq-arrow seq-arrow--right" /><Arrow dir="down" class="seq-arrow seq-arrow--down" /></>}</li>
+              ))}
+            </ol>
+          </section>
+        ))}
+      </div>
+      <p class="flow-did">{t.did}</p>
+    </article>
+  </div>
+</section>

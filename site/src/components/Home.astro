@@ -1,0 +1,26 @@
+---
+import Hero from './Hero.astro';
+import Reality from './Reality.astro';
+import Thesis from './Thesis.astro';
+import Bilbao from './Bilbao.astro';
+import BetterLife from './BetterLife.astro';
+import GeoVision from './GeoVision.astro';
+import ArchivePath from './ArchivePath.astro';
+import Process from './Process.astro';
+import Why from './Why.astro';
+import Contact from './Contact.astro';
+import type { Lang } from '../i18n';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+---
+<Hero lang={lang} />
+<Reality lang={lang} />
+<Thesis lang={lang} />
+<Bilbao lang={lang} />
+<BetterLife lang={lang} />
+<GeoVision lang={lang} />
+<ArchivePath lang={lang} />
+<Process lang={lang} />
+<Why lang={lang} />
+<Contact lang={lang} />

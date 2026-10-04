@@ -1,0 +1,34 @@
+---
+import Mark from './Mark.astro';
+import Arrow from './Arrow.astro';
+import { copy, type Lang } from '../i18n';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = copy[lang].hero;
+---
+<section class="hero" id="inicio" aria-labelledby="hero-title">
+  <div class="wrap hero-grid">
+    <!-- The visible "El problema" label and the struck line are one paragraph, so a
+         screen reader hears the label once, then the sentence. The struck line
+         is set about 40% smaller than the promise. On desktop one strike
+         crosses the whole line; on phones the line wraps in two and each line
+         gets its own strike (same gesture, drawn in sequence). -->
+    <p class="hero-struck">
+      <span class="t-label hero-before">{t.before}</span>
+      <s class="hero-struck-line"><span class="marked marked--strike">{t.struckLines.map((part, i) => (
+        <>{i > 0 && ' '}<span class="struck-part">{part}<Mark name="strike" class="strike-line" /></span></>
+      ))}<Mark name="strike" class="strike-whole" /></span></s>
+    </p>
+    <h1 class="t-poster hero-title" id="hero-title">
+      {t.h1.map((line) => <span class="line">{line}{' '}</span>)}
+    </h1>
+    <div class="hero-lower">
+      <p class="t-read hero-support">{t.support}</p>
+      <p class="hero-niche">{t.niche}</p>
+      <p class="hero-ctas">
+        <a class="cta-link hero-cta" href="#contacto">{t.cta}<Arrow /></a>
+      </p>
+    </div>
+  </div>
+</section>

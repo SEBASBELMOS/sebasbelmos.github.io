@@ -1,0 +1,88 @@
+/* Mona Sans, self-hosted variable WOFF2 (Google Fonts v4 subsets). */
+@font-face {
+  font-family: 'Mona Sans';
+  font-style: normal;
+  font-weight: 200 900;
+  font-stretch: 75% 125%;
+  font-display: swap;
+  src: url('/assets/fonts/mona-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Mona Sans';
+  font-style: normal;
+  font-weight: 200 900;
+  font-stretch: 75% 125%;
+  font-display: swap;
+  src: url('/assets/fonts/mona-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* Subscript three (O₃ in the GeoVision captions), from a separate Google Fonts
+   text subset of the same family. Arrows are drawn as SVG (Arrow.astro), so
+   the subset's arrow glyphs are no longer mapped. */
+@font-face {
+  font-family: 'Mona Sans';
+  font-style: normal;
+  font-weight: 200 900;
+  font-stretch: 75% 125%;
+  font-display: swap;
+  src: url('/assets/fonts/mona-symbols.woff2') format('woff2');
+  unicode-range: U+2083;
+}
+@font-face {
+  font-family: 'Mona Sans';
+  font-style: italic;
+  font-weight: 200 900;
+  font-stretch: 75% 125%;
+  font-display: swap;
+  src: url('/assets/fonts/mona-italic-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Mona Sans';
+  font-style: italic;
+  font-weight: 200 900;
+  font-stretch: 75% 125%;
+  font-display: swap;
+  src: url('/assets/fonts/mona-italic-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+:root {
+  /* Final palette. Blue is the pen (annotation, hover and focus only); gold is
+     a micro-accent on ink only. Paper is the canvas, grey the soft band. */
+  --ink: #111114;
+  --paper: #F4F1EA;
+  --grey: #ECEBE7;
+  --white: #FFFFFF;
+  /* Candidate pen blue (LAST-PASS §10); the previous value was #2230C4. */
+  --blue: #30439E;
+  --gold: #C9A24B;
+  /* Secondary text and hairlines, tuned for AA on paper and grey. */
+  --ink-2: #55544F;
+  --rule: #CFCBC2;
+  --on-ink-2: #B4B5BC;
+  --on-ink-rule: rgba(255, 255, 255, .14);
+  --gutter: clamp(20px, 4.4vw, 72px);
+  --max: 1440px;
+  --header-h: 64px;
+
+  --pad: clamp(72px, 10vh, 136px);
+  --pad-tight: clamp(56px, 8vh, 104px);
+  --pad-loose: clamp(88px, 12vh, 160px);
+
+  --ease-pen: cubic-bezier(.65, 0, .35, 1);
+  --ease-out: cubic-bezier(.2, .7, .2, 1);
+
+  --font: 'Mona Sans', ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Phones: tighter section padding keeps the page short without cutting content. */
+@media (max-width: 699px) {
+  :root {
+    --header-h: 56px;
+    --pad: 64px;
+    --pad-tight: 48px;
+    --pad-loose: 72px;
+  }
+}

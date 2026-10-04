@@ -1,0 +1,29 @@
+---
+import { copy, type Lang } from '../i18n';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = copy[lang].betterlife;
+---
+<article class="case betterlife band" id="betterlife" aria-labelledby="betterlife-title">
+  <div class="wrap">
+    <h3 class="t-head case-title" id="betterlife-title">{t.title}</h3>
+    <p class="t-record case-record">{t.record}</p>
+    <!-- Two periods side by side under a plain hairline: nothing reads as
+         cause and effect. -->
+    <div class="chrono">
+      <section class="period period--1" aria-labelledby="bl-p1">
+        <p class="t-label period-label">{t.p1Label}</p>
+        <h4 class="period-head" id="bl-p1"><span class="t-metric period-metric">{t.p1Metric}</span> <span class="period-unit">{t.p1Unit}</span></h4>
+        <p class="period-time">{t.p1Time}</p>
+        <p class="qualifier">{t.qualifier}</p>
+      </section>
+      <section class="period period--2" aria-labelledby="bl-p2">
+        <p class="t-label period-label">{t.p2Label}</p>
+        <h4 class="t-head period-title" id="bl-p2">{t.p2Title}</h4>
+        <p class="period-body">{t.p2Body}</p>
+        <p class="t-record period-scope">{t.scope}</p>
+      </section>
+    </div>
+  </div>
+</article>

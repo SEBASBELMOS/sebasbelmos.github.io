@@ -1,0 +1,412 @@
+[
+  {
+    "id": "geovision",
+    "name": "GeoVision-CLIP Cali",
+    "category": "ai",
+    "status": "live",
+    "tech": [
+      "Python",
+      "FastAPI",
+      "React",
+      "Docker"
+    ],
+    "repo": "https://github.com/SEBASBELMOS/GeoVision-CLIP-Cali",
+    "live": "https://huggingface.co/spaces/analiticalastdance/geovision-cali-frontend",
+    "context": {
+      "en": "University · team of 3",
+      "es": "Universidad · equipo de 3"
+    },
+    "en": {
+      "summary": "Air-quality estimates for Cali from five data sources, in an application anyone can explore.",
+      "problem": "Satellite, weather and ground-station data arrive in different formats and resolutions. They need one consistent foundation before anyone can explore them.",
+      "built": "My part of a university team of 3: data engineering, the FastAPI backend, the React frontend, tests and deployment.",
+      "evidence": [
+        "University project · team of 3.",
+        "5 data sources · 93.1 GB of raw Sentinel-2 imagery (198 scenes) · 1,920 spatial cells.",
+        "26/26 backend tests · live application."
+      ]
+    },
+    "es": {
+      "summary": "Estimaciones de calidad del aire en Cali a partir de cinco fuentes de datos, en una aplicación que cualquiera puede explorar.",
+      "problem": "Los datos satelitales, meteorológicos y de estaciones llegan en formatos y resoluciones distintas. Necesitan una base común antes de poder explorarlos.",
+      "built": "Mi parte en un equipo universitario de 3: ingeniería de datos, el backend en FastAPI, el frontend en React, las pruebas y el despliegue.",
+      "evidence": [
+        "Proyecto universitario · equipo de 3.",
+        "5 fuentes de datos · 93,1 GB de imágenes originales de Sentinel-2 (198 escenas) · 1.920 celdas espaciales.",
+        "26/26 pruebas del backend · aplicación en vivo."
+      ]
+    }
+  },
+  {
+    "id": "lakehouse",
+    "name": "NYC Taxi Lakehouse",
+    "category": "data",
+    "status": "code",
+    "tech": [
+      "MinIO",
+      "Apache Iceberg",
+      "ClickHouse",
+      "dlt"
+    ],
+    "repo": "https://github.com/SEBASBELMOS/nyc-taxi-lakehouse",
+    "en": {
+      "summary": "NYC taxi trips, taken from a public source into a data lake and made queryable on several platforms.",
+      "problem": "Large public datasets have to be loaded, stored and checked in a repeatable way before anyone can query them with confidence.",
+      "built": "A university project I built end to end: a lakehouse pipeline that downloads the NYC Yellow Taxi data, stores it as Parquet in MinIO, registers Apache Iceberg tables in a Nessie catalogue and distributes them to Azure ADLS and ClickHouse with dlt, processing in PyArrow batches.",
+      "evidence": [
+        "Individual university project.",
+        "3,475,226 rows validated across the pipeline stages.",
+        "A verification script for each stage; runs locally with Docker Compose."
+      ]
+    },
+    "es": {
+      "summary": "Viajes de taxi de Nueva York, desde una fuente pública hasta un data lake consultable en varias plataformas.",
+      "problem": "Los datasets públicos grandes deben cargarse, almacenarse y verificarse de forma repetible antes de consultarlos con confianza.",
+      "built": "Proyecto universitario que construí de principio a fin: un pipeline lakehouse que descarga los datos de NYC Yellow Taxi, los guarda en Parquet en MinIO, registra tablas Apache Iceberg en un catálogo Nessie y los distribuye a Azure ADLS y ClickHouse con dlt, procesando por lotes con PyArrow.",
+      "evidence": [
+        "Proyecto universitario individual.",
+        "3.475.226 filas validadas entre las etapas del pipeline.",
+        "Un script de verificación por etapa; se ejecuta en local con Docker Compose."
+      ]
+    },
+    "context": {
+      "en": "University · individual",
+      "es": "Universidad · individual"
+    }
+  },
+  {
+    "id": "saludred",
+    "name": "SaludRed",
+    "category": "ai",
+    "status": "code",
+    "tech": [
+      "FastAPI",
+      "PostgreSQL",
+      "HL7 FHIR R4",
+      "Docker"
+    ],
+    "repo": "https://github.com/SEBASBELMOS/saludred",
+    "en": {
+      "summary": "One shared, up-to-date view of hospital beds, requests and priorities across a care network.",
+      "problem": "A bed can be physically free and still go unused if nobody knows its status in time. Fragmented updates lead to waiting patients, repeated calls and no record of who changed what.",
+      "built": "A university project I built end to end: a FastAPI and PostgreSQL system for an EPS/IPS network, with a bed queue ordered by clinical priority, audited assignments, role-based access, account lockout, network analytics with k-means patient clustering implemented from scratch, LOINC-validated vital signs, an HL7 FHIR R4 integration and a role-based web interface.",
+      "evidence": [
+        "Individual university project with synthetic data only, from a deterministic generator with clinical profiles and a bed simulation running near 85% occupancy.",
+        "Bed queue ordered by clinical priority, then waiting time; skipping it requires a reason that is logged in the audit trail.",
+        "Analytics: median and 90th-percentile waits, bed turnaround and a recommendation of which IPS should take the next patient.",
+        "A pytest suite with 120+ tests. A functional academic prototype, not a system in clinical use."
+      ]
+    },
+    "es": {
+      "summary": "Una vista compartida y al día de camas, solicitudes y prioridades en una red de salud.",
+      "problem": "Una cama puede estar libre y aun así no usarse si nadie conoce su estado a tiempo. La información fragmentada genera esperas, llamadas repetidas y ningún registro de quién cambió qué.",
+      "built": "Proyecto universitario que construí de principio a fin: un sistema en FastAPI y PostgreSQL para una red EPS/IPS, con cola de camas por prioridad clínica, asignaciones auditadas, acceso por roles, bloqueo de cuentas, analítica de la red con agrupamiento k-means de pacientes implementado desde cero, signos vitales validados con LOINC, integración HL7 FHIR R4 y una interfaz web por rol.",
+      "evidence": [
+        "Proyecto universitario individual, solo con datos sintéticos, generados de forma determinista con perfiles clínicos y una simulación de camas cerca del 85 % de ocupación.",
+        "Cola de camas ordenada por prioridad clínica y luego por tiempo de espera; saltarla exige un motivo que queda en la auditoría.",
+        "Analítica: espera mediana y percentil 90, tiempo de alistamiento de camas y recomendación de a qué IPS enviar al próximo paciente.",
+        "Suite de pytest con más de 120 pruebas. Prototipo académico funcional; no es un sistema en uso clínico."
+      ]
+    },
+    "context": {
+      "en": "University · individual",
+      "es": "Universidad · individual"
+    }
+  },
+  {
+    "id": "jobs",
+    "name": "LinkedIn Jobs ETL",
+    "category": "data",
+    "status": "code",
+    "tech": [
+      "Python",
+      "Airflow",
+      "PostgreSQL",
+      "Power BI"
+    ],
+    "repo": "https://github.com/SEBASBELMOS/LinkedIn-Jobs-Posting",
+    "en": {
+      "summary": "123K+ job postings, transformed into a clearer picture of hiring, skills and salaries.",
+      "problem": "Job postings contain useful signals, but raw records are difficult to compare and analyse consistently.",
+      "built": "An end-to-end ETL pipeline with raw, cleaned and analytics layers, Apache Airflow orchestration and a star-schema PostgreSQL warehouse.",
+      "evidence": [
+        "Team project of 2.",
+        "123K+ job postings in the project dataset.",
+        "Dimensional modelling for skills, salary and hiring analysis.",
+        "Warehouse architecture designed for deployment on GCP, AWS RDS or Supabase."
+      ]
+    },
+    "es": {
+      "summary": "Más de 123.000 ofertas convertidas en una visión más clara de contratación, habilidades y salarios.",
+      "problem": "Las ofertas de empleo contienen señales útiles, pero los registros sin procesar son difíciles de comparar y analizar.",
+      "built": "Un pipeline ETL con capas raw, cleaned y analytics, orquestación en Apache Airflow y un warehouse PostgreSQL en esquema estrella.",
+      "evidence": [
+        "Proyecto en equipo de 2.",
+        "Más de 123.000 ofertas en el dataset del proyecto.",
+        "Modelado dimensional para analizar habilidades, salarios y contratación.",
+        "Arquitectura del warehouse preparada para despliegue en GCP, AWS RDS o Supabase."
+      ]
+    },
+    "context": {
+      "en": "Team of 2",
+      "es": "Equipo de 2"
+    }
+  },
+  {
+    "id": "spotify",
+    "name": "Spotify Analytics ETL",
+    "category": "data",
+    "status": "code",
+    "tech": [
+      "Airflow",
+      "PostgreSQL",
+      "GCP",
+      "Power BI"
+    ],
+    "repo": "https://github.com/SEBASBELMOS/spotify-analytics-etl-pipeline",
+    "en": {
+      "summary": "114K+ music records. Less duplication, richer data and a pipeline ready for analysis.",
+      "problem": "Combining Spotify tracks with Grammy records requires cleaning, deduplication and a repeatable integration process.",
+      "built": "An Airflow-orchestrated ETL pipeline on GCP, with daily scheduling, monitoring, error handling and a PostgreSQL analytical layer.",
+      "evidence": [
+        "114K+ source music records.",
+        "28.6% reduction in duplicates.",
+        "81,941 enriched rows in the resulting dataset."
+      ]
+    },
+    "es": {
+      "summary": "Más de 114.000 registros musicales. Menos duplicados, datos enriquecidos y una base para analizar.",
+      "problem": "Combinar canciones de Spotify con registros de los Grammy exige limpieza, deduplicación y una integración repetible.",
+      "built": "Un ETL orquestado con Airflow en GCP, con programación diaria, monitoreo, manejo de errores y una capa analítica en PostgreSQL.",
+      "evidence": [
+        "Más de 114.000 registros musicales de origen.",
+        "Reducción de duplicados del 28,6 %.",
+        "81.941 filas enriquecidas en el dataset resultante."
+      ]
+    },
+    "context": {
+      "en": "Technical project",
+      "es": "Proyecto técnico"
+    }
+  },
+  {
+    "id": "deutsch",
+    "name": "DeutschLernen",
+    "category": "ai",
+    "status": "code",
+    "tech": [
+      "Node.js",
+      "Express",
+      "Groq",
+      "AssemblyAI"
+    ],
+    "repo": "https://github.com/SEBASBELMOS/deutschlernen",
+    "en": {
+      "summary": "A place to practise German with AI conversations, voice input and spaced repetition.",
+      "problem": "Learning a language takes repeated practice, useful feedback and a way to revisit what you have learnt.",
+      "built": "A solo full-stack learning app: Express backend, vanilla JavaScript frontend, LLM role-play and correction, voice input and a Leitner spaced-repetition system with account sync.",
+      "evidence": [
+        "Built as an independent full-stack product.",
+        "Connects my interest in language learning with practical AI.",
+        "Leitner spaced repetition with account synchronisation."
+      ]
+    },
+    "es": {
+      "summary": "Un espacio para practicar alemán con conversaciones de IA, voz y repetición espaciada.",
+      "problem": "Aprender un idioma requiere práctica constante, retroalimentación útil y una forma de repasar lo aprendido.",
+      "built": "Una aplicación full-stack desarrollada individualmente: backend Express, frontend JavaScript, conversación y corrección con LLM, entrada de voz y repetición espaciada Leitner con sincronización de cuentas.",
+      "evidence": [
+        "Producto full-stack desarrollado individualmente.",
+        "Une mi interés por los idiomas con la IA aplicada.",
+        "Repetición espaciada Leitner con sincronización de cuentas."
+      ]
+    },
+    "context": {
+      "en": "Personal product · individual",
+      "es": "Producto personal · individual"
+    }
+  },
+  {
+    "id": "abodi",
+    "name": "Abodi ML",
+    "category": "ai",
+    "status": "poc",
+    "tech": [
+      "XGBoost",
+      "MLflow",
+      "FastAPI",
+      "Prometheus"
+    ],
+    "repo": "https://github.com/SEBASBELMOS/abodi_ml",
+    "en": {
+      "summary": "A LegalTech proof of concept for flagging court cases at risk of missing deadlines.",
+      "problem": "Legal teams need to identify cases that may miss deadlines, so they can prioritise attention.",
+      "built": "An XGBoost classification proof of concept with MLflow tracking, FastAPI serving, Docker Compose, Prometheus and Grafana monitoring, and CI/CD.",
+      "evidence": [
+        "F1 = 0.89 in an evaluation on synthetic data.",
+        "Synthetic records were modelled from business rules.",
+        "This is a proof of concept, not a model validated on real court cases."
+      ]
+    },
+    "es": {
+      "summary": "Prueba de concepto LegalTech para señalar procesos en riesgo de incumplir plazos.",
+      "problem": "Los equipos jurídicos necesitan identificar procesos que podrían incumplir términos para priorizar su atención.",
+      "built": "Una prueba de concepto con XGBoost, seguimiento en MLflow, API FastAPI, Docker Compose, monitoreo Prometheus y Grafana, y CI/CD.",
+      "evidence": [
+        "F1 = 0,89 en una evaluación con datos sintéticos.",
+        "Registros sintéticos modelados a partir de reglas de negocio.",
+        "Es una prueba de concepto, no un modelo validado en expedientes reales."
+      ]
+    },
+    "context": {
+      "en": "Proof of concept",
+      "es": "Prueba de concepto"
+    }
+  },
+  {
+    "id": "echoform",
+    "name": "EchoForm",
+    "category": "ai",
+    "status": "paused",
+    "tech": [
+      "AI agents",
+      "Supabase",
+      "Human review"
+    ],
+    "en": {
+      "summary": "Turning transcripts into editable content assets, with the creator in control.",
+      "problem": "Creators and digital teams often repeat the same work when adapting one piece of content into different formats.",
+      "built": "A content repurposing system, currently paused. It organises transcripts into editable briefs, post variants, Markdown articles and shorts plans, with brand context and human review before publication.",
+      "evidence": [
+        "Current status: paused prototype.",
+        "Human review is part of the workflow.",
+        "Content assets remain editable before publication."
+      ]
+    },
+    "es": {
+      "summary": "De transcripciones a contenido editable, con el creador al mando.",
+      "problem": "Los creadores y equipos digitales repiten trabajo al adaptar una misma pieza de contenido a distintos formatos.",
+      "built": "Un sistema de reutilización de contenido, actualmente en pausa. Organiza transcripciones en briefs, variantes de publicaciones, artículos Markdown y planes de shorts, con contexto de marca y revisión humana antes de publicar.",
+      "evidence": [
+        "Estado actual: prototipo en pausa.",
+        "La revisión humana forma parte del flujo.",
+        "Los resultados permanecen editables antes de publicar."
+      ]
+    },
+    "context": {
+      "en": "Paused prototype",
+      "es": "Prototipo en pausa"
+    }
+  },
+  {
+    "id": "happiness",
+    "name": "Global Happiness ML",
+    "category": "ai",
+    "status": "code",
+    "tech": [
+      "scikit-learn",
+      "Kafka",
+      "PostgreSQL",
+      "Docker"
+    ],
+    "repo": "https://github.com/SEBASBELMOS/world-happiness-ml-pipeline",
+    "en": {
+      "summary": "Exploring how economic and social indicators relate to happiness across 164 countries.",
+      "problem": "Country-level indicators offer a way to study and estimate happiness, but require a reproducible analytical workflow.",
+      "built": "A regression pipeline with Random Forest model selection, PostgreSQL traceability and a Kafka streaming architecture for prediction events.",
+      "evidence": [
+        "164 countries represented in the project.",
+        "Reported model R² = 0.8639.",
+        "Prediction events with PostgreSQL traceability."
+      ]
+    },
+    "es": {
+      "summary": "Explorar la relación entre indicadores económicos, sociales y felicidad en 164 países.",
+      "problem": "Los indicadores nacionales permiten estudiar y estimar la felicidad, pero requieren un flujo analítico reproducible.",
+      "built": "Un pipeline de regresión con selección de Random Forest, trazabilidad en PostgreSQL y arquitectura de streaming con Kafka para eventos de predicción.",
+      "evidence": [
+        "164 países representados en el proyecto.",
+        "R² reportado del modelo: 0,8639.",
+        "Eventos de predicción con trazabilidad en PostgreSQL."
+      ]
+    },
+    "context": {
+      "en": "Technical project",
+      "es": "Proyecto técnico"
+    }
+  },
+  {
+    "id": "graduates",
+    "name": "Colombia Graduates",
+    "category": "data",
+    "status": "code",
+    "tech": [
+      "Looker Studio",
+      "SNIES",
+      "Open data"
+    ],
+    "repo": "https://github.com/SEBASBELMOS/colombia-graduates-dashboard",
+    "archiveReport": "https://github.com/SEBASBELMOS/colombia-graduates-dashboard/blob/main/Proyecto_Final_-_Equipo_113.pdf",
+    "en": {
+      "summary": "Making Colombian higher-education data easier to explore, by field, level and region.",
+      "problem": "Public education data becomes more useful when people can compare fields of study, qualification levels and regions.",
+      "built": "An interactive Looker Studio dashboard based on official SNIES / datos.gov.co open data on higher-education graduates.",
+      "evidence": [
+        "DS4A final project, built with Jimmy Moreno (team of 2).",
+        "Dataset covers 2016–2020.",
+        "Official open data from SNIES / datos.gov.co; the dataset was later removed, so the dashboard is shown as an archived export.",
+        "Breakdowns by field of study, qualification level and region."
+      ]
+    },
+    "es": {
+      "summary": "Datos de educación superior en Colombia, explorables por área, nivel y región.",
+      "problem": "Los datos públicos de educación son más útiles cuando se pueden comparar áreas de estudio, niveles académicos y regiones.",
+      "built": "Un dashboard interactivo en Looker Studio con datos abiertos oficiales de SNIES / datos.gov.co sobre graduados de educación superior.",
+      "evidence": [
+        "Proyecto final de DS4A, desarrollado con Jimmy Moreno (equipo de 2).",
+        "El dataset abarca 2016–2020.",
+        "Datos abiertos oficiales de SNIES / datos.gov.co; el dataset se retiró después, así que el dashboard se muestra como una exportación archivada.",
+        "Desglose por área de estudio, nivel académico y región."
+      ]
+    },
+    "context": {
+      "en": "DS4A · team of 2",
+      "es": "DS4A · equipo de 2"
+    }
+  },
+  {
+    "id": "jurisintel",
+    "name": "JurisIntel",
+    "category": "ai",
+    "status": "volunteer",
+    "tech": [
+      "NLP",
+      "Python",
+      "Automation"
+    ],
+    "context": {
+      "en": "Volunteer · 2025–2026",
+      "es": "Voluntariado · 2025–2026"
+    },
+    "en": {
+      "summary": "Turning legal documents and case updates into structured information.",
+      "problem": "Legal documents and case updates are hard to monitor and review consistently while the information is unstructured.",
+      "built": "A volunteer contribution: legal-document NLP pipelines, case-monitoring automation and support for an AI legal assistant.",
+      "evidence": [
+        "Volunteer contribution, not paid client work.",
+        "Pipelines, case monitoring and assistant support.",
+        "No business metric is claimed."
+      ]
+    },
+    "es": {
+      "summary": "Convertir documentos jurídicos y actualizaciones de casos en información estructurada.",
+      "problem": "Los documentos jurídicos y las actualizaciones de casos son difíciles de seguir y revisar de forma consistente mientras la información no tiene estructura.",
+      "built": "Contribución voluntaria: pipelines de NLP para documentos jurídicos, automatización del seguimiento de casos y apoyo a un asistente jurídico con IA.",
+      "evidence": [
+        "Contribución voluntaria, no trabajo pagado para un cliente.",
+        "Pipelines, seguimiento de casos y apoyo al asistente.",
+        "No se atribuye ninguna métrica de negocio."
+      ]
+    }
+  }
+]

@@ -1,0 +1,20 @@
+---
+import Arrow from './Arrow.astro';
+import { copy, workHref, type Lang } from '../i18n';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = copy[lang].archivePath;
+---
+<!-- One editorial row, the whole of it a single link to /work/: one line of
+     text plus the arrow. Full-bleed hairlines above and below; on hover and
+     focus the row turns to ink. The visible text is the accessible name: the
+     arrow and its word joiner are hidden from assistive tech so the name is
+     exactly the words on screen. -->
+<section class="archive-path" id="archivo" aria-label={copy[lang].ui.archive}>
+  <a class="archive-row" href={workHref(lang)}>
+    <span class="wrap archive-row-inner">
+      <span class="t-head archive-row-title">{t.title}<span aria-hidden="true"><Arrow /></span></span>
+    </span>
+  </a>
+</section>

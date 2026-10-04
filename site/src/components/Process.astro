@@ -1,0 +1,22 @@
+---
+import { copy, type Lang } from '../i18n';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = copy[lang].process;
+---
+<section class="process band" id="proceso" aria-labelledby="process-title">
+  <div class="wrap">
+    <h2 class="t-head process-title" id="process-title">{t.title.map((line) => <span class="line">{line}</span>)}</h2>
+    <p class="process-under">{t.under}</p>
+    <ol class="process-steps">
+      {t.steps.map(([no, title, body]) => (
+        <li>
+          <span class="t-record process-no" aria-hidden="true">{no}</span>
+          <h3 class="t-head process-step-title">{title}</h3>
+          <p>{body}</p>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>

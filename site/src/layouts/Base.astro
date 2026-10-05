@@ -21,7 +21,7 @@ const site = 'https://sebasbelmos.github.io';
 const path = page === 'home' ? '' : 'work/';
 const esUrl = `${site}${base}${path}`;
 const enUrl = `${site}${base}en/${path}`;
-const ogImage = `${site}${base}assets/og-${lang}.png`;
+const ogImage = `${site}${base}assets/${lang === 'es' ? 'og-image-v2.png' : 'og-image-v2-en.png'}`;
 ---
 <!doctype html>
 <html lang={lang}>
@@ -42,6 +42,7 @@ const ogImage = `${site}${base}assets/og-${lang}.png`;
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="SEBASBELMOS" />
         <meta property="og:locale" content={lang === 'es' ? 'es_CO' : 'en_GB'} />
+        <meta property="og:locale:alternate" content={lang === 'es' ? 'en_GB' : 'es_CO'} />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:url" content={lang === 'es' ? esUrl : enUrl} />
@@ -53,6 +54,7 @@ const ogImage = `${site}${base}assets/og-${lang}.png`;
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={ogImage} />
+        <meta name="twitter:image:alt" content={t.meta.ogAlt} />
       </>
     )}
     <link rel="icon" href={asset('brand-icon.ico')} />

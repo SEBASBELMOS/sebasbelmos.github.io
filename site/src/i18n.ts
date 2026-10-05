@@ -24,14 +24,14 @@ export const links = {
 
 const es = {
   meta: {
-    title: 'Sebastian Belalcazar · Menos trabajo manual',
+    title: 'Sebastian Belalcazar — AI Systems Engineer',
     description:
       'Ayudo a fundadores de negocios digitales a conectar herramientas, datos y procesos para reducir trabajo manual.',
     workTitle: 'Todos los proyectos · Sebastian Belalcazar',
     workDescription:
       'Proyectos universitarios, exploraciones propias y contribuciones de Sebastian Belalcazar.',
     notFoundTitle: 'Página no encontrada · SEBASBELMOS',
-    ogAlt: 'Menos trabajo manual. Menos cosas que dependan de ti. Sebastian Belalcazar, SEBASBELMOS.',
+    ogAlt: 'Tarjeta de SEBASBELMOS sobre papel claro: «Menos trabajo manual. Menos cosas que dependan de ti.» Sebastian Belalcazar, AI Systems Engineer.',
   },
   ui: {
     skip: 'Saltar al contenido',
@@ -172,13 +172,13 @@ type Copy = typeof es;
 
 const en: Copy = {
   meta: {
-    title: 'Sebastian Belalcazar · Less manual work',
+    title: 'Sebastian Belalcazar — AI Systems Engineer',
     description:
       'I help founders of digital businesses connect tools, data and workflows to cut manual work.',
     workTitle: 'All projects · Sebastian Belalcazar',
     workDescription: 'University projects, personal explorations and contributions by Sebastian Belalcazar.',
     notFoundTitle: 'Page not found · SEBASBELMOS',
-    ogAlt: 'Less manual work. Fewer things that depend on you. Sebastian Belalcazar, SEBASBELMOS.',
+    ogAlt: 'SEBASBELMOS card on light paper: “Less manual work. Fewer things that depend on you.” Sebastian Belalcazar, AI Systems Engineer.',
   },
   ui: {
     skip: 'Skip to content',

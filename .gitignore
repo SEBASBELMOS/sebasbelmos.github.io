@@ -15,3 +15,6 @@ site/qa/shots/
 site/qa/*.json
 site/public/**/*.webp.json
 site/public/**/*.png.json
+
+# Brand assets (LinkedIn banner, OG sources): local only, not used by the site.
+site/brand/
